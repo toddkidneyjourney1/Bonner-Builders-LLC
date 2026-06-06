@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bonner Builders LLC | Custom Residential Carpentry & Remodeling</title>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-B8HDE9NGYF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-B8HDE9NGYF');
+</script>
+
 <style>
 /* --- Color Palette & Design Tokens --- */
 :root {
@@ -661,7 +671,7 @@ opacity: 1;
 <h3 class="section-title">Start Your Building Inquiry</h3>
 <div class="contact-info">
 <h4>Project Consultation Desk</h4>
-<p style="margin-bottom: 10px;">Direct Phone line:<br><a href="tel:6037070049" style="color: var(--navy-brand); font-weight: bold; text-decoration: none;">603-707-0049</a></p>
+<p style="margin-bottom: 10px;">Direct Phone Line:<br><a href="tel:6037070049" style="color: var(--navy-brand); font-weight: bold; text-decoration: none;">603-707-0049</a></p>
 <p>Email:<br><strong><a href="mailto:Bonnerbuilders@yahoo.com" style="color: var(--navy-brand); text-decoration: none;">Bonnerbuilders@yahoo.com</a></strong></p>
 </div>
 </div>
@@ -734,6 +744,14 @@ function switchTab(tabId) {
     const targetBtn = document.getElementById('tab-' + tabId);
     if(targetBtn) {
         targetBtn.classList.add('active');
+    }
+
+    // Tracks internal dynamic tab modifications via Google Analytics
+    if (typeof gtag === 'function') {
+        gtag('event', 'page_view', {
+            page_title: 'Bonner Builders | ' + tabId.charAt(0).toUpperCase() + tabId.slice(1),
+            page_path: '/' + tabId
+        });
     }
     
     // 6. Return user viewing frame smoothly to the top anchor line
