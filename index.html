@@ -162,11 +162,10 @@ transition: all 0.3s ease;
 
 /* --- Tab Content Control --- */
 .tab-content {
-display: none; 
-width: 100%;
+display: none; width: 100%;
 }
 .tab-content.active-tab {
-display: block !important; 
+display: block !important;
 }
 
 /* --- Hero Banner Section --- */
@@ -604,15 +603,15 @@ opacity: 1;
 <h3 class="section-title">Our Dedicated Building Services</h3>
 <div class="gallery-grid">
 <div class="gallery-item">
-<div class="gallery-wrapper"><img src="bonner2.jpg" alt="Custom Home Frameworks"></div>
+<div class="gallery-wrapper"><img src="bonner2.JPG" alt="Custom Home Frameworks"></div>
 <div class="gallery-caption"><h4>Custom Home Frameworks</h4></div>
 </div>
 <div class="gallery-item">
-<div class="gallery-wrapper"><img src="bonner3.jpg" alt="Millwork & Detail Design"></div>
+<div class="gallery-wrapper"><img src="bonner3.JPG" alt="Millwork & Detail Design"></div>
 <div class="gallery-caption"><h4>Millwork &amp; Detail Design</h4></div>
 </div>
 <div class="gallery-item">
-<div class="gallery-wrapper"><img src="bonner4.jpg" alt="High-End Coastal Additions"></div>
+<div class="gallery-wrapper"><img src="bonner4.JPG" alt="High-End Coastal Additions"></div>
 <div class="gallery-caption"><h4>High-End Coastal Additions</h4></div>
 </div>
 </div>
@@ -628,19 +627,19 @@ opacity: 1;
 <button class="carousel-btn next" onclick="moveCarousel(1)" aria-label="Next Project">&#10095;</button>
 <div class="carousel-stage" id="carouselStage">
 <div class="carousel-slide">
-<div class="carousel-image-frame"><img src="bonner5.jpg" alt="Lakefront Entry Vault Archway"></div>
+<div class="carousel-image-frame"><img src="bonner5.JPG" alt="Lakefront Entry Vault Archway"></div>
 <div class="carousel-text-overlay">Lakefront Entry Vault Archway</div>
 </div>
 <div class="carousel-slide">
-<div class="carousel-image-frame"><img src="bonner6.jpg" alt="Custom Hearth & Oak Beam Intersect"></div>
+<div class="carousel-image-frame"><img src="bonner6.JPG" alt="Custom Hearth & Oak Beam Intersect"></div>
 <div class="carousel-text-overlay">Custom Hearth &amp; Oak Beam Intersect</div>
 </div>
 <div class="carousel-slide">
-<div class="carousel-image-frame"><img src="bonner7.jpg" alt="Panoramic Great Room Vault Framing"></div>
+<div class="carousel-image-frame"><img src="bonner7.JPG" alt="Panoramic Great Room Vault Framing"></div>
 <div class="carousel-text-overlay">Panoramic Great Room Vault Framing</div>
 </div>
 <div class="carousel-slide">
-<div class="carousel-image-frame"><img src="bonner8.jpg" alt="Open Plan Living"></div>
+<div class="carousel-image-frame"><img src="bonner8.JPG" alt="Open Plan Living"></div>
 <div class="carousel-text-overlay">Open Plan Living Trim Integration</div>
 </div>
 </div>
@@ -657,126 +656,4 @@ opacity: 1;
 <div class="author">— David R., Developer</div>
 </div>
 <div class="testimonial-card">
-<p>"They tackled our custom historical finish trim package flawlessly. Every miter joint is structurally absolute."</p>
-<div class="author">— Eleanor V., Homeowner</div>
-</div>
-</div>
-</section>
-</div>
-
-<div id="panel-contact" class="tab-content">
-<section class="section-wrapper">
-<div class="split-layout">
-<div>
-<h3 class="section-title">Start Your Building Inquiry</h3>
-<div class="contact-info">
-<h4>Project Consultation Desk</h4>
-<p style="margin-bottom: 10px;">Direct Phone Line:<br><a href="tel:6037070049" style="color: var(--navy-brand); font-weight: bold; text-decoration: none;">603-707-0049</a></p>
-<p>Email:<br><strong><a href="mailto:Bonnerbuilders@yahoo.com" style="color: var(--navy-brand); text-decoration: none;">Bonnerbuilders@yahoo.com</a></strong></p>
-</div>
-</div>
-<div>
-<form class="contact-form" onsubmit="event.preventDefault(); alert('Details received.');">
-<div class="form-group">
-<label for="form-name">Your Full Name</label>
-<input type="text" id="form-name" required>
-</div>
-<div class="form-group">
-<label for="form-phone">Phone Number</label>
-<input type="tel" id="form-phone" required>
-</div>
-<div class="form-group">
-<label for="form-email">Email Address</label>
-<input type="email" id="form-email" required>
-</div>
-<div class="form-group">
-<label for="form-scope">Project Scope Description</label>
-<textarea id="form-scope" rows="4" required></textarea>
-</div>
-<button type="submit" class="submit-btn">Send Details</button>
-</form>
-</div>
-</div>
-</section>
-</div>
-
-<footer>
-<img src="logo.png" alt="Bonner Builders Emblem" class="footer-logo">
-<p>&copy; 2026 Bonner Builders LLC. Meredith, New Hampshire. All Rights Reserved.</p>
-</footer>
-
-<script>
-// Toggle Mobile Dropdown Drawer
-function toggleMobileMenu() {
-    const navContainer = document.getElementById('navContainer');
-    const menuToggle = document.getElementById('menuToggle');
-    navContainer.classList.toggle('mobile-open');
-    menuToggle.classList.toggle('open');
-}
-
-// Global Tab switcher
-function switchTab(tabId) {
-    // 1. Hide mobile menu drawer if it was open
-    const navContainer = document.getElementById('navContainer');
-    const menuToggle = document.getElementById('menuToggle');
-    navContainer.classList.remove('mobile-open');
-    menuToggle.classList.remove('open');
-
-    // 2. Clear visual panel assets
-    const panes = document.querySelectorAll('.tab-content');
-    panes.forEach(p => {
-        p.classList.remove('active-tab');
-    });
-    
-    // 3. Clear button state configurations
-    const buttons = document.querySelectorAll('.tab-btn');
-    buttons.forEach(b => {
-        b.classList.remove('active');
-    });
-    
-    // 4. Reveal targeted section layout
-    const targetPane = document.getElementById('panel-' + tabId);
-    if(targetPane) {
-        targetPane.classList.add('active-tab');
-    }
-    
-    // 5. Apply focus state highlight rules to matching header button
-    const targetBtn = document.getElementById('tab-' + tabId);
-    if(targetBtn) {
-        targetBtn.classList.add('active');
-    }
-
-    // Tracks internal dynamic tab modifications via Google Analytics
-    if (typeof gtag === 'function') {
-        gtag('event', 'page_view', {
-            page_title: 'Bonner Builders | ' + tabId.charAt(0).toUpperCase() + tabId.slice(1),
-            page_path: '/' + tabId
-        });
-    }
-    
-    // 6. Return user viewing frame smoothly to the top anchor line
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-// Portfolio Carousel Logic
-let currentSlideIndex = 0;
-function moveCarousel(direction) {
-    const stage = document.getElementById('carouselStage');
-    const slides = document.querySelectorAll('.carousel-slide');
-    const totalSlides = slides.length;
-    
-    currentSlideIndex += direction;
-    
-    if (currentSlideIndex >= totalSlides) {
-        currentSlideIndex = 0;
-    } else if (currentSlideIndex < 0) {
-        currentSlideIndex = totalSlides - 1;
-    }
-    
-    const percentage = -currentSlideIndex * 100;
-    stage.style.transform = `translateX(${percentage}%)`;
-}
-</script>
-
-</body>
-</html>
+<p>"They tackled our custom historical finish
