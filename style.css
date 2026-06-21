@@ -46,12 +46,21 @@ nav {
     background: #2c2c2c; 
     padding: 15px; 
     text-align: center; 
-    /* This pins the nav to the absolute top of the browser */
-    position: fixed; 
+    position: sticky; 
     top: 0; 
-    left: 0; 
-    width: 100%; 
     z-index: 1000; 
+}
+
+nav a { 
+    margin: 0 15px; 
+    color: white !important; /* The !important tag forces the white color */
+    text-decoration: none; 
+    font-weight: bold; 
+}
+
+nav a:hover { 
+    color: var(--accent-gold); 
+    text-decoration: underline; 
 }
 
 /* Add a margin to the body to prevent content from hiding behind the fixed nav */
