@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Bonner Builders LLC</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="layout-container">
-        <header class="header">
-            <img src="your-logo.jpg" alt="Bonner Builders Logo">
-        </header>
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="services.html">SERVICES</a>
+        <a href="portfolio.html">PORTFOLIO</a>
+        <a href="testimonials.html">TESTIMONIALS</a>
+        <a href="join.html">JOIN OUR TEAM</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
 
-        <nav class="sidebar">
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="services.html">SERVICES</a></li>
-                <li><a href="portfolio.html">PORTFOLIO</a></li>
-                <li><a href="testimonials.html">TESTIMONIALS</a></li>
-                <li><a href="join.html">JOIN OUR TEAM</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-            </ul>
-        </nav>
+    <div class="container">
+        <h2>OUR WORK</h2>
+        <p>A look at some of the custom projects we have completed in the Lakes Region.</p>
 
-        <main class="content">
-            <h1>Page Title</h1>
-            <p>Your content goes here.</p>
-        </main>
+        <div class="carousel">
+            <div class="carousel-inner" id="carousel">
+                <img src="images/project1.jpg" alt="Project 1">
+                <img src="images/project2.jpg" alt="Project 2">
+                <img src="images/project3.jpg" alt="Project 3">
+            </div>
+        </div>
     </div>
 
+    <script>
+        let index = 0;
+        const images = document.getElementById('carousel').children;
+        function showNext() {
+            images[index].style.display = 'none';
+            index = (index + 1) % images.length;
+            images[index].style.display = 'block';
+        }
+        // Initialize
+        for(let i = 1; i < images.length; i++) images[i].style.display = 'none';
+        setInterval(showNext, 3000); // Changes every 3 seconds
+    </script>
 </body>
 </html>
