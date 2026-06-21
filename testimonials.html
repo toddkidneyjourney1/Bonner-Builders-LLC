@@ -17,8 +17,9 @@ body { margin: 0; font-family: sans-serif; line-height: 1.6; color: var(--text-d
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(rgba(28, 45, 66, 0.9), rgba(28, 45, 66, 0.9)), 
-                url('images/logo.png') center/contain no-repeat;
+    /* Removed the linear-gradient overlay */
+    background: url('images/logo.png') center/contain no-repeat;
+    background-color: white; /* Or your preferred background color */
     border-bottom: 5px solid var(--accent-gold);
 }
 
