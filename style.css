@@ -9,10 +9,11 @@
 html { scroll-behavior: smooth; }
 body { 
     margin: 0; 
-    margin-top: 60px; /* Pushes content down so it isn't hidden by the fixed nav */
+    margin-top: 70px; 
     font-family: sans-serif; 
     line-height: 1.6; 
-    color: var(--text-dark); 
+    color: white; /* Changed text color to white for readability on dark background */
+    background-color: var(--navy-brand); /* Sets the blue background */
 }
 
 /* --- Hero Banner --- */
