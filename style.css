@@ -46,15 +46,21 @@ nav a:hover, nav a.active {
 /* --- Homepage Hero Banner --- */
 #home {
     text-align: center;
-    padding: 120px 20px; /* Increased padding to make the banner taller and more grand */
+    padding: 140px 20px; /* Adjust this height so your logo looks perfect */
     
-    /* ADD IMAGE HERE: This pulls your logo as a background or you can use a project photo */
-    background-image: linear-gradient(rgba(22, 36, 53, 0.8), rgba(22, 36, 53, 0.8)), url('images/Bonner_Builders_007.JPG');
-    background-size: cover;
+    /* Pulls your logo file and sets the dark brand background with no filters */
+    background-image: url('images/logo.png');
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: var(--navy-brand); 
     
     border-bottom: 4px solid var(--accent-gold);
+}
+
+/* Hide the white text completely so it doesn't clash with the logo */
+#home h1, #home p {
+    display: none;
 }
 
 #home h1 {
