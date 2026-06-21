@@ -1,74 +1,177 @@
-/* --- Variables --- */
+/* --- Brand Variables --- */
 :root {
     --accent-gold: #c5a059;
     --navy-brand: #1c2d42;
     --text-dark: #333;
+    --bg-light: #f9f9f9;
 }
 
 /* --- Global Styles --- */
-html { scroll-behavior: smooth; }
 body {
     margin: 0;
-    margin-top: 70px;
-    font-family: sans-serif;
+    padding: 0;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
     color: white;
     background-color: var(--navy-brand);
 }
 
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
 /* --- Navigation --- */
 nav {
-    background: #2c2c2c;
-    padding: 15px;
+    background: #111b27;
+    padding: 15px 0;
     text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
+    border-bottom: 2px solid var(--accent-gold);
 }
+
 nav a {
+    color: #ffffff;
     margin: 0 15px;
-    color: white !important;
     text-decoration: none;
     font-weight: bold;
-}
-nav a:hover { color: var(--accent-gold); text-decoration: underline; }
-
-/* This ONLY affects the homepage banner */
-.hero-banner {
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: #1c2d42; /* Your navy brand color */
-    border-bottom: 5px solid #c5a059;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
 }
 
-/* This is the simple, small header for internal pages */
+nav a:hover, nav a.active {
+    color: var(--accent-gold);
+}
+
+/* --- Homepage Hero Banner --- */
+#home {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #162435;
+    border-bottom: 4px solid var(--accent-gold);
+}
+
+#home h1 {
+    font-size: 3rem;
+    margin: 0 0 10px 0;
+    letter-spacing: 2px;
+}
+
+#home p {
+    font-size: 1.2rem;
+    color: var(--accent-gold);
+    margin: 0;
+    letter-spacing: 1s;
+}
+
+/* --- Interior Page Header --- */
 .page-header {
     text-align: center;
-    padding: 20px;
-    background: #1c2d42;
+    padding: 40px 20px;
+    background-color: #111b27;
+    border-bottom: 2px solid #253954;
+}
+
+.page-header h1 {
+    font-size: 2.2rem;
+    margin: 0;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+/* --- Grid Layouts (Services & Testimonials) --- */
+.services-grid, .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.service-box, .card {
+    background: #23364f;
+    padding: 25px;
+    border-radius: 6px;
+    border-top: 4px solid var(--accent-gold);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card p {
+    font-style: italic;
+}
+
+.card h4 {
+    margin-top: 15px;
+    color: var(--accent-gold);
+}
+
+/* --- Forms (Contact & Join) --- */
+.contact-form, .join-form {
+    background: #23364f;
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.contact-form label, .join-form label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: var(--accent-gold);
+}
+
+.contact-form input, .contact-form textarea,
+.join-form input, .join-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border: 1px solid #253954;
+    background: #162435;
     color: white;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
-/* --- General Header (For other pages) --- */
-header {
-    text-align: center;
-    padding: 20px;
-    background: var(--navy-brand);
+.contact-form button, .join-form button {
+    margin-top: 25px;
+    padding: 12px 30px;
+    background: var(--accent-gold);
+    color: #111;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background 0.3s ease;
 }
 
-/* --- Layout --- */
-.container { max-width: 960px; margin: 40px auto; padding: 20px; }
+.contact-form button:hover, .join-form button:hover {
+    background: #ebd09c;
+}
 
-/* --- Services Grid --- */
-.services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
-.service-box { padding: 20px; border: 1px solid #ddd; background: #f9f9f9; color: var(--text-dark); }
+/* --- Portfolio Carousel --- */
+.carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+    height: 450px;
+    overflow: hidden;
+    border: 4px solid #23364f;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
 
-/* --- Carousel --- */
-.carousel { position: relative; max-width: 800px; margin: 40px auto; overflow: hidden; border: 5px solid white; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-.carousel-inner { display: flex; transition: transform 0.5s ease-in-out; }
-.carousel-inner img { width: 100%; flex-shrink: 0; }
+.carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel img.active {
+    opacity: 1;
+}
