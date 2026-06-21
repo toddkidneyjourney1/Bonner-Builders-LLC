@@ -8,7 +8,7 @@ body {
 
 /* Wood Grain Header */
 header { 
-    background-image: url('images/wood%20grain.jpg');
+    background-image: url('logo.png');
     background-size: cover;
     background-position: center;
     padding: 80px 20px; 
