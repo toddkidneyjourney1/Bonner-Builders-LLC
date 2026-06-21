@@ -8,16 +8,16 @@
         :root { --accent-gold: #c5a059; --navy-brand: #1c2d42; }
         body { margin: 0; font-family: sans-serif; line-height: 1.6; color: #333; }
 
-        /* Header with Logo */
+        /* Header settings to fill with logo */
         header { 
-            background: url('images/logo.png') center/contain no-repeat;
-            padding: 120px 20px; 
+            background: url('images/logo.png') center/cover no-repeat;
+            padding: 150px 20px; /* Increase this to make the header taller */
             text-align: center;
             border-bottom: 5px solid var(--accent-gold);
             background-color: #fcfcfc;
         }
         
-        /* Hiding old text as it's now part of the logo */
+        /* This completely removes the text so it doesn't block the logo */
         header h1, header p { display: none; }
         
         nav { background: #2c2c2c; padding: 15px; text-align: center; }
@@ -31,9 +31,7 @@
 <body>
 
 <header>
-    <h1>BONNER BUILDERS LLC</h1>
-    <p>CUSTOM CARPENTRY & REMODELING</p>
-</header>
+    </header>
 
 <nav>
     <a href="#">HOME</a>
