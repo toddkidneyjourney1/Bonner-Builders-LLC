@@ -1,1 +1,51 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Bonner Builders LLC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>BONNER BUILDERS LLC</h1>
+</header>
+
+<nav>
+    <a href="index.html">HOME</a>
+    <a href="services.html">SERVICES</a>
+    <a href="portfolio.html">PORTFOLIO</a>
+    <a href="testimonials.html">TESTIMONIALS</a>
+    <a href="join.html">JOIN OUR TEAM</a>
+    <a href="contact.html">CONTACT</a>
+</nav>
+
+<div class="container">
+    <h2>OUR PORTFOLIO</h2>
+    <div class="carousel">
+        <div class="carousel-inner" id="carousel">
+            <img src="images/project1.jpg" alt="Project 1">
+            <img src="images/project2.jpg" alt="Project 2">
+            <img src="images/project3.jpg" alt="Project 3">
+        </div>
+    </div>
+</div>
+
+<script>
+    let index = 0;
+    const slides = document.getElementById('carousel');
+    const totalSlides = slides.children.length;
+
+    function slide() {
+        index = (index + 1) % totalSlides;
+        slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+    
+    // Changes image every 3 seconds
+    setInterval(slide, 3000);
+</script>
+
+</body>
+</html>
