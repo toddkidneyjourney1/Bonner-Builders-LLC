@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Our Team | Bonner Builders LLC</title>
+    <title>Join Us | Bonner Builders LLC</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .join-container { max-width: 600px; margin: 40px auto; padding: 20px; }
+        .join-form label { display: block; margin-top: 15px; font-weight: bold; }
+        .join-form input, .join-form textarea { width: 100%; padding: 10px; margin-top: 5px; }
+        .join-form button { margin-top: 20px; padding: 10px 20px; background: #c5a059; color: white; border: none; cursor: pointer; }
+    </style>
 </head>
 <body>
 
-    <header id="home">
-        <h1>BONNER BUILDERS LLC</h1>
-        <p>CUSTOM CARPENTRY & REMODELING</p>
+    <header class="page-header">
+        <h1>JOIN OUR TEAM</h1>
     </header>
 
     <nav>
@@ -23,23 +28,19 @@
         <a href="contact.html">Contact</a>
     </nav>
 
-    <main class="container">
-        <h2>Join Our Team</h2>
-        <p>We are always looking for skilled craftsmen to join the Bonner Builders family. Please fill out the inquiry form below to get in touch with us.</p>
+    <main class="join-container">
+        <p>We are always looking for skilled craftsmen to join the Bonner Builders team. Tell us about your experience below.</p>
         
-        <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
-            <label for="name">Full Name *</label><br>
-            <input type="text" id="name" name="name" required><br><br>
-
-            <label for="experience">Years of Experience *</label><br>
-            <input type="number" id="experience" name="experience" required><br><br>
-
-            <label for="trade">Primary Trade / Skill *</label><br>
-            <input type="text" id="trade" name="trade" required><br><br>
-
-            <label for="message">About Your Experience *</label><br>
-            <textarea id="message" name="message" rows="5" required></textarea><br><br>
-
+        <form class="join-form" action="mailto:your-email@example.com" method="post" enctype="text/plain">
+            <label>Full Name:</label>
+            <input type="text" name="name" required>
+            
+            <label>Trade / Years of Experience:</label>
+            <input type="text" name="experience" required>
+            
+            <label>Why do you want to work with us?</label>
+            <textarea name="message" rows="5" required></textarea>
+            
             <button type="submit">SUBMIT APPLICATION</button>
         </form>
     </main>
