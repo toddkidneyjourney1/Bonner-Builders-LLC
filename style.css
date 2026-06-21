@@ -42,10 +42,25 @@ header#home h1, header#home p { display: none !important; }
 .hero-btn:hover { background-color: #a8874a; }
 
 /* --- Navigation --- */
-nav { background: #2c2c2c; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 1000; }
-nav a { margin: 0 15px; color: white; text-decoration: none; font-weight: bold; }
-nav a:hover { color: var(--accent-gold); text-decoration: underline; }
+nav { 
+    background: #2c2c2c; 
+    padding: 15px; 
+    text-align: center; 
+    /* This pins the nav to the absolute top of the browser */
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 1000; 
+}
 
+/* Add a margin to the body to prevent content from hiding behind the fixed nav */
+body { 
+    margin-top: 60px; /* Adjust this value based on the height of your nav */
+    font-family: sans-serif; 
+    line-height: 1.6; 
+    color: var(--text-dark); 
+}
 /* --- Layout --- */
 .container { max-width: 960px; margin: 40px auto; padding: 20px; }
 
