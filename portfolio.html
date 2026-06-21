@@ -5,32 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Bonner Builders LLC</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .carousel { 
-            position: relative; 
-            max-width: 800px; 
-            margin: 40px auto; 
-            height: 500px; 
-            background: #111b27;
-            border: 4px solid #23364f;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        /* Hide images by default */
-        .carousel img { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            position: absolute; 
-            top: 0; 
-            left: 0; 
-            display: none; 
-        }
-        /* Display only the active image */
-        .carousel img.active { 
-            display: block; 
-        }
-    </style>
 </head>
 <body>
 
@@ -66,12 +40,17 @@
             let currentIndex = 0;
             const images = document.querySelectorAll('#portfolioCarousel img');
             
-            if(images.length > 0) {
+            if (images.length > 0) {
                 setInterval(function() {
+                    // Remove active class from current image (fades it out)
                     images[currentIndex].classList.remove('active');
+                    
+                    // Move to next image index
                     currentIndex = (currentIndex + 1) % images.length;
+                    
+                    // Add active class to next image (fades it in)
                     images[currentIndex].classList.add('active');
-                }, 3000);
+                }, 3000); // Transitions every 3 seconds
             }
         });
     </script>
