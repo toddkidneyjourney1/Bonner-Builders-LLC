@@ -6,9 +6,30 @@
     <title>Portfolio | Bonner Builders LLC</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .carousel { position: relative; max-width: 800px; margin: auto; height: 400px; overflow: hidden; }
-        .carousel img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 1s ease-in-out; }
-        .carousel img.active { opacity: 1; }
+        .carousel { 
+            position: relative; 
+            max-width: 800px; 
+            margin: 40px auto; 
+            height: 500px; 
+            background: #111b27;
+            border: 4px solid #23364f;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        /* Hide images by default */
+        .carousel img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            position: absolute; 
+            top: 0; 
+            left: 0; 
+            display: none; 
+        }
+        /* Display only the active image */
+        .carousel img.active { 
+            display: block; 
+        }
     </style>
 </head>
 <body>
@@ -41,14 +62,18 @@
     </main>
 
     <script>
-        let currentIndex = 0;
-        const images = document.querySelectorAll('#portfolioCarousel img');
-        function rotateImages() {
-            images[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].classList.add('active');
-        }
-        setInterval(rotateImages, 3000);
+        document.addEventListener("DOMContentLoaded", function() {
+            let currentIndex = 0;
+            const images = document.querySelectorAll('#portfolioCarousel img');
+            
+            if(images.length > 0) {
+                setInterval(function() {
+                    images[currentIndex].classList.remove('active');
+                    currentIndex = (currentIndex + 1) % images.length;
+                    images[currentIndex].classList.add('active');
+                }, 3000);
+            }
+        });
     </script>
 </body>
 </html>
