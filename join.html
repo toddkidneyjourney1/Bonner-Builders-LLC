@@ -1,22 +1,45 @@
-<form action="https://formspree.io/f/YOUR_JOIN_FORM_ID" method="POST">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Join Us - Bonner Builders LLC</title>
+</head>
+<body>
 
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" required>
+    <header id="home">
+        <h1>BONNER BUILDERS LLC</h1>
+        <p>CUSTOM CARPENTRY & REMODELING</p>
+    </header>
 
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="contact.html">Contact</a>
+        <a href="join.html">Join Us</a>
+        <a href="testimonials.html">Testimonials</a>
+    </nav>
 
-            <label for="experience">Years of Carpentry Experience</label>
-            <select id="experience" name="experience">
-                <option value="0-2">0-2 Years</option>
-                <option value="3-5">3-5 Years</option>
-                <option value="5+">5+ Years</option>
-            </select>
-
-            <label for="message">Message / Skills</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
+    <div class="container">
+        <h2>Join Our Team</h2>
+        <form action="https://formspree.io/f/YOUR_JOIN_FORM_ID" method="POST">
+            <label for="name">Full Name</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            
+            <label for="experience">Years of Experience</label><br>
+            <input type="number" id="experience" name="experience" required><br><br>
+            
+            <label for="skills">Skills / Trade</label><br>
+            <input type="text" id="skills" name="skills" required><br><br>
+            
+            <label for="resume">Tell us about yourself</label><br>
+            <textarea id="resume" name="resume" rows="5" required></textarea><br><br>
+            
             <button type="submit">SUBMIT APPLICATION</button>
         </form>
+    </div>
+
+</body>
+</html>
