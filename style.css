@@ -187,3 +187,38 @@ nav a:hover, nav a.active {
 .carousel img.active {
     opacity: 1;
 }
+/* --- Tighten Layout to Fit on One Screen --- */
+
+/* Reduce global vertical spacing */
+.container {
+    margin: 15px auto;
+}
+
+/* Force the About Page image to remain compact and side-by-side on desktop */
+@media (min-width: 768px) {
+    main.container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+/* Restrict the max height of photos so they don't push content down */
+main.container img {
+    max-height: 40vh; /* Limits image height to 40% of the screen height */
+    width: auto;
+    object-fit: contain;
+    border-radius: 6px;
+    margin-top: 10px;
+}
+
+/* Tighten the Services Grid layout */
+.services-grid {
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.service-box {
+    padding: 15px;
+}
