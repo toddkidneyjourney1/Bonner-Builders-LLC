@@ -16,7 +16,7 @@ body { margin: 0; font-family: sans-serif; line-height: 1.6; color: var(--text-d
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* Clean image display */
+    /* Clean background: Logo centered on white */
     background-image: url('images/logo.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -25,10 +25,8 @@ body { margin: 0; font-family: sans-serif; line-height: 1.6; color: var(--text-d
     border-bottom: 5px solid var(--accent-gold);
 }
 
-/* Hide text in header */
-header#home h1, header#home p {
-    display: none !important;
-}
+/* Ensure no text overlays the logo */
+header#home h1, header#home p { display: none !important; }
 
 .hero-btn {
     display: inline-block;
