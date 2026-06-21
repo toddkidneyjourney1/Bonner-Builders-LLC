@@ -35,20 +35,23 @@ nav a {
 }
 nav a:hover { color: var(--accent-gold); text-decoration: underline; }
 
-/* --- HERO BANNER (Homepage Only) --- */
-/* We rename this to a class so it only applies where you put the class */
+/* This ONLY affects the homepage banner */
 .hero-banner {
     height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image: url('images/logo.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-color: var(--navy-brand);
-    border-bottom: 5px solid var(--accent-gold);
+    background-color: #1c2d42; /* Your navy brand color */
+    border-bottom: 5px solid #c5a059;
+}
+
+/* This is the simple, small header for internal pages */
+.page-header {
+    text-align: center;
+    padding: 20px;
+    background: #1c2d42;
+    color: white;
 }
 
 /* --- General Header (For other pages) --- */
