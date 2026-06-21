@@ -1,66 +1,24 @@
-/* General Site Styling */
-body { 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    line-height: 1.6; 
-    margin: 0; 
-    color: #333; 
-}
+<style>
+    :root { --accent-gold: #c5a059; --navy-brand: #1c2d42; --white: #ffffff; }
+    body { margin: 0; font-family: sans-serif; line-height: 1.6; color: #333; }
 
-/* Wood Grain Header */
-header { 
-    background-image: url('logo.png');
-    background-size: cover;
-    background-position: center;
-    padding: 80px 20px; 
-    text-align: center; 
-    color: #ffffff;
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
-    border-bottom: 5px solid #4a3728;
-}
+    /* Wood Grain Header */
+    header { 
+        background: url('images/logo.png') center/cover no-repeat;
+        padding: 80px 20px;
+        text-align: center;
+        border-bottom: 5px solid var(--accent-gold);
+    }
+    
+    /* This hides the original text so only the logo shows */
+    header h1, header p { 
+        display: none; 
+    }
+    
+    nav { background: #2c2c2c; padding: 15px; text-align: center; }
+    nav a { margin: 0 15px; color: white; text-decoration: none; font-weight: bold; }
 
-header h1 { margin: 0; font-size: 2.5em; }
-
-/* Navigation Styling */
-nav { 
-    background: #2c2c2c; 
-    padding: 15px; 
-    text-align: center; 
-}
-nav a { 
-    margin: 0 15px; 
-    text-decoration: none; 
-    color: #ffffff; 
-    font-weight: bold; 
-    text-transform: uppercase;
-    font-size: 0.9em;
-}
-nav a:hover { color: #d4a373; }
-
-/* Main Content Area */
-.container { 
-    max-width: 1000px; 
-    margin: 40px auto; 
-    padding: 0 20px; 
-}
-
-.services { 
-    display: flex; 
-    gap: 20px; 
-    margin: 30px 0; 
-}
-
-.service-box { 
-    flex: 1; 
-    padding: 20px; 
-    border: 1px solid #e0e0e0; 
-    background: #fdfdfd;
-    border-radius: 5px;
-}
-
-blockquote {
-    font-style: italic;
-    border-left: 5px solid #d4a373;
-    padding-left: 20px;
-    margin: 30px 0;
-    color: #555;
-}
+    .container { max-width: 960px; margin: 40px auto; padding: 20px; }
+    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+    .service-box { padding: 20px; border: 1px solid #ddd; background: #f9f9f9; }
+</style>
