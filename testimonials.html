@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testimonials | Bonner Builders LLC</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .testimonial-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+            margin-top: 40px; 
+        }
+        .card { 
+            background: #23364f; 
+            padding: 30px; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15); 
+            border-top: 5px solid #c5a059; 
+        }
+        .card p { 
+            font-style: italic; 
+            color: #ffffff; 
+            margin: 0 0 15px 0;
+        }
+        .card h4 { 
+            color: #c5a059; 
+            margin: 0; 
+            text-transform: uppercase; 
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+    </style>
 </head>
 <body>
 
@@ -40,6 +67,11 @@
             <div class="card">
                 <p>"The custom trim work transformed our living space completely. Absolutely beautiful attention to detail."</p>
                 <h4>— R. Walters, Laconia</h4>
+            </div>
+
+            <div class="card">
+                <p>"They remodeled our kitchen last winter. Professional communication throughout the entire process and a flawless finish."</p>
+                <h4>— M. & T. Sullivan, Center Harbor</h4>
             </div>
         </div>
     </main>
