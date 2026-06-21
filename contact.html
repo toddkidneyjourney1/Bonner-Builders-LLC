@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Bonner Builders LLC</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .contact-container { max-width: 600px; margin: 40px auto; padding: 20px; }
+        .contact-form label { display: block; margin-top: 15px; font-weight: bold; }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 10px; margin-top: 5px; }
+        .contact-form button { margin-top: 20px; padding: 10px 20px; background: #c5a059; color: white; border: none; cursor: pointer; }
+    </style>
 </head>
 <body>
 
-    <header id="home">
-        <h1>BONNER BUILDERS LLC</h1>
-        <p>CUSTOM CARPENTRY & REMODELING</p>
+    <header class="page-header">
+        <h1>CONTACT US</h1>
     </header>
 
     <nav>
@@ -24,23 +28,19 @@
         <a href="contact.html" class="active">Contact</a>
     </nav>
 
-    <main class="container">
-        <h2>Contact Us</h2>
-        <p>Ready to start your next project? Get in touch with us today for a consultation or quote.</p>
+    <main class="contact-container">
+        <p>Ready to start your next project? Fill out the form below and we will get back to you shortly.</p>
         
-        <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
-            <label for="name">Full Name *</label><br>
-            <input type="text" id="name" name="name" required><br><br>
-
-            <label for="email">Email Address *</label><br>
-            <input type="email" id="email" name="email" required><br><br>
-
-            <label for="phone">Phone Number</label><br>
-            <input type="tel" id="phone" name="phone"><br><br>
-
-            <label for="message">Project Details *</label><br>
-            <textarea id="message" name="message" rows="5" required></textarea><br><br>
-
+        <form class="contact-form" action="mailto:your-email@example.com" method="post" enctype="text/plain">
+            <label>Name:</label>
+            <input type="text" name="name" required>
+            
+            <label>Email:</label>
+            <input type="email" name="email" required>
+            
+            <label>Message:</label>
+            <textarea name="message" rows="5" required></textarea>
+            
             <button type="submit">SEND MESSAGE</button>
         </form>
     </main>
