@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join Our Team | Bonner Builders LLC</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -12,34 +13,44 @@
         <p>CUSTOM CARPENTRY & REMODELING</p>
     </header>
 
-   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="testimonials.html">Testimonials</a>
-    <a href="join.html">Join Us</a>
-    <a href="contact.html">Contact</a>
-</nav>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="join.html">Join Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 
-    <div class="container">
+    <main class="container">
         <h2>Join Our Team</h2>
+        <p>We are always looking for skilled craftsmen to join the Bonner Builders family. Please fill out the application below.</p>
+        
         <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-            <label for="name">Full Name</label><br>
-            <input type="text" id="name" name="name" required><br><br>
-            
-            <label for="experience">Years of Experience</label><br>
-            <input type="number" id="experience" name="experience" required><br><br>
-            
-            <label for="skills">Skills / Trade</label><br>
-            <input type="text" id="skills" name="skills" required><br><br>
-            
-            <label for="message">Tell us about yourself</label><br>
-            <textarea id="message" name="message" rows="5" required></textarea><br><br>
-            
-            <button type="submit">SUBMIT APPLICATION</button>
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="experience">Years of Experience</label>
+                <input type="number" id="experience" name="experience" required>
+            </div>
+
+            <div class="form-group">
+                <label for="trade">Primary Trade / Skill</label>
+                <input type="text" id="trade" name="trade" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">About Your Experience</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">SUBMIT APPLICATION</button>
         </form>
-    </div>
+    </main>
 
 </body>
 </html>
