@@ -7,7 +7,13 @@
 
 /* --- Global Styles --- */
 html { scroll-behavior: smooth; }
-body { margin: 0; font-family: sans-serif; line-height: 1.6; color: var(--text-dark); }
+body { 
+    margin: 0; 
+    margin-top: 60px; /* Pushes content down so it isn't hidden by the fixed nav */
+    font-family: sans-serif; 
+    line-height: 1.6; 
+    color: var(--text-dark); 
+}
 
 /* --- Hero Banner --- */
 #home {
@@ -16,7 +22,6 @@ body { margin: 0; font-family: sans-serif; line-height: 1.6; color: var(--text-d
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* Logo centered on the navy brand color */
     background-image: url('images/logo.png');
     background-position: center;
     background-repeat: no-repeat;
@@ -46,14 +51,16 @@ nav {
     background: #2c2c2c; 
     padding: 15px; 
     text-align: center; 
-    position: sticky; 
+    position: fixed; 
     top: 0; 
+    left: 0;
+    width: 100%;
     z-index: 1000; 
 }
 
 nav a { 
     margin: 0 15px; 
-    color: white !important; /* The !important tag forces the white color */
+    color: white !important; 
     text-decoration: none; 
     font-weight: bold; 
 }
@@ -63,13 +70,6 @@ nav a:hover {
     text-decoration: underline; 
 }
 
-/* Add a margin to the body to prevent content from hiding behind the fixed nav */
-body { 
-    margin-top: 60px; /* Adjust this value based on the height of your nav */
-    font-family: sans-serif; 
-    line-height: 1.6; 
-    color: var(--text-dark); 
-}
 /* --- Layout --- */
 .container { max-width: 960px; margin: 40px auto; padding: 20px; }
 
