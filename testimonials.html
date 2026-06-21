@@ -3,51 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testimonials | Bonner Builders LLC</title>
+    <title>Services | Bonner Builders LLC</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-top: 5px solid #c5a059; /* Gold accent */
-        }
-        .card p { font-style: italic; color: #333; }
-        .card h4 { color: #1c2d42; margin-top: 20px; text-transform: uppercase; }
-    </style>
 </head>
 <body>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="testimonials.html">Testimonials</a>
-    <a href="join.html">Join Us</a>
-    <a href="contact.html">Contact</a>
-</nav>
+    <header class="page-header">
+        <h1>OUR SERVICES</h1>
+    </header>
 
-<div class="container">
-    <h2>CLIENT FEEDBACK</h2>
-    <div class="testimonial-grid">
-        <div class="card">
-            <p>"Bonner Builders provided top-tier craftsmanship on our recent home addition. Professional, clean, and exactly on budget."</p>
-            <h4>— The Miller Family, Meredith</h4>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="join.html">Join Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <main class="container">
+        <h2>Professional Carpentry & Remodeling</h2>
+        <p>With 45 years of experience in the Lakes Region, we provide expert craftsmanship for every stage of your home project.</p>
+        
+        <div class="services-grid">
+            <h3>Custom Carpentry</h3>
+            <p>Master-level finish carpentry and custom trim work designed to elevate the character of your home.</p>
+            
+            <h3>Remodeling & Additions</h3>
+            <p>Seamless home expansions and renovations that integrate perfectly with your existing structure.</p>
+            
+            <h3>Structural Framing</h3>
+            <p>Precision framing techniques that ensure long-term structural integrity for your custom builds.</p>
         </div>
-        <div class="card">
-            <p>"It is rare to find a contractor who values old-school joinery while staying ahead of modern building standards. Exceptional work."</p>
-            <h4>— Lakes Region Property Group</h4>
-        </div>
-    </div>
-</div>
+    </main>
 
 </body>
 </html>
