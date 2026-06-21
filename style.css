@@ -16,12 +16,12 @@ body { margin: 0; font-family: sans-serif; line-height: 1.6; color: var(--text-d
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* Clean background: Logo centered on white */
+    /* Logo centered on the navy brand color */
     background-image: url('images/logo.png');
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    background-color: white; 
+    background-color: var(--navy-brand); 
     border-bottom: 5px solid var(--accent-gold);
 }
 
