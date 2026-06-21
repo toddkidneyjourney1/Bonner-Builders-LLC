@@ -3,6 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Team | Bonner Builders LLC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="about.html">ABOUT</a>
+        <a href="services.html">SERVICES</a>
+        <a href="portfolio.html">PORTFOLIO</a>
+        <a href="testimonials.html">TESTIMONIALS</a>
+        <a href="join.html">JOIN OUR TEAM</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+    <div class="container">
+        <h2>WORK WITH US</h2>
+        <p>Tell us about your experience below.</p>
+        <form action="https://formspree.io/f/YOUR_JOIN_FORM_ID" method="POST">
+            <label>Name</label>
+            <input type="text" name="name" required>
+            <label>Email</label>
+            <input type="email" name="email" required>
+            <label>Experience Level</label>
+            <select name="experience">
+                <option value="0-2">0-2 Years</option>
+                <option value="3-5">3-5 Years</option>
+                <option value="5+">5+ Years</option>
+            </select>
+            <label>Message</label>
+            <textarea name="message" rows="5" required></textarea>
+            <button type="submit">SUBMIT APPLICATION</button>
+        </form>
+    </div>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Bonner Builders LLC</title>
     <link rel="stylesheet" href="style.css">
     <style>
