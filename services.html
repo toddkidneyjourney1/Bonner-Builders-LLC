@@ -6,18 +6,18 @@
     <title>Services | Bonner Builders LLC</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Forces exactly 3 columns side-by-side on desktop screens */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+        /* Forces exactly 3 horizontal columns on one screen, overriding the main stylesheet */
+        body main.container .services-grid {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 15px !important;
+            margin-top: 20px !important;
         }
 
         /* Styles each individual service block */
         .service-box {
             background: #23364f;
-            padding: 0 0 20px 0;
+            padding: 0 0 12px 0;
             border-radius: 6px;
             border-top: 4px solid #c5a059;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
@@ -25,24 +25,25 @@
             text-align: center;
         }
 
-        /* Keeps photo height perfectly sized to fit on one screen */
+        /* Shrinks photo height slightly to fit the vertical screen limits */
         .service-box img {
             width: 100%;
-            height: 22vh; 
+            height: 18vh; 
             object-fit: cover;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .service-box h3 {
-            margin: 10px 15px;
+            margin: 5px 10px;
+            font-size: 1.1rem;
             color: #ffffff;
         }
 
         .service-box p {
-            margin: 10px 15px;
-            font-size: 0.95rem;
+            margin: 5px 10px;
+            font-size: 0.85rem;
             color: #e0e0e0;
-            line-height: 1.5;
+            line-height: 1.4;
         }
     </style>
 </head>
