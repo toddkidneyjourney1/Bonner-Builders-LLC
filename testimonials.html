@@ -1,31 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials | Bonner Builders LLC</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 5px solid #c5a059; /* Gold accent */
+        }
+        .card p { font-style: italic; color: #333; }
+        .card h4 { color: #1c2d42; margin-top: 20px; text-transform: uppercase; }
+    </style>
 </head>
 <body>
 
-    <div class="layout-container">
-        <header class="header">
-            <img src="your-logo.jpg" alt="Bonner Builders Logo">
-        </header>
+<nav>
+    <a href="index.html">HOME</a>
+    <a href="services.html">SERVICES</a>
+    <a href="portfolio.html">PORTFOLIO</a>
+    <a href="testimonials.html">TESTIMONIALS</a>
+    <a href="join.html">JOIN OUR TEAM</a>
+    <a href="contact.html">CONTACT</a>
+</nav>
 
-        <nav class="sidebar">
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="services.html">SERVICES</a></li>
-                <li><a href="portfolio.html">PORTFOLIO</a></li>
-                <li><a href="testimonials.html">TESTIMONIALS</a></li>
-                <li><a href="join.html">JOIN OUR TEAM</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-            </ul>
-        </nav>
-
-        <main class="content">
-            <h1>Page Title</h1>
-            <p>Your content goes here.</p>
-        </main>
+<div class="container">
+    <h2>CLIENT FEEDBACK</h2>
+    <div class="testimonial-grid">
+        <div class="card">
+            <p>"Bonner Builders provided top-tier craftsmanship on our recent home addition. Professional, clean, and exactly on budget."</p>
+            <h4>— The Miller Family, Meredith</h4>
+        </div>
+        <div class="card">
+            <p>"It is rare to find a contractor who values old-school joinery while staying ahead of modern building standards. Exceptional work."</p>
+            <h4>— Lakes Region Property Group</h4>
+        </div>
     </div>
+</div>
 
 </body>
 </html>
