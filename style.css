@@ -174,7 +174,15 @@ nav a:hover, nav a.active {
 }
 
 .carousel img {
-    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;       /* Add this */
+    height: 100%;      /* Add this */
+    object-fit: cover; /* Add this to prevent stretching */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}    width: 100%;
     height: 100%;
     object-fit: cover;
     position: absolute;
