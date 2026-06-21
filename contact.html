@@ -1,1 +1,49 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Bonner Builders LLC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="home">
+        <h1>BONNER BUILDERS LLC</h1>
+        <p>CUSTOM CARPENTRY & REMODELING</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="join.html">Join Us</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+
+    <main class="container">
+        <h2>Contact Us</h2>
+        <p>Ready to start your next project? Get in touch with us today for a consultation or quote.</p>
+        
+        <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+            <label for="name">Full Name *</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email Address *</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="phone">Phone Number</label><br>
+            <input type="tel" id="phone" name="phone"><br><br>
+
+            <label for="message">Project Details *</label><br>
+            <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+            <button type="submit">SEND MESSAGE</button>
+        </form>
+    </main>
+
+</body>
+</html>
