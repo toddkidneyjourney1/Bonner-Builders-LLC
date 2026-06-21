@@ -46,8 +46,14 @@ nav a:hover, nav a.active {
 /* --- Homepage Hero Banner --- */
 #home {
     text-align: center;
-    padding: 80px 20px;
-    background-color: #162435;
+    padding: 120px 20px; /* Increased padding to make the banner taller and more grand */
+    
+    /* ADD IMAGE HERE: This pulls your logo as a background or you can use a project photo */
+    background-image: linear-gradient(rgba(22, 36, 53, 0.8), rgba(22, 36, 53, 0.8)), url('images/Bonner_Builders_007.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
     border-bottom: 4px solid var(--accent-gold);
 }
 
