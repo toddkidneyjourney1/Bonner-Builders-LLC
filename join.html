@@ -1,55 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Our Team | Bonner Builders LLC</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Force container to handle the form cleanly */
-        .container { background: white; padding: 30px; border-radius: 8px; color: #333; }
-        label { display: block; margin-top: 15px; font-weight: bold; color: #1c2d42; }
-        input, select, textarea { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
-        button { margin-top: 20px; padding: 12px 20px; background-color: #c5a059; color: white; border: none; cursor: pointer; font-weight: bold; border-radius: 4px; width: 100%; }
-        button:hover { background-color: #a8874a; }
-    </style>
-</head>
-<body>
+<form action="https://formspree.io/f/YOUR_JOIN_FORM_ID" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
 
-    <nav>
-        <a href="index.html">HOME</a>
-        <a href="about.html">ABOUT</a>
-        <a href="services.html">SERVICES</a>
-        <a href="portfolio.html">PORTFOLIO</a>
-        <a href="testimonials.html">TESTIMONIALS</a>
-        <a href="join.html">JOIN OUR TEAM</a>
-        <a href="contact.html">CONTACT</a>
-    </nav>
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required>
 
-    <div class="container">
-        <h2>WORK WITH US</h2>
-        <p>Interested in joining the Bonner Builders team? Tell us about your experience below.</p>
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
 
-        <form action="https://formspree.io/f/YOUR_JOIN_FORM_ID" method="POST">
-            <label>Name</label>
-            <input type="text" name="name" required>
-
-            <label>Email</label>
-            <input type="email" name="email" required>
-
-            <label>Years of Carpentry Experience</label>
-            <select name="experience">
+            <label for="experience">Years of Carpentry Experience</label>
+            <select id="experience" name="experience">
                 <option value="0-2">0-2 Years</option>
                 <option value="3-5">3-5 Years</option>
                 <option value="5+">5+ Years</option>
             </select>
 
-            <label>Message / Skills</label>
-            <textarea name="message" rows="5" required></textarea>
+            <label for="message">Message / Skills</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
 
             <button type="submit">SUBMIT APPLICATION</button>
         </form>
-    </div>
-
-</body>
-</html>
