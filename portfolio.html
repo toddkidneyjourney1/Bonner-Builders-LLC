@@ -32,7 +32,7 @@
         <h2>Our Featured Projects</h2>
         <p>Take a look at some of our recent custom carpentry, framing, and remodeling work across the Lakes Region.</p>
         
-      <div class="carousel">
+        <div class="carousel">
             <img src="images/project1.jpg" alt="Project 1" class="active">
             <img src="images/project2.jpg" alt="Project 2">
             <img src="images/project3.jpg" alt="Project 3">
@@ -42,7 +42,6 @@
             <img src="images/project7.jpg" alt="Project 7">
             <img src="images/project8.jpg" alt="Project 8">
         </div>
-        
     </main>
 
     <script>
@@ -51,18 +50,16 @@
             let currentIndex = 0;
 
             if (images.length > 0) {
+                // Ensure the first image is explicitly visible right away
+                images[0].classList.add('active');
+
                 function changeImage() {
-                    // Remove active class from current image
                     images[currentIndex].classList.remove('active');
-                    
-                    // Move to next image, looping back to 0 at the end
                     currentIndex = (currentIndex + 1) % images.length;
-                    
-                    // Add active class to new image
                     images[currentIndex].classList.add('active');
                 }
-
-                // Change images every 3 seconds
+                
+                // Cycle every 3 seconds
                 setInterval(changeImage, 3000);
             }
         });
