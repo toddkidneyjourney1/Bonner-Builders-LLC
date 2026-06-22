@@ -1,255 +1,138 @@
-/* --- Brand Variables --- */
-:root {
-    --accent-gold: #c5a059;
-    --navy-brand: #1c2d42;
-    --text-dark: #333;
-    --bg-light: #f9f9f9;
-}
-
-/* --- Global Styles --- */
-body {
+/* --- Global Reset & Fonts --- */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: white;
-    background-color: var(--navy-brand);
 }
 
-.container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #141f2e;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+/* --- Header Layout & Padding --- */
+.page-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1b2a47;
+    padding: 30px 20px; /* Increased vertical padding to give the logo breathing room */
+    border-bottom: 3px solid #c5a059;
+}
+
+.header-logo {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    color: #ffffff;
 }
 
 /* --- Navigation --- */
 nav {
-    background: #111b27;
-    padding: 15px 0;
-    text-align: center;
-    border-bottom: 2px solid var(--accent-gold);
+    display: flex;
+    justify-content: center;
+    background-color: #111a2e;
+    padding: 15px;
 }
 
 nav a {
-    color: #ffffff;
-    margin: 0 15px;
+    color: #e0e0e0;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1rem;
+    margin: 0 15px;
+    font-weight: 600;
     transition: color 0.3s ease;
 }
 
 nav a:hover, nav a.active {
-    color: var(--accent-gold);
+    color: #c5a059;
 }
 
-/* --- Homepage Hero Banner --- */
-#home {
-    text-align: center;
-    padding: 140px 20px; /* Adjust this height so your logo looks perfect */
-    
-    /* Pulls your logo file and sets the dark brand background with no filters */
-    background-image: url('images/logo.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: var(--navy-brand); 
-    
-    border-bottom: 4px solid var(--accent-gold);
+/* --- Container Details & Spacing --- */
+.container {
+    max-width: 800px;
+    margin: 40px auto 60px auto; /* Added 60px bottom margin for a clean cushion */
+    padding: 0 20px;
 }
 
-/* Hide the white text completely so it doesn't clash with the logo */
-#home h1, #home p {
-    display: none;
-}
-
-#home h1 {
-    font-size: 3rem;
-    margin: 0 0 10px 0;
-    letter-spacing: 2px;
-}
-
-#home p {
-    font-size: 1.2rem;
-    color: var(--accent-gold);
-    margin: 0;
-    letter-spacing: 1s;
-}
-
-/* --- Interior Page Header --- */
-.page-header {
-    text-align: center;
-    padding: 40px 20px;
-    background-color: #111b27;
-    border-bottom: 2px solid #253954;
-}
-
-.page-header h1 {
-    font-size: 2.2rem;
-    margin: 0;
-    color: #ffffff;
-    letter-spacing: 1px;
-}
-
-/* --- Grid Layouts (Services & Testimonials) --- */
-.services-grid, .testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.service-box, .card {
-    background: #23364f;
-    padding: 25px;
-    border-radius: 6px;
-    border-top: 4px solid var(--accent-gold);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.card p {
-    font-style: italic;
-}
-
-.card h4 {
-    margin-top: 15px;
-    color: var(--accent-gold);
-}
-
-/* --- Forms (Contact & Join) --- */
-.contact-form, .join-form {
-    background: #23364f;
+/* --- Contact Form Layout --- */
+.contact-card {
+    background-color: #1b2a47;
     padding: 30px;
     border-radius: 8px;
-    margin-top: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.contact-form label, .join-form label {
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
     display: block;
-    margin-top: 15px;
-    font-weight: bold;
-    color: var(--accent-gold);
+    margin-bottom: 8px;
+    color: #c5a059;
+    font-weight: 600;
 }
 
-.contact-form input, .contact-form textarea,
-.join-form input, .join-form textarea {
+/* --- Form Input Fields --- */
+input[type="text"],
+input[type="email"],
+textarea {
     width: 100%;
     padding: 12px;
-    margin-top: 6px;
-    border: 1px solid #253954;
-    background: #162435;
-    color: white;
+    background-color: #141f2e;
+    border: 1px solid #2d3f5e; /* Subtle baseline border visibility */
     border-radius: 4px;
-    box-sizing: border-box;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
-.contact-form button, .join-form button {
-    margin-top: 25px;
+/* Nice gold accent outline when typing */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #c5a059;
+    background-color: #172436; /* Slightly lighter background inside focus state */
+    outline: none;
+    box-shadow: 0 0 5px rgba(197, 160, 89, 0.3);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* --- Golden Send Message Button --- */
+.btn-submit {
+    display: inline-block;
+    background-color: #c5a059; /* Brand signature gold */
+    color: #141f2e; /* Contrast dark text */
     padding: 12px 30px;
-    background: var(--accent-gold);
-    color: #111;
-    font-weight: bold;
     border: none;
     border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 700;
     cursor: pointer;
-    text-transform: uppercase;
-    transition: background 0.3s ease;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
-.contact-form button:hover, .join-form button:hover {
-    background: #ebd09c;
+.btn-submit:hover {
+    background-color: #e2b969; /* Slightly brighter gold on hover */
 }
 
-/* --- Portfolio Carousel --- */
-.carousel {
-    position: relative;
-    max-width: 800px;
-    margin: 40px auto;
-    height: 450px;
-    overflow: hidden;
-    border: 4px solid #23364f;
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
-.carousel img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;       /* Add this */
-    height: 100%;      /* Add this */
-    object-fit: cover; /* Add this to prevent stretching */
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-.carousel img.active {
-    opacity: 1;
-}
-/* --- Tighten Layout to Fit on One Screen --- */
-
-/* Reduce global vertical spacing */
-.container {
-    margin: 15px auto;
-}
-
-/* Force the About Page image to remain compact and side-by-side on desktop */
-@media (min-width: 768px) {
-    main.container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-}
-
-/* Restrict the max height of photos so they don't push content down */
-main.container img {
-    max-height: 40vh; /* Limits image height to 40% of the screen height */
-    width: auto;
-    object-fit: contain;
-    border-radius: 6px;
-    margin-top: 10px;
-}
-
-/* Tighten the Services Grid layout */
-.services-grid {
-    gap: 15px;
-    margin-top: 15px;
-}
-/* --- Fix Portfolio Carousel Image Visibility --- */
-#portfolioCarousel {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    height: 500px;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-#portfolioCarousel img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-}
-
-#portfolioCarousel img.active {
-    opacity: 1;
-}
-.service-box {
-    padding: 15px;
+.btn-submit:active {
+    transform: scale(0.98);
 }
