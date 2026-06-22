@@ -8,7 +8,7 @@
 </head>
 <body>
 
-   <header class="page-header">
+    <header class="page-header">
         <img src="images/logo.png" alt="Bonner Builders Logo" class="header-logo" style="height: 60px; width: auto; float: left; margin-right: 15px;">
         <h1>OUR WORK</h1>
         <div class="header-contact">
@@ -45,22 +45,26 @@
     </main>
 
     <script>
-        const images = document.querySelectorAll('.carousel img');
-        let currentIndex = 0;
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = document.querySelectorAll('.carousel img');
+            let currentIndex = 0;
 
-        function changeImage() {
-            // Remove active class from current image
-            images[currentIndex].classList.remove('active');
-            
-            // Move to next image, looping back to 0 at the end
-            currentIndex = (currentIndex + 1) % images.length;
-            
-            // Add active class to new image
-            images[currentIndex].classList.add('active');
-        }
+            if (images.length > 0) {
+                function changeImage() {
+                    // Remove active class from current image
+                    images[currentIndex].classList.remove('active');
+                    
+                    // Move to next image, looping back to 0 at the end
+                    currentIndex = (currentIndex + 1) % images.length;
+                    
+                    // Add active class to new image
+                    images[currentIndex].classList.add('active');
+                }
 
-        // Change images every 3 seconds (3000 milliseconds)
-        setInterval(changeImage, 3000);
+                // Change images every 3 seconds
+                setInterval(changeImage, 3000);
+            }
+        });
     </script>
 
 </body>
