@@ -50,7 +50,7 @@
             let currentIndex = 0;
 
             if (images.length > 0) {
-                // Ensure the first image displays right away
+                // Instantly make the first image visible
                 images[0].classList.add('active');
 
                 function changeImage() {
@@ -59,7 +59,7 @@
                     images[currentIndex].classList.add('active');
                 }
                 
-                // Rotates the images every 3 seconds
+                // Rotate every 3 seconds
                 setInterval(changeImage, 3000);
             }
         });
