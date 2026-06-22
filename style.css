@@ -235,4 +235,30 @@ main.container img {
         text-align: center;
         margin-top: 15px;
     }
+}/* --- Portfolio Carousel Structural Fix --- */
+.carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+    height: 500px; /* Forces the blank box to open up to 500px tall */
+    overflow: hidden; /* Keeps the cross-fading clean */
+    border: 4px solid #23364f;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.carousel img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Keeps your carpentry photos perfectly framed without stretching */
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Forces the active image to show up */
+.carousel img.active {
+    opacity: 1 !important;
 }
