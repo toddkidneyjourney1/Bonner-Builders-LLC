@@ -189,6 +189,11 @@ nav a:hover, nav a.active {
     margin: 15px auto;
 }
 
+/* Center all headings and paragraphs inside your main layout */
+main.container h2, 
+main.container p {
+    text-align: center;
+}
 @media (min-width: 768px) {
     main.container {
         display: flex;
