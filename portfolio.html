@@ -33,7 +33,7 @@
         <p>Take a look at some of our recent custom carpentry, framing, and remodeling work across the Lakes Region.</p>
         
         <div class="carousel">
-            <img src="images/project1.jpg" alt="Project 1" class="active">
+            <img src="images/project1.jpg" alt="Project 1">
             <img src="images/project2.jpg" alt="Project 2">
             <img src="images/project3.jpg" alt="Project 3">
             <img src="images/project4.jpg" alt="Project 4">
@@ -50,7 +50,7 @@
             let currentIndex = 0;
 
             if (images.length > 0) {
-                // Ensure the first image is explicitly visible right away
+                // Ensure the first image displays right away
                 images[0].classList.add('active');
 
                 function changeImage() {
@@ -59,7 +59,7 @@
                     images[currentIndex].classList.add('active');
                 }
                 
-                // Cycle every 3 seconds
+                // Rotates the images every 3 seconds
                 setInterval(changeImage, 3000);
             }
         });
