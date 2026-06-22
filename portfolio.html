@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<header class="page-header">
+    <header class="page-header">
         <img src="images/logo.png" alt="Bonner Builders Logo" class="header-logo" style="height: 60px; width: auto; float: left; margin-right: 15px;">
         <h1>OUR WORK</h1>
     </header>
@@ -24,8 +24,11 @@
     </nav>
 
     <main class="container">
-        <div class="carousel" id="portfolioCarousel">
-            <img src="images/project1.jpg" class="active" alt="Project 1">
+        <h2>Our Featured Projects</h2>
+        <p>Take a look at some of our recent custom carpentry, framing, and remodeling work across the Lakes Region.</p>
+        
+        <div class="carousel">
+            <img src="images/project1.jpg" alt="Project 1" class="active">
             <img src="images/project2.jpg" alt="Project 2">
             <img src="images/project3.jpg" alt="Project 3">
             <img src="images/project4.jpg" alt="Project 4">
@@ -37,23 +40,23 @@
     </main>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let currentIndex = 0;
-            const images = document.querySelectorAll('#portfolioCarousel img');
+        const images = document.querySelectorAll('.carousel img');
+        let currentIndex = 0;
+
+        function changeImage() {
+            // Remove active class from current image
+            images[currentIndex].classList.remove('active');
             
-            if (images.length > 0) {
-                setInterval(function() {
-                    // Remove active class from current image (fades it out)
-                    images[currentIndex].classList.remove('active');
-                    
-                    // Move to next image index
-                    currentIndex = (currentIndex + 1) % images.length;
-                    
-                    // Add active class to next image (fades it in)
-                    images[currentIndex].classList.add('active');
-                }, 3000); // Transitions every 3 seconds
-            }
-        });
+            // Move to next image, looping back to 0 at the end
+            currentIndex = (currentIndex + 1) % images.length;
+            
+            // Add active class to new image
+            images[currentIndex].classList.add('active');
+        }
+
+        // Change images every 3 seconds (3000 milliseconds)
+        setInterval(changeImage, 3000);
     </script>
+
 </body>
 </html>
