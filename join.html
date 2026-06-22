@@ -5,17 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join Us | Bonner Builders LLC</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        .join-container { max-width: 600px; margin: 40px auto; padding: 20px; }
-        .join-form label { display: block; margin-top: 15px; font-weight: bold; }
-        .join-form input, .join-form textarea { width: 100%; padding: 10px; margin-top: 5px; }
-        .join-form button { margin-top: 20px; padding: 10px 20px; background: #c5a059; color: white; border: none; cursor: pointer; }
-    </style>
 </head>
 <body>
 
     <header class="page-header">
-       <img src="images/logo.png" alt="Bonner Builders Logo" class="header-logo" style="height: 60px; width: auto; float: left; margin-right: 15px;">
+        <img src="images/logo.png" alt="Bonner Builders Logo" class="header-logo" style="height: 60px; width: auto; float: left; margin-right: 15px;">
         <h1>JOIN OUR TEAM</h1>
     </header>
 
@@ -29,20 +23,27 @@
         <a href="contact.html">Contact</a>
     </nav>
 
-    <main class="join-container">
+    <main class="container">
+        <h2>Employment Opportunities</h2>
         <p>We are always looking for skilled craftsmen to join the Bonner Builders team. Tell us about your experience below.</p>
         
-        <form class="join-form" action="mailto:your-email@example.com" method="post" enctype="text/plain">
-            <label>Full Name:</label>
-            <input type="text" name="name" required>
+        <form class="join-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
             
-            <label>Trade / Years of Experience:</label>
-            <input type="text" name="experience" required>
+            <label for="experience">Trade / Years of Experience:</label>
+            <input type="text" id="experience" name="experience" required>
             
-            <label>Why do you want to work with us?</label>
-            <textarea name="message" rows="5" required></textarea>
+            <label for="message">Why do you want to work with us?</label>
+            <textarea id="message" name="message" required></textarea>
             
-            <button type="submit">SUBMIT APPLICATION</button>
+            <button type="submit">Submit Application</button>
         </form>
     </main>
 
