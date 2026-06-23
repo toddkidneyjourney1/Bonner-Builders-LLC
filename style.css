@@ -9,17 +9,15 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    color: #333;
+    color: var(--white);
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
-    /* Restoring Background Image */
-    background-image: url('images/home.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+    
+    /* Updated to Navy Background */
+    background-image: none;
+    background-color: var(--primary-blue);
 }
 
 .container {
