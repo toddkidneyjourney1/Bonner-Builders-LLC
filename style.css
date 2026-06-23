@@ -20,14 +20,14 @@
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
-    color: var(--text-dark);
-    background-color: var(--bg-light);
+    color: #ffffff; /* Crisp white body text for dark mode readability */
+    background-color: var(--navy-brand); /* Solid Navy Blue background across the full page */
 }
 
 /* --- Typography Defaults --- */
 h1, h2, h3 {
     font-family: 'Playfair Display', Georgia, serif;
-    color: var(--navy-brand);
+    color: #ffffff; /* Headings set to white to stand out against navy */
     margin-bottom: 15px;
 }
 
@@ -45,7 +45,7 @@ header {
     position: relative;
 }
 
-/* Dark transparent overlay to keep text highly readable over the wood frames */
+/* Dark transparent overlay to protect legibility over background wood frames */
 header::before {
     content: '';
     position: absolute;
@@ -57,7 +57,7 @@ header::before {
     z-index: 1;
 }
 
-/* Flexbox setup to align everything cleanly */
+/* Flexbox setup to separate logo alignment and contact lines */
 header .nav-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -83,7 +83,6 @@ header .logo img {
     display: block;
 }
 
-/* Target the contact details specifically to style and align them left */
 header h1, 
 header p {
     color: #ffffff;
@@ -105,14 +104,14 @@ header p {
 }
 
 /* ==========================================================================
-   Solid Navy Navigation Bar (Sits Below Header)
+   Navigation Menu Layout (Styled like Email Layout Buttons)
    ========================================================================== */
 nav {
     background-color: var(--navy-brand);
     padding: 15px 20px;
     display: flex;
     justify-content: center;
-    gap: 25px;
+    gap: 15px; /* Tighter gap matching structural block menus */
     flex-wrap: wrap;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -123,15 +122,22 @@ nav a {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    color: #ffffff; /* White links against the navy background */
-    padding: 6px 12px;
-    transition: color 0.3s ease;
+    color: #ffffff;
+    
+    /* Email block-style tab design rules */
+    background-color: rgba(26, 43, 76, 0.7); /* Translucent container backdrop */
+    padding: 10px 20px;
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Thin framing line */
+    transition: all 0.3s ease;
 }
 
-/* Hover turning to your branded gold */
+/* Gold active / hover transformation states */
 nav a:hover,
 nav a.active {
-    color: var(--accent-gold);
+    color: #ffffff;
+    background-color: var(--accent-gold);
+    border-color: var(--accent-gold);
 }
 
 /* ==========================================================================
@@ -147,14 +153,14 @@ body > p {
 
 body > h2 {
     font-size: 2.2rem;
-    color: var(--navy-brand);
+    color: #ffffff;
     margin-bottom: 20px;
     text-transform: uppercase;
 }
 
 body > p {
     font-size: 1.1rem;
-    color: #444444;
+    color: #e0e0e0; /* Softer tint so content paragraph blocks don't feel harsh */
     margin-bottom: 20px;
 }
 
@@ -177,6 +183,11 @@ body > p {
     }
 
     nav {
-        gap: 15px;
+        gap: 10px;
+    }
+    
+    nav a {
+        padding: 8px 14px;
+        font-size: 0.85rem;
     }
 }
