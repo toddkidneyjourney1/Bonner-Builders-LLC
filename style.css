@@ -1,142 +1,106 @@
-/* ==========================================================================
-   Bonner Builders LLC - Main Stylesheet
-   ========================================================================== */
-
-/* --- Brand Variables --- */
+/* --- Variables --- */
 :root {
+    --primary-blue: #1a2b4c;
     --accent-gold: #b38f4d;
-    --navy-brand: #1a2b4c;
+    --white: #ffffff;
 }
 
 /* --- Global Styles --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.6;
-    color: #ffffff;
-    background-color: var(--navy-brand);
-    /* Updated Background Image for Home Page */
-    background-image: url('images/home.jpg');
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    
+    /* Background Image Settings */
+    background-image: url('images/landing.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     background-repeat: no-repeat;
-    /* Maintain Center Alignment */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    min-height: 100vh;
 }
 
-h1, h2, h3, p, a {
-    color: #ffffff;
+/* Page Container for readability over background */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* ==========================================================================
-   Horizontal Scrollable Portfolio Gallery
-   ========================================================================== */
-.portfolio-gallery {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 20px 0;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-}
-
-.portfolio-gallery img {
-    flex: 0 0 auto;
-    width: 300px;
-    height: 200px;
-    object-fit: cover;
-    border: 3px solid var(--accent-gold);
-    scroll-snap-align: start;
-    transition: transform 0.3s ease;
-}
-
-.portfolio-gallery img:hover {
-    transform: scale(1.05);
-}
-
-/* ==========================================================================
-   Header Banner
-   ========================================================================== */
+/* --- Header & Nav --- */
 header {
     width: 100%;
-    background-color: var(--navy-brand); /* Solid color behind header */
+    background-color: var(--primary-blue);
     padding: 30px 40px;
     border-bottom: 4px solid var(--accent-gold);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    color: var(--white);
+    text-align: center;
 }
 
-.logo-container img {
-    max-width: 200px;
-}
-
-.contact-info {
-    text-align: right;
-    font-size: 0.9rem;
-}
-
-.contact-info h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    font-family: 'Playfair Display', Georgia, serif;
-}
-
-/* ==========================================================================
-   Navigation
-   ========================================================================== */
 nav {
-    background-color: var(--navy-brand);
-    padding: 20px;
+    background-color: var(--primary-blue);
     width: 100%;
+    padding: 15px 0;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 nav a {
     text-decoration: none;
+    color: var(--white);
     font-weight: 600;
     text-transform: uppercase;
-    padding: 10px 20px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid #ffffff;
+    padding: 10px 15px;
+    border: 1px solid var(--white);
+    border-radius: 4px;
     transition: 0.3s;
 }
 
 nav a:hover {
-    background-color: var(--accent-gold);
-    border-color: var(--accent-gold);
+    background-color: var(--white);
+    color: var(--primary-blue);
 }
 
-/* ==========================================================================
-   Content
-   ========================================================================== */
-.container, section {
+/* --- About Gallery --- */
+.about-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.gallery-item {
+    flex: 1;
+    min-width: 300px;
+    max-width: 45%;
+    text-align: center;
+}
+
+.gallery-img {
     width: 100%;
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: rgba(26, 43, 76, 0.85); /* Semi-transparent background for readability */
+    height: auto;
     border-radius: 8px;
+    border: 3px solid var(--accent-gold);
 }
 
-.about-image {
-    display: block;
-    margin: 20px auto;
-    max-width: 100%;
-    height: auto;
-    border: 3px solid var(--accent-gold);
-    border-radius: 8px;
+.caption {
+    margin-top: 10px;
+    font-style: italic;
+    color: #666;
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+    .gallery-item { max-width: 100%; }
 }
