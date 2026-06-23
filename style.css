@@ -106,12 +106,23 @@ nav a:hover {
 }
 
 /* Individual images in the slider */
+..about-gallery {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0;
+    /* Force the container to respect its contents */
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+
 .about-gallery img {
-    flex: 0 0 auto;             /* Prevent images from shrinking/growing */
-    width: 300px;               /* Fixed width */
+    /* 'flex-shrink: 0' is the most important part to prevent stacking */
+    flex: 0 0 300px; 
     height: 200px;
     object-fit: cover;
     border: 3px solid var(--accent-gold);
     border-radius: 8px;
-    display: block;             /* Remove potential extra spacing */
+    display: block;
 }
