@@ -93,13 +93,25 @@ nav a:hover {
     background-color: var(--white);
     color: var(--primary-blue);
 }
+/* Container for the slider */
+.about-gallery {
+    display: flex;
+    flex-direction: row;        /* Force row layout */
+    flex-wrap: nowrap;          /* Absolutely no wrapping */
+    overflow-x: auto;           /* Enable horizontal scrolling */
+    gap: 20px;
+    padding: 20px 0;
+    width: 100%;                /* Take full width */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+}
 
-/* Update the gallery image styling to allow them to sit side-by-side */
+/* Individual images in the slider */
 .about-gallery img {
-    flex: 0 0 auto;           /* This prevents images from shrinking or wrapping */
-    width: 300px;             /* Set a fixed width for your project photos */
+    flex: 0 0 auto;             /* Prevent images from shrinking/growing */
+    width: 300px;               /* Fixed width */
     height: 200px;
-    object-fit: cover;        /* Keeps them uniform */
+    object-fit: cover;
     border: 3px solid var(--accent-gold);
     border-radius: 8px;
+    display: block;             /* Remove potential extra spacing */
 }
