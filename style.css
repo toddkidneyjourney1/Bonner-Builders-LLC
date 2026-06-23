@@ -2,7 +2,7 @@
    Bonner Builders LLC - Main Stylesheet
    ========================================================================== */
 
-/* Global Reset & Base Layout */
+/* Global Reset & Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -16,11 +16,11 @@ body {
     background-color: #fdfbf7;
 }
 
-/* Typography Defaults */
+/* Typography Links */
 h1, h2, h3 {
     font-family: 'Playfair Display', Georgia, serif;
     color: #1a2b4c; /* Deep Navy Blue */
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 a {
@@ -30,16 +30,17 @@ a {
 }
 
 /* ==========================================================================
-   Navigation Header Styling
+   Navigation Header
    ========================================================================== */
 header {
     background-color: #ffffff;
-    border-bottom: 3px solid #b38f4d; /* Muted Gold Accent Line */
-    padding: 30px 40px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-/* Flexbox Container to force Identity Left and Navigation Right */
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -48,53 +49,32 @@ header {
     align-items: center;
 }
 
-/* Left Side: Brand Identity */
-.logo {
+.logo img {
+    max-width: 220px;
+    height: auto;
+}
+
+.nav-menu {
     display: flex;
-    flex-direction: column;
+    list-style: none;
+    gap: 20px;
 }
 
-.logo h1 {
-    font-size: 2.2rem;
-    color: #1a2b4c;
-    font-weight: 700;
-    letter-spacing: 1px;
-    margin: 0;
-    line-height: 1.2;
-}
-
-.logo p {
-    font-size: 0.9rem;
-    color: #555555;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 600;
-    margin-top: 5px;
-}
-
-/* Right Side: Horizontal Navigation Menu */
-nav {
-    display: flex;
-    align-items: center;
-}
-
-nav a {
+.nav-menu a {
     font-size: 0.95rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #1a2b4c;
-    padding: 8px 16px;
-    display: inline-block;
+    padding: 8px 12px;
 }
 
-/* Interactive Hover State */
-nav a:hover {
-    color: #b38f4d; /* Turns Accent Gold on Hover */
+.nav-menu a:hover, 
+.nav-menu a.active {
+    color: #b38f4d; /* Muted Gold Accent */
 }
 
 /* ==========================================================================
-   Main Content Sections
+   Main Content Layout
    ========================================================================== */
 .container {
     max-width: 1200px;
@@ -102,42 +82,72 @@ nav a:hover {
     padding: 0 20px;
 }
 
-.welcome-section {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.welcome-section h2 {
+.section-title {
+    text-align: center;
     font-size: 2.2rem;
-    color: #1a2b4c;
-    margin-bottom: 25px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    margin-bottom: 40px;
+    position: relative;
 }
 
-.welcome-section p {
-    font-size: 1.15rem;
-    color: #444444;
-    margin-bottom: 20px;
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #b38f4d;
+    margin: 15px auto 0 auto;
+}
+
+/* Services Grid Layout */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-top: 15px;
 }
 
 /* ==========================================================================
-   Responsive Design for Tablets/Mobile
+   Footer
+   ========================================================================== */
+footer {
+    background-color: #1a2b4c;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+}
+
+footer p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   Responsive Media Queries
    ========================================================================== */
 @media (max-width: 768px) {
-    header {
-        padding: 20px;
-    }
-
     .nav-container {
         flex-direction: column;
-        gap: 20px;
-        text-align: center;
-    }
-    
-    nav a {
-        padding: 8px 10px;
-        font-size: 0.85rem;
+        gap: 15px;
     }
 }
