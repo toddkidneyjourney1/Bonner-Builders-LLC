@@ -1,242 +1,221 @@
+/* ==========================================================================
+   Bonner Builders LLC - Main Stylesheet
+   ========================================================================== */
+
 /* --- Brand Variables --- */
 :root {
-    --accent-gold: #c5a059;
-    --navy-brand: #1c2d42;
-    --text-dark: #333;
-    --bg-light: #f9f9f9;
+    --accent-gold: #b38f4d;
+    --navy-brand: #1a2b4c;
+    --text-dark: #333333;
+    --bg-light: #fdfbf7;
 }
 
 /* --- Global Styles --- */
-body {
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
-    color: white;
-    background-color: var(--navy-brand);
+    color: var(--text-dark);
+    background-color: var(--bg-light);
 }
 
-.container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
+/* --- Typography --- */
+h1, h2, h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: var(--navy-brand);
+    margin-bottom: 15px;
 }
 
-/* --- Navigation --- */
-nav {
-    background: #111b27;
-    padding: 15px 0;
-    text-align: center;
-    border-bottom: 2px solid var(--accent-gold);
-}
-
-nav a {
-    color: #ffffff;
-    margin: 0 15px;
+a {
     text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1rem;
+    color: var(--navy-brand);
     transition: color 0.3s ease;
 }
 
-nav a:hover, nav a.active {
+/* ==========================================================================
+   Navigation Header
+   ========================================================================== */
+header {
+    background-color: #ffffff;
+    border-bottom: 3px solid var(--accent-gold);
+    padding: 25px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo img {
+    max-width: 220px;
+    height: auto;
+    display: block;
+}
+
+/* --- Navigation Menu --- */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-menu a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--navy-brand);
+    padding: 8px 4px;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
     color: var(--accent-gold);
 }
 
-/* --- Homepage Hero Banner --- */
+/* ==========================================================================
+   Homepage Hero Banner
+   ========================================================================== */
 #home {
     text-align: center;
     padding: 140px 20px;
-    background-image: url('images/logo.png');
-    background-size: contain;
+    background-image: url('images/landing.jpg');
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-color: var(--navy-brand);
     border-bottom: 4px solid var(--accent-gold);
-}
-
-#home h1, #home p {
-    display: none;
-}
-
-/* --- Interior Page Header Layout --- */
-.page-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #111b27;
-    padding: 20px 40px;
-    border-bottom: 2px solid #253954;
-}
-
-.page-header h1 {
-    font-size: 2.2rem;
-    margin: 0;
-    color: #ffffff;
-    letter-spacing: 1px;
-}
-
-/* --- Header Contact Block --- */
-.header-contact {
-    text-align: right;
-    font-size: 0.95rem;
-    line-height: 1.4;
-}
-
-.header-contact p {
-    margin: 2px 0;
-    color: #ffffff;
-}
-
-/* --- Grid Layouts (Services & Testimonials) --- */
-.services-grid, .testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.service-box, .card {
-    background: #23364f;
-    padding: 25px;
-    border-radius: 6px;
-    border-top: 4px solid var(--accent-gold);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.card p {
-    font-style: italic;
-}
-
-.card h4 {
-    margin-top: 15px;
-    color: var(--accent-gold);
-}
-
-/* --- Forms (Contact & Join Team) --- */
-.contact-form, .join-form {
-    background: #23364f;
-    padding: 30px;
-    border-radius: 8px;
-    margin-top: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-.contact-form label, .join-form label {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
-    color: var(--accent-gold);
-}
-
-.contact-form input, .contact-form textarea, .join-form input, .join-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-top: 6px;
-    border: 1px solid #253954;
-    background: #162435;
-    color: white;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-.contact-form button, .join-form button {
-    margin-top: 25px;
-    padding: 12px 30px;
-    background: var(--accent-gold);
-    color: #111;
-    font-weight: bold;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: background 0.3s ease;
-}
-
-.contact-form button:hover, .join-form button:hover {
-    background: #ebd09c;
-}
-
-/* --- Portfolio Carousel Slideshow --- */
-.carousel {
     position: relative;
-    max-width: 800px;
-    margin: 40px auto;
-    height: 500px; 
-    overflow: hidden;
-    border: 4px solid #23364f;
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
-.carousel img {
+/* Tint overlay to make the logo and typography readable over the background */
+#home::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 100% !important;
-    height: 100% !important;
-    max-height: none !important;
-    object-fit: cover !important;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(26, 43, 76, 0.4); /* Subtle navy overlay */
+    z-index: 1;
 }
 
-.carousel img.active {
-    opacity: 1 !important;
+#home .container {
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
 }
 
-/* --- Tighten Layout & Typography --- */
+#home img {
+    max-width: 320px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   Main Content Layout
+   ========================================================================== */
 .container {
-    margin: 15px auto;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
 }
 
-main.container h2, main.container p {
+.section-title {
     text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    position: relative;
 }
 
-@media (min-width: 768px) {
-    main.container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-gold);
+    margin: 15px auto 0 auto;
 }
 
-/* Styles standard page images but leaves carousel images alone */
-main.container img:not(.carousel img) {
-    max-height: 40vh;
-    width: auto;
-    object-fit: contain;
-    border-radius: 6px;
-    margin-top: 10px;
-}
-
+/* Services Grid Layout */
 .services-grid {
-    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
     margin-top: 15px;
 }
 
-.service-box {
-    padding: 15px;
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+    background-color: var(--navy-brand);
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
 }
 
-/* --- Mobile Responsive Rules --- */
+footer p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   Responsive Media Queries
+   ========================================================================== */
 @media (max-width: 768px) {
-    .page-header {
+    .nav-container {
         flex-direction: column;
+        gap: 20px;
         text-align: center;
-        padding: 20px;
     }
-    .header-logo {
-        position: static;
-        margin: 0 auto 10px auto;
+    
+    .nav-menu {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-    .header-contact {
-        text-align: center;
-        margin-top: 15px;
-    }
-    .carousel {
-        height: 350px;
+
+    #home {
+        padding: 90px 20px;
     }
 }
