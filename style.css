@@ -68,7 +68,7 @@ header {
     padding: 8px 12px;
 }
 
-.nav-menu a:hover,
+.nav-menu a:hover, 
 .nav-menu a.active {
     color: #b38f4d; /* Muted Gold Accent */
 }
