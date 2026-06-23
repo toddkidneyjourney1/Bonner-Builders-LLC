@@ -26,10 +26,13 @@ body {
     width: 90%;
     max-width: 900px;
     margin: 20px auto;
-    background-color: var(--white);
+    /* Changed from var(--white) to var(--primary-blue) */
+    background-color: var(--primary-blue);
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    /* Adding text color to ensure it remains readable on dark blue */
+    color: var(--white);
 }
 
 /* --- Header Layout --- */
