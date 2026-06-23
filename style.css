@@ -1,122 +1,153 @@
-/* --- Variables --- */
+/* ==========================================================================
+   Bonner Builders LLC - Main Stylesheet
+   ========================================================================== */
+
+/* --- Brand Variables --- */
 :root {
-    --primary-blue: #1a2b4c;
     --accent-gold: #b38f4d;
-    --white: #ffffff;
-    --light-grey: #f9f9f9;
+    --navy-brand: #1a2b4c;
 }
 
 /* --- Global Styles --- */
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
-    color: #333;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.container {
-    width: 90%;
-    max-width: 900px;
-    margin: 20px auto;
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #ffffff; /* Bright White */
+    background-color: var(--navy-brand);
 }
 
-/* --- Header & Nav --- */
+h1, h2, h3, p, a {
+    color: #ffffff; /* Bright White */
+}
+/* ==========================================================================
+   Horizontal Scrollable Portfolio Gallery
+   ========================================================================== */
+
+.portfolio-gallery {
+    display: flex;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    gap: 20px;
+    padding: 20px 0;
+    scroll-snap-type: x mandatory; /* Makes scrolling feel "snappy" */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+}
+
+.portfolio-gallery img {
+    flex: 0 0 auto; /* Prevents images from shrinking */
+    width: 300px; /* Adjust size as needed */
+    height: 200px;
+    object-fit: cover;
+    border: 3px solid var(--accent-gold);
+    scroll-snap-align: start; /* Snaps to image edges */
+    transition: transform 0.3s ease;
+}
+
+.portfolio-gallery img:hover {
+    transform: scale(1.05); /* Subtle zoom effect */
+}
+
+/* ==========================================================================
+   Header Banner
+   ========================================================================== */
 header {
     width: 100%;
-    background-color: var(--primary-blue);
+    background-image: url('images/landing.jpg');
+    background-size: cover;
+    background-position: center;
     padding: 30px 40px;
     border-bottom: 4px solid var(--accent-gold);
-    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+.logo-container img {
+    max-width: 200px;
+}
+
+/* Right-aligned contact info */
+.contact-info {
+    text-align: right;
+    font-size: 0.9rem;
+}
+
+.contact-info h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* ==========================================================================
+   Navigation (Block style)
+   ========================================================================== */
 nav {
-    background-color: var(--primary-blue);
-    padding: 15px;
+    background-color: var(--navy-brand);
+    padding: 20px;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Helps tabs stack on narrow mobile screens */
-    gap: 10px;
+    gap: 20px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 nav a {
     text-decoration: none;
-    color: var(--white);
     font-weight: 600;
     text-transform: uppercase;
-    padding: 10px 15px;
-    border: 1px solid var(--white);
-    border-radius: 4px;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #ffffff;
     transition: 0.3s;
 }
 
 nav a:hover {
-    background-color: var(--white);
-    color: var(--primary-blue);
+    background-color: var(--accent-gold);
+    border-color: var(--accent-gold);
 }
 
-/* --- About Gallery --- */
-.about-gallery {
+/* ==========================================================================
+   Content
+   ========================================================================== */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+/* Center all body content */
+body {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin: 30px 0;
-}
-
-.gallery-item {
-    flex: 1;
-    min-width: 300px; /* Ensures images don't get too small */
-    max-width: 45%;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
-.gallery-img {
+/* Ensure the container and sections respect the centering */
+.container, 
+section {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    max-width: 900px; /* Keeps content from stretching too wide on large screens */
+    margin: 0 auto;
+}
+/* Center the team image on the About Us page */
+.about-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.about-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* This ensures it never exceeds the width of your main container */
+    max-width: 100%; 
+    /* This maintains the aspect ratio while fitting the space */
+    height: auto; 
+    /* Optional: adds a nice border to match your other elements */
     border: 3px solid var(--accent-gold);
-}
-
-.caption {
-    margin-top: 10px;
-    font-style: italic;
-    color: #666;
-}
-
-/* --- Form Styling (For Join & Contact) --- */
-.application-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 500px;
-    margin: 30px auto;
-    text-align: left;
-}
-
-.form-group input, 
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Ensures padding doesn't break layout */
-}
-
-.submit-button {
-    background-color: var(--accent-gold);
-    color: var(--white);
-    padding: 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-/* --- Responsive --- */
-@media (max-width: 600px) {
-    .gallery-item { max-width: 100%; }
+    border-radius: 8px;
 }
