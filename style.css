@@ -94,12 +94,12 @@ nav a:hover {
     color: var(--primary-blue);
 }
 
-.about-gallery {
-    display: flex;
-    justify-content: flex-start;
-    gap: 20px;
-    flex-wrap: nowrap;          /* Forces images into one line */
-    overflow-x: auto;           /* Enables the horizontal scrollbar */
-    padding-bottom: 20px;       /* Gives the scrollbar room to breathe */
-    margin: 30px 0;
+/* Update the gallery image styling to allow them to sit side-by-side */
+.about-gallery img {
+    flex: 0 0 auto;           /* This prevents images from shrinking or wrapping */
+    width: 300px;             /* Set a fixed width for your project photos */
+    height: 200px;
+    object-fit: cover;        /* Keeps them uniform */
+    border: 3px solid var(--accent-gold);
+    border-radius: 8px;
 }
