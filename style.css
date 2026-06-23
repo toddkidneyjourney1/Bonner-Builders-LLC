@@ -1,6 +1,6 @@
 /* ==========================================================================
    Bonner Builders LLC - Main Stylesheet
-   ========================================================================= */
+   ========================================================================== */
 
 /* Global Reset & Base Styles */
 * {
@@ -16,7 +16,7 @@ body {
     background-color: #fdfbf7;
 }
 
-/* Typography Links */
+/* Typography & Base Links */
 h1, h2, h3 {
     font-family: 'Playfair Display', Georgia, serif;
     color: #1a2b4c; /* Deep Navy Blue */
@@ -25,17 +25,17 @@ h1, h2, h3 {
 
 a {
     text-decoration: none;
-    color: #1a2b4c;
+    color: #1a2b4c; /* Deep Navy Blue Links */
     transition: color 0.3s ease;
 }
 
 /* ==========================================================================
    Navigation Header & Layout Fixes
-   ========================================================================= */
+   ========================================================================== */
 header {
     background-color: #ffffff;
     border-bottom: 3px solid #b38f4d; /* Muted Gold Accent Line */
-    padding: 25px 20px;
+    padding: 30px 20px; /* Generous breathing room for the header */
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -50,17 +50,28 @@ header {
     align-items: center;
 }
 
+/* For your header identity layout */
 .logo {
     display: flex;
-    align-items: center;
+    flex-direction: column;
 }
 
-.logo img {
-    max-width: 240px;
-    height: auto;
-    display: block;
+.logo h1 {
+    font-size: 2.2rem;
+    color: #1a2b4c; /* Locked-in Deep Navy */
+    margin-bottom: 5px;
+    letter-spacing: 1px;
 }
 
+.logo p {
+    font-size: 0.9rem;
+    color: #555555;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+/* Navigation Links Menu */
 .nav-menu {
     display: flex;
     list-style: none;
@@ -73,12 +84,11 @@ header {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #1a2b4c; /* Deep Navy Blue Navigation Links */
+    color: #1a2b4c; /* Deep Navy Text */
     padding: 8px 4px;
-    position: relative;
 }
 
-/* Hover & Active States with Gold Accent */
+/* Hover & Active Link States */
 .nav-menu a:hover,
 .nav-menu a.active {
     color: #b38f4d; /* Muted Gold Accent */
@@ -86,82 +96,41 @@ header {
 
 /* ==========================================================================
    Main Content Layout
-   ========================================================================= */
+   ========================================================================== */
 .container {
     max-width: 1200px;
     margin: 60px auto;
     padding: 0 20px;
 }
 
-.section-title {
-    text-align: center;
+.welcome-section {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.welcome-section h2 {
     font-size: 2.2rem;
-    margin-bottom: 40px;
-    position: relative;
     color: #1a2b4c;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.section-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: #b38f4d; /* Muted Gold Underline Accent */
-    margin: 15px auto 0 auto;
-}
-
-/* Services Grid Layout */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.service-card {
-    background-color: #ffffff;
-    border: 1px solid #e2e2e2;
-    border-top: 4px solid #1a2b4c; /* Navy Accent Border on Cards */
-    border-radius: 4px;
-    padding: 30px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-    border-top-color: #b38f4d; /* Turns Gold on Hover */
-}
-
-.service-card h3 {
-    font-size: 1.5rem;
-    margin-top: 15px;
-    color: #1a2b4c;
-}
-
-/* ==========================================================================
-   Footer
-   ========================================================================= */
-footer {
-    background-color: #1a2b4c; /* Deep Navy Blue Footer */
-    color: #ffffff;
-    text-align: center;
-    padding: 40px 20px;
-    margin-top: 60px;
-    border-top: 4px solid #b38f4d; /* Gold Accent Top Border */
-}
-
-footer p {
-    font-size: 0.9rem;
-    opacity: 0.9;
-    letter-spacing: 0.5px;
+.welcome-section p {
+    font-size: 1.15rem;
+    color: #444444;
+    margin-bottom: 20px;
 }
 
 /* ==========================================================================
    Responsive Media Queries
-   ========================================================================= */
+   ========================================================================== */
 @media (max-width: 768px) {
+    header {
+        padding: 20px;
+    }
+
     .nav-container {
         flex-direction: column;
         gap: 20px;
