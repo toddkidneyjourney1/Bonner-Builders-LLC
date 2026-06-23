@@ -2,7 +2,7 @@
    Bonner Builders LLC - Main Stylesheet
    ========================================================================== */
 
-/* Global Reset */
+/* Global Reset & Base Layout */
 * {
     margin: 0;
     padding: 0;
@@ -16,7 +16,7 @@ body {
     background-color: #fdfbf7;
 }
 
-/* Typography & Links */
+/* Typography Defaults */
 h1, h2, h3 {
     font-family: 'Playfair Display', Georgia, serif;
     color: #1a2b4c; /* Deep Navy Blue */
@@ -30,7 +30,7 @@ a {
 }
 
 /* ==========================================================================
-   Navigation Header Fixes
+   Navigation Header Styling
    ========================================================================== */
 header {
     background-color: #ffffff;
@@ -39,6 +39,7 @@ header {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+/* Flexbox Container to force Identity Left and Navigation Right */
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -47,7 +48,7 @@ header {
     align-items: center;
 }
 
-/* Identity Style */
+/* Left Side: Brand Identity */
 .logo {
     display: flex;
     flex-direction: column;
@@ -59,6 +60,7 @@ header {
     font-weight: 700;
     letter-spacing: 1px;
     margin: 0;
+    line-height: 1.2;
 }
 
 .logo p {
@@ -70,13 +72,12 @@ header {
     margin-top: 5px;
 }
 
-/* Navigation Link Alignment */
+/* Right Side: Horizontal Navigation Menu */
 nav {
     display: flex;
     align-items: center;
 }
 
-/* Style for standard link groups or horizontal structures */
 nav a {
     font-size: 0.95rem;
     font-weight: 600;
@@ -87,13 +88,13 @@ nav a {
     display: inline-block;
 }
 
-/* Hover and Active Link Actions */
+/* Interactive Hover State */
 nav a:hover {
-    color: #b38f4d; /* Turns Gold on Hover */
+    color: #b38f4d; /* Turns Accent Gold on Hover */
 }
 
 /* ==========================================================================
-   Main Content Layout
+   Main Content Sections
    ========================================================================== */
 .container {
     max-width: 1200px;
@@ -122,7 +123,7 @@ nav a:hover {
 }
 
 /* ==========================================================================
-   Responsive Viewports
+   Responsive Design for Tablets/Mobile
    ========================================================================== */
 @media (max-width: 768px) {
     header {
