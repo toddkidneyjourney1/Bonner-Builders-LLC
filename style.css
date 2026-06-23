@@ -1,242 +1,228 @@
-/* --- Brand Variables --- */
-:root {
-    --accent-gold: #c5a059;
-    --navy-brand: #1c2d42;
-    --text-dark: #333;
-    --bg-light: #f9f9f9;
-}
+/* ==========================================================================
+   Bonner Builders LLC - Main Stylesheet
+   ========================================================================== */
 
-/* --- Global Styles --- */
-body {
+/* Global Reset & Base Styles */
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: white;
-    background-color: var(--navy-brand);
-}
-
-.container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-/* --- Navigation --- */
-nav {
-    background: #111b27;
-    padding: 15px 0;
-    text-align: center;
-    border-bottom: 2px solid var(--accent-gold);
-}
-
-nav a {
-    color: #ffffff;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-}
-
-nav a:hover, nav a.active {
-    color: var(--accent-gold);
-}
-
-/* --- Homepage Hero Banner --- */
-#home {
-    text-align: center;
-    padding: 140px 20px;
-    background-image: url('images/logo.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: var(--navy-brand);
-    border-bottom: 4px solid var(--accent-gold);
-}
-
-#home h1, #home p {
-    display: none;
-}
-
-/* --- Interior Page Header Layout --- */
-.page-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #111b27;
-    padding: 20px 40px;
-    border-bottom: 2px solid #253954;
-}
-
-.page-header h1 {
-    font-size: 2.2rem;
-    margin: 0;
-    color: #ffffff;
-    letter-spacing: 1px;
-}
-
-/* --- Header Contact Block --- */
-.header-contact {
-    text-align: right;
-    font-size: 0.95rem;
-    line-height: 1.4;
-}
-
-.header-contact p {
-    margin: 2px 0;
-    color: #ffffff;
-}
-
-/* --- Grid Layouts (Services & Testimonials) --- */
-.services-grid, .testimonial-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.service-box, .card {
-    background: #23364f;
-    padding: 25px;
-    border-radius: 6px;
-    border-top: 4px solid var(--accent-gold);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.card p {
-    font-style: italic;
-}
-
-.card h4 {
-    margin-top: 15px;
-    color: var(--accent-gold);
-}
-
-/* --- Forms (Contact & Join Team) --- */
-.contact-form, .join-form {
-    background: #23364f;
-    padding: 30px;
-    border-radius: 8px;
-    margin-top: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-.contact-form label, .join-form label {
-    display: block;
-    margin-top: 15px;
-    font-weight: bold;
-    color: var(--accent-gold);
-}
-
-.contact-form input, .contact-form textarea, .join-form input, .join-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-top: 6px;
-    border: 1px solid #253954;
-    background: #162435;
-    color: white;
-    border-radius: 4px;
     box-sizing: border-box;
 }
 
-.contact-form button, .join-form button {
-    margin-top: 25px;
-    padding: 12px 30px;
-    background: var(--accent-gold);
-    color: #111;
-    font-weight: bold;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333333;
+    background-color: #fdfbf7;
+}
+
+/* Typography Links */
+h1, h2, h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    color: #1a2b4c; /* Deep Navy Blue */
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #1a2b4c;
+    transition: color 0.3s ease;
+}
+
+/* ==========================================================================
+   Navigation Header
+   ========================================================================== */
+header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    max-width: 220px;
+    height: auto;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-menu a {
+    font-size: 0.95rem;
+    font-weight: 600;
     text-transform: uppercase;
-    transition: background 0.3s ease;
+    letter-spacing: 1px;
+    padding: 8px 12px;
 }
 
-.contact-form button:hover, .join-form button:hover {
-    background: #ebd09c;
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #b38f4d; /* Muted Gold Accent */
 }
 
-/* --- Portfolio Carousel Slideshow --- */
-.carousel {
+/* ==========================================================================
+   Hero Banner Section
+   ========================================================================== */
+.hero-banner {
     position: relative;
-    max-width: 800px;
-    margin: 40px auto;
-    height: 500px; 
-    overflow: hidden;
-    border: 4px solid #23364f;
-    border-radius: 8px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    width: 100%;
+    min-height: 500px;
+    background: url('images/landing-page.jpg') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
 }
 
-.carousel img {
+/* Warm Wood-Grain Overlay Blend Effect */
+.hero-banner::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 100% !important;
-    height: 100% !important;
-    max-height: none !important;
-    object-fit: cover !important;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(234, 216, 194, 0.2); /* Light warm tint */
+    pointer-events: none;
+    z-index: 1;
 }
 
-.carousel img.active {
-    opacity: 1 !important;
+.hero-banner-content {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.92);
+    padding: 40px 60px;
+    border-radius: 4px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    max-width: 700px;
 }
 
-/* --- Tighten Layout & Typography --- */
+.hero-banner-content .hero-logo {
+    max-width: 280px;
+    margin-bottom: 20px;
+}
+
+.hero-banner h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.hero-banner p {
+    font-size: 1.25rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #555555;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   Main Content Layout
+   ========================================================================== */
 .container {
-    margin: 15px auto;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
 }
 
-main.container h2, main.container p {
+.section-title {
     text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    position: relative;
 }
 
-@media (min-width: 768px) {
-    main.container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #b38f4d;
+    margin: 15px auto 0 auto;
 }
 
-/* Styles standard page images but leaves carousel images alone */
-main.container img:not(.carousel img) {
-    max-height: 40vh;
-    width: auto;
-    object-fit: contain;
-    border-radius: 6px;
-    margin-top: 10px;
-}
-
+/* Services Grid Layout */
 .services-grid {
-    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background-color: #ffffff;
+    border: 1px solid #e2e2e2;
+    border-radius: 4px;
+    padding: 30px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
     margin-top: 15px;
 }
 
-.service-box {
-    padding: 15px;
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer {
+    background-color: #1a2b4c;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
 }
 
-/* --- Mobile Responsive Rules --- */
+footer p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   Responsive Media Queries
+   ========================================================================== */
 @media (max-width: 768px) {
-    .page-header {
+    .nav-container {
         flex-direction: column;
-        text-align: center;
-        padding: 20px;
+        gap: 15px;
     }
-    .header-logo {
-        position: static;
-        margin: 0 auto 10px auto;
+
+    .hero-banner {
+        min-height: 400px;
     }
-    .header-contact {
-        text-align: center;
-        margin-top: 15px;
+
+    .hero-banner-content {
+        padding: 25px 30px;
     }
-    .carousel {
-        height: 350px;
+
+    .hero-banner h1 {
+        font-size: 2rem;
+    }
+
+    .hero-banner p {
+        font-size: 1rem;
     }
 }
