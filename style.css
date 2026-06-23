@@ -32,14 +32,30 @@ body {
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-/* --- Header & Nav Fixes --- */
+/* --- Header Layout --- */
 header {
     width: 100%;
-    background-color: var(--primary-blue);
-    padding: 20px; /* Reduced padding to help size */
+    background-image: url('images/landing.jpg'); /* Your requested header background */
+    background-size: cover;
+    background-position: center;
+    padding: 20px 40px;
     border-bottom: 4px solid var(--accent-gold);
     color: var(--white);
-    text-align: center;
+    display: flex; /* Aligns contents side-by-side */
+    justify-content: space-between; /* Pushes logo left, info right */
+    align-items: center;
+}
+
+/* Constrains logo size */
+header img {
+    max-width: 150px; /* Adjust this to make the logo smaller */
+    height: auto;
+}
+
+/* Info block on the right */
+.header-info {
+    text-align: right;
+    font-size: 0.9rem;
 }
 
 /* Constrains logo size in the header */
