@@ -96,10 +96,10 @@ nav a:hover {
 
 .about-gallery {
     display: flex;
-    justify-content: flex-start; /* Keeps them aligned to the left */
+    justify-content: flex-start;
     gap: 20px;
-    flex-wrap: nowrap;          /* THIS IS THE KEY: Prevents wrapping */
-    overflow-x: auto;           /* THIS IS THE KEY: Enables the scrollbar */
-    padding-bottom: 20px;       /* Adds space for the scrollbar */
+    flex-wrap: nowrap;          /* Forces images into one line */
+    overflow-x: auto;           /* Enables the horizontal scrollbar */
+    padding-bottom: 20px;       /* Gives the scrollbar room to breathe */
     margin: 30px 0;
 }
