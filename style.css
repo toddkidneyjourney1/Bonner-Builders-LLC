@@ -25,6 +25,32 @@ body {
 h1, h2, h3, p, a {
     color: #ffffff; /* Bright White */
 }
+/* ==========================================================================
+   Horizontal Scrollable Portfolio Gallery
+   ========================================================================== */
+
+.portfolio-gallery {
+    display: flex;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    gap: 20px;
+    padding: 20px 0;
+    scroll-snap-type: x mandatory; /* Makes scrolling feel "snappy" */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+}
+
+.portfolio-gallery img {
+    flex: 0 0 auto; /* Prevents images from shrinking */
+    width: 300px; /* Adjust size as needed */
+    height: 200px;
+    object-fit: cover;
+    border: 3px solid var(--accent-gold);
+    scroll-snap-align: start; /* Snaps to image edges */
+    transition: transform 0.3s ease;
+}
+
+.portfolio-gallery img:hover {
+    transform: scale(1.05); /* Subtle zoom effect */
+}
 
 /* ==========================================================================
    Header Banner
