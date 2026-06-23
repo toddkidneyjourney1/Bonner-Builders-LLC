@@ -1,13 +1,11 @@
 /* ==========================================================================
    Bonner Builders LLC - Main Stylesheet
-   ========================================================================= */
+   ========================================================================== */
 
 /* --- Brand Variables --- */
 :root {
     --accent-gold: #b38f4d;
     --navy-brand: #1a2b4c;
-    --text-dark: #333333;
-    --bg-light: #fdfbf7;
 }
 
 /* --- Global Styles --- */
@@ -20,91 +18,47 @@
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
-    color: #ffffff; /* Crisp white body text for dark mode readability */
-    background-color: var(--navy-brand); /* Solid Navy Blue background across the full page */
+    color: #ffffff; /* Bright White */
+    background-color: var(--navy-brand);
 }
 
-/* --- Typography Defaults --- */
-h1, h2, h3 {
-    font-family: 'Playfair Display', Georgia, serif;
-    color: #ffffff; /* Headings set to white to stand out against navy */
-    margin-bottom: 15px;
+h1, h2, h3, p, a {
+    color: #ffffff; /* Bright White */
 }
 
 /* ==========================================================================
-   Main Header Banner Area
+   Header Banner
    ========================================================================== */
 header {
     width: 100%;
     background-image: url('images/landing.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    padding: 40px 30px;
+    padding: 30px 40px;
     border-bottom: 4px solid var(--accent-gold);
-    position: relative;
-}
-
-/* Dark transparent overlay to protect legibility over background wood frames */
-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(26, 43, 76, 0.4);
-    z-index: 1;
-}
-
-/* Flexbox setup to separate logo alignment and contact lines */
-header .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-    z-index: 2;
 }
 
-/* Left Side Group: Logo and Contact Details */
-.logo-contact-group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 15px;
-}
-
-header .logo img {
+.logo-container img {
     max-width: 200px;
-    height: auto;
-    display: block;
 }
 
-header h1, 
-header p {
-    color: #ffffff;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+/* Right-aligned contact info */
+.contact-info {
+    text-align: right;
+    font-size: 0.9rem;
+}
+
+.contact-info h3 {
     margin: 0;
-    text-align: left;
-}
-
-header h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-header p {
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    font-size: 1.2rem;
+    font-family: 'Playfair Display', Georgia, serif;
 }
 
 /* ==========================================================================
-   Navigation Menu Layout (With Custom Mitered Frames)
+   Navigation (Block style)
    ========================================================================== */
 nav {
     background-color: var(--navy-brand);
@@ -112,94 +66,29 @@ nav {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 nav a {
     text-decoration: none;
-    font-size: 0.95rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: #ffffff;
-    
-    background-color: rgba(26, 43, 76, 0.8);
-    padding: 12px 24px;
-    display: inline-block;
-    position: relative;
-    transition: all 0.3s ease;
-    
-    /* Elegant mitered joint border using individual edge colors */
-    border-top: 3px solid rgba(255, 255, 255, 0.4);
-    border-left: 3px solid rgba(255, 255, 255, 0.4);
-    border-bottom: 3px solid rgba(255, 255, 255, 0.15);
-    border-right: 3px solid rgba(255, 255, 255, 0.15);
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid #ffffff;
+    transition: 0.3s;
 }
 
-/* Hover turning to a crisp gold mitered frame look */
-nav a:hover,
-nav a.active {
-    color: #ffffff;
-    background-color: rgba(26, 43, 76, 0.4);
-    
-    /* Swaps out to reveal structural looking gold corners */
-    border-top-color: #f1d299;
-    border-left-color: #f1d299;
-    border-bottom-color: var(--accent-gold);
-    border-right-color: var(--accent-gold);
-    
-    box-shadow: inset 0 0 8px rgba(179, 143, 77, 0.3);
+nav a:hover {
+    background-color: var(--accent-gold);
+    border-color: var(--accent-gold);
 }
 
 /* ==========================================================================
-   Main Content Layout Defaults
+   Content
    ========================================================================== */
-.container,
-body > h2,
-body > p {
+.container {
     max-width: 900px;
     margin: 40px auto;
     padding: 0 20px;
-}
-
-body > h2 {
-    font-size: 2.2rem;
-    color: #ffffff;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-body > p {
-    font-size: 1.1rem;
-    color: #e0e0e0; /* Softer tint so content paragraph blocks don't feel harsh */
-    margin-bottom: 20px;
-}
-
-/* ==========================================================================
-   Mobile Adjustments
-   ========================================================================== */
-@media (max-width: 768px) {
-    header .nav-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
-
-    .logo-contact-group {
-        align-items: center;
-    }
-
-    header h1, header p {
-        text-align: center;
-    }
-
-    nav {
-        gap: 12px;
-    }
-    
-    nav a {
-        padding: 8px 16px;
-        font-size: 0.85rem;
-    }
 }
