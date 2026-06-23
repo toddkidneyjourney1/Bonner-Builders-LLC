@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Bonner Builders LLC</title>
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header class="page-header">
-        <img src="images/logo.png" alt="Bonner Builders Logo" class="header-logo" style="height: 60px; width: auto; float: left; margin-right: 15px;">
-        <h1>OUR WORK</h1>
-        <div class="header-contact">
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Bonner Builders Logo">
+        </div>
+        <div class="contact-info">
+            <h3>Bonner Builders LLC</h3>
             <p>📞 (603) 539-7512</p>
             <p>✉️ bonnerbuilders@gmail.com</p>
             <p>📍 Lakes Region, NH</p>
@@ -20,50 +22,30 @@
 
     <nav>
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
         <a href="portfolio.html" class="active">Portfolio</a>
+        <a href="services.html">Services</a>
         <a href="testimonials.html">Testimonials</a>
         <a href="join.html">Join Us</a>
         <a href="contact.html">Contact</a>
     </nav>
 
     <main class="container">
-        <h2>Our Featured Projects</h2>
-        <p>Take a look at some of our recent custom carpentry, framing, and remodeling work across the Lakes Region.</p>
-        
-        <div class="carousel">
-            <img src="images/project1.jpg" alt="Project 1">
-            <img src="images/project2.jpg" alt="Project 2">
-            <img src="images/project3.jpg" alt="Project 3">
-            <img src="images/project4.jpg" alt="Project 4">
-            <img src="images/project5.jpg" alt="Project 5">
-            <img src="images/project6.jpg" alt="Project 6">
-            <img src="images/project7.jpg" alt="Project 7">
-            <img src="images/project8.jpg" alt="Project 8">
-        </div>
+        <section>
+            <h2>Our Featured Projects</h2>
+            <p>Take a look at some of our recent custom carpentry, framing, and remodeling work across the Lakes Region.</p>
+            
+            <div class="portfolio-gallery">
+                <img src="images/project1.jpg" alt="Project 1">
+                <img src="images/project2.jpg" alt="Project 2">
+                <img src="images/project3.jpg" alt="Project 3">
+                <img src="images/project4.jpg" alt="Project 4">
+                <img src="images/project5.jpg" alt="Project 5">
+                <img src="images/project6.jpg" alt="Project 6">
+                <img src="images/project7.jpg" alt="Project 7">
+                <img src="images/project8.jpg" alt="Project 8">
+            </div>
+        </section>
     </main>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const images = document.querySelectorAll('.carousel img');
-            let currentIndex = 0;
-
-            if (images.length > 0) {
-                // Instantly make the first image visible
-                images[0].classList.add('active');
-
-                function changeImage() {
-                    images[currentIndex].classList.remove('active');
-                    currentIndex = (currentIndex + 1) % images.length;
-                    images[currentIndex].classList.add('active');
-                }
-                
-                // Rotate every 3 seconds
-                setInterval(changeImage, 3000);
-            }
-        });
-    </script>
 
 </body>
 </html>
