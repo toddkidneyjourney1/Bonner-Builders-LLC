@@ -8,7 +8,6 @@
 </head>
 <body>
 
-    <!-- Header and Nav -->
     <header>
         <div class="logo-container">
             <img src="images/logo.png" alt="Bonner Builders Logo">
@@ -30,36 +29,34 @@
         <a href="contact.html" class="active">Contact</a>
     </nav>
 
-    <!-- Contact Form Section -->
     <main class="container">
-        <section>
-            <h1>Contact Us</h1>
-            <p>Ready to start your next project? Fill out the form below and we will get back to you shortly.</p>
-            
+        <section class="contact-hero">
+            <h1>Let's Build Something Together</h1>
+            <p>From custom residential carpentry to complex remodels, we're ready to bring your vision to life. Drop us a note, and let's get the conversation started.</p>
+        </section>
+
+        <div class="contact-grid">
+            <section class="contact-info-panel">
+                <h2>Get In Touch</h2>
+                <p><strong>Phone:</strong> (603) 539-7512</p>
+                <p><strong>Email:</strong> bonnerbuilders@gmail.com</p>
+                <p><strong>Location:</strong> Serving the Lakes Region, NH</p>
+                <p><em>Office Hours: Mon–Fri, 8am–5pm</em></p>
+            </section>
+
             <form action="#" method="post" class="application-form">
                 <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" placeholder="Your Name" required>
                 </div>
-                
                 <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" placeholder="Your Email" required>
                 </div>
-                
                 <div class="form-group">
-                    <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" name="phone" required>
+                    <textarea placeholder="Tell us about your project..." rows="5" required></textarea>
                 </div>
-                
-                <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                </div>
-                
-                <button type="submit" class="submit-button">Send Message</button>
+                <button type="submit" class="submit-button">Send Your Vision</button>
             </form>
-        </section>
+        </div>
     </main>
 
 </body>
