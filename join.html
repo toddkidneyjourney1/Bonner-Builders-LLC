@@ -8,49 +8,63 @@
 </head>
 <body>
 
- <header>
-    <div class="logo-container">
-        <img src="images/logo.png" alt="Bonner Builders Logo">
-    </div>
-    <div class="contact-info">
-        <h3>Bonner Builders LLC</h3>
-        <p>📞 (603) 539-7512</p>
-        <p>✉️ bonnerbuilders@gmail.com</p>
-        <p>📍 Lakes Region, NH</p>
-    </div>
-</header>
+    <!-- Header and Nav -->
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Bonner Builders Logo">
+        </div>
+        <div class="contact-info">
+            <h3>Bonner Builders LLC</h3>
+            <p>📞 (603) 539-7512</p>
+            <p>✉️ bonnerbuilders@gmail.com</p>
+            <p>📍 Lakes Region, NH</p>
+        </div>
+    </header>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="services.html">Services</a>
-    <a href="testimonials.html">Testimonials</a>
-    <a href="join.html">Join Us</a>
-    <a href="contact.html">Contact</a>
-</nav>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="services.html">Services</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="join.html" class="active">Join Us</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 
+    <!-- Join Us Section -->
     <main class="container">
-        <h2>Employment Opportunities</h2>
-        <p>We are always looking for skilled craftsmen to join the Bonner Builders team. Tell us about your experience below.</p>
-        
-        <form class="join-form">
-            <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required>
-
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" name="email" required>
+        <section>
+            <h1>Join Our Team</h1>
+            <p>We are always looking for skilled craftsmen to join the Bonner Builders team. Please fill out the form below to tell us about your experience.</p>
             
-            <label for="experience">Trade / Years of Experience:</label>
-            <input type="text" id="experience" name="experience" required>
-            
-            <label for="message">Why do you want to work with us?</label>
-            <textarea id="message" name="message" required></textarea>
-            
-            <button type="submit">Submit Application</button>
-        </form>
+            <form action="#" method="post" class="application-form">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="experience">Trade / Years of Experience:</label>
+                    <input type="text" id="experience" name="experience" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Why do you want to work with us?</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">Submit Application</button>
+            </form>
+        </section>
     </main>
 
 </body>
