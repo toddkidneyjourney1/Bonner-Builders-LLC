@@ -133,3 +133,9 @@ section {
     max-width: 900px; /* Keeps content from stretching too wide on large screens */
     margin: 0 auto;
 }
+/* Center the team image on the About Us page */
+.about-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
