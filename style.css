@@ -1,6 +1,6 @@
 /* ==========================================================================
    Bonner Builders LLC - Main Stylesheet
-   ========================================================================== */
+   ========================================================================= */
 
 /* Global Reset & Base Styles */
 * {
@@ -30,15 +30,16 @@ a {
 }
 
 /* ==========================================================================
-   Navigation Header
-   ========================================================================== */
+   Navigation Header & Layout Fixes
+   ========================================================================= */
 header {
     background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-    padding: 20px;
+    border-bottom: 3px solid #b38f4d; /* Muted Gold Accent Line */
+    padding: 25px 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .nav-container {
@@ -49,15 +50,22 @@ header {
     align-items: center;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+}
+
 .logo img {
-    max-width: 220px;
+    max-width: 240px;
     height: auto;
+    display: block;
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 25px;
+    align-items: center;
 }
 
 .nav-menu a {
@@ -65,17 +73,20 @@ header {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    padding: 8px 12px;
+    color: #1a2b4c; /* Deep Navy Blue Navigation Links */
+    padding: 8px 4px;
+    position: relative;
 }
 
-.nav-menu a:hover, 
+/* Hover & Active States with Gold Accent */
+.nav-menu a:hover,
 .nav-menu a.active {
     color: #b38f4d; /* Muted Gold Accent */
 }
 
 /* ==========================================================================
    Main Content Layout
-   ========================================================================== */
+   ========================================================================= */
 .container {
     max-width: 1200px;
     margin: 60px auto;
@@ -87,6 +98,7 @@ header {
     font-size: 2.2rem;
     margin-bottom: 40px;
     position: relative;
+    color: #1a2b4c;
 }
 
 .section-title::after {
@@ -94,7 +106,7 @@ header {
     display: block;
     width: 60px;
     height: 3px;
-    background-color: #b38f4d;
+    background-color: #b38f4d; /* Muted Gold Underline Accent */
     margin: 15px auto 0 auto;
 }
 
@@ -109,6 +121,7 @@ header {
 .service-card {
     background-color: #ffffff;
     border: 1px solid #e2e2e2;
+    border-top: 4px solid #1a2b4c; /* Navy Accent Border on Cards */
     border-radius: 4px;
     padding: 30px;
     text-align: center;
@@ -118,36 +131,46 @@ header {
 .service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    border-top-color: #b38f4d; /* Turns Gold on Hover */
 }
 
 .service-card h3 {
     font-size: 1.5rem;
     margin-top: 15px;
+    color: #1a2b4c;
 }
 
 /* ==========================================================================
    Footer
-   ========================================================================== */
+   ========================================================================= */
 footer {
-    background-color: #1a2b4c;
+    background-color: #1a2b4c; /* Deep Navy Blue Footer */
     color: #ffffff;
     text-align: center;
     padding: 40px 20px;
     margin-top: 60px;
+    border-top: 4px solid #b38f4d; /* Gold Accent Top Border */
 }
 
 footer p {
     font-size: 0.9rem;
-    opacity: 0.8;
+    opacity: 0.9;
     letter-spacing: 0.5px;
 }
 
 /* ==========================================================================
    Responsive Media Queries
-   ========================================================================== */
+   ========================================================================= */
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .nav-menu {
         gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
