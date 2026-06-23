@@ -16,7 +16,7 @@ body {
     min-height: 100vh;
     
     /* Background Image Settings */
-    background-image: url('images/landing.jpg');
+    background-image: url('images/home.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -69,6 +69,22 @@ nav a {
 nav a:hover {
     background-color: var(--white);
     color: var(--primary-blue);
+}
+
+/* --- Contact Form Adjustments --- */
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.form-group textarea {
+    height: 200px;
+    resize: vertical;
 }
 
 /* --- About Gallery --- */
