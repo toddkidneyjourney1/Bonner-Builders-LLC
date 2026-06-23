@@ -66,6 +66,7 @@ header {
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 8px 12px;
+    display: inline-block;
 }
 
 .nav-menu a:hover, 
