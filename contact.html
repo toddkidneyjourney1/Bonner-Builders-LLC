@@ -8,45 +8,58 @@
 </head>
 <body>
 
-  <header>
-    <div class="logo-container">
-        <img src="images/logo.png" alt="Bonner Builders Logo">
-    </div>
-    <div class="contact-info">
-        <h3>Bonner Builders LLC</h3>
-        <p>📞 (603) 539-7512</p>
-        <p>✉️ bonnerbuilders@gmail.com</p>
-        <p>📍 Lakes Region, NH</p>
-    </div>
-</header>
+    <!-- Header and Nav -->
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Bonner Builders Logo">
+        </div>
+        <div class="contact-info">
+            <h3>Bonner Builders LLC</h3>
+            <p>📞 (603) 539-7512</p>
+            <p>✉️ bonnerbuilders@gmail.com</p>
+            <p>📍 Lakes Region, NH</p>
+        </div>
+    </header>
 
-<nav>
-    <a href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="services.html">Services</a>
-    <a href="testimonials.html">Testimonials</a>
-    <a href="join.html">Join Us</a>
-    <a href="contact.html">Contact</a>
-</nav>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="services.html">Services</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="join.html">Join Us</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
 
+    <!-- Contact Form Section -->
     <main class="container">
-        <p>Ready to start your next project? Fill out the form below and we will get back to you shortly.</p>
-        
-        <form class="contact-form" action="mailto:your-email@example.com" method="post" enctype="text/plain">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button type="submit">SEND MESSAGE</button>
-        </form>
+        <section>
+            <h1>Contact Us</h1>
+            <p>Ready to start your next project? Fill out the form below and we will get back to you shortly.</p>
+            
+            <form action="#" method="post" class="application-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </section>
     </main>
 
 </body>
