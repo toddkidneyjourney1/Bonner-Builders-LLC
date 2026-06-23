@@ -16,7 +16,7 @@ body {
     min-height: 100vh;
     
     /* Background Image Settings */
-    background-image: url('images/home.jpg');
+    background-image: url('images/landing.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
