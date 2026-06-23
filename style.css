@@ -139,3 +139,15 @@ section {
     margin-left: auto;
     margin-right: auto;
 }
+.about-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* This ensures it never exceeds the width of your main container */
+    max-width: 100%; 
+    /* This maintains the aspect ratio while fitting the space */
+    height: auto; 
+    /* Optional: adds a nice border to match your other elements */
+    border: 3px solid var(--accent-gold);
+    border-radius: 8px;
+}
