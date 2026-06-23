@@ -18,38 +18,50 @@
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
-    color: #ffffff; /* Bright White */
+    color: #ffffff;
     background-color: var(--navy-brand);
+    /* Updated Background Image for Home Page */
+    background-image: url('images/home.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    /* Maintain Center Alignment */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
 }
 
 h1, h2, h3, p, a {
-    color: #ffffff; /* Bright White */
+    color: #ffffff;
 }
+
 /* ==========================================================================
    Horizontal Scrollable Portfolio Gallery
    ========================================================================== */
-
 .portfolio-gallery {
     display: flex;
-    overflow-x: auto; /* Enables horizontal scrolling */
+    overflow-x: auto;
     gap: 20px;
     padding: 20px 0;
-    scroll-snap-type: x mandatory; /* Makes scrolling feel "snappy" */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
 }
 
 .portfolio-gallery img {
-    flex: 0 0 auto; /* Prevents images from shrinking */
-    width: 300px; /* Adjust size as needed */
+    flex: 0 0 auto;
+    width: 300px;
     height: 200px;
     object-fit: cover;
     border: 3px solid var(--accent-gold);
-    scroll-snap-align: start; /* Snaps to image edges */
+    scroll-snap-align: start;
     transition: transform 0.3s ease;
 }
 
 .portfolio-gallery img:hover {
-    transform: scale(1.05); /* Subtle zoom effect */
+    transform: scale(1.05);
 }
 
 /* ==========================================================================
@@ -57,9 +69,7 @@ h1, h2, h3, p, a {
    ========================================================================== */
 header {
     width: 100%;
-    background-image: url('images/landing.jpg');
-    background-size: cover;
-    background-position: center;
+    background-color: var(--navy-brand); /* Solid color behind header */
     padding: 30px 40px;
     border-bottom: 4px solid var(--accent-gold);
     display: flex;
@@ -71,7 +81,6 @@ header {
     max-width: 200px;
 }
 
-/* Right-aligned contact info */
 .contact-info {
     text-align: right;
     font-size: 0.9rem;
@@ -84,11 +93,12 @@ header {
 }
 
 /* ==========================================================================
-   Navigation (Block style)
+   Navigation
    ========================================================================== */
 nav {
     background-color: var(--navy-brand);
     padding: 20px;
+    width: 100%;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -113,41 +123,20 @@ nav a:hover {
 /* ==========================================================================
    Content
    ========================================================================== */
-.container {
+.container, section {
+    width: 100%;
     max-width: 900px;
     margin: 40px auto;
-    padding: 0 20px;
-}
-/* Center all body content */
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    padding: 20px;
+    background-color: rgba(26, 43, 76, 0.85); /* Semi-transparent background for readability */
+    border-radius: 8px;
 }
 
-/* Ensure the container and sections respect the centering */
-.container, 
-section {
-    width: 100%;
-    max-width: 900px; /* Keeps content from stretching too wide on large screens */
-    margin: 0 auto;
-}
-/* Center the team image on the About Us page */
 .about-image {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-.about-image {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    /* This ensures it never exceeds the width of your main container */
-    max-width: 100%; 
-    /* This maintains the aspect ratio while fitting the space */
-    height: auto; 
-    /* Optional: adds a nice border to match your other elements */
+    margin: 20px auto;
+    max-width: 100%;
+    height: auto;
     border: 3px solid var(--accent-gold);
     border-radius: 8px;
 }
