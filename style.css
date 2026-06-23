@@ -1,6 +1,6 @@
 /* ==========================================================================
    Bonner Builders LLC - Main Stylesheet
-   ========================================================================== */
+   ========================================================================= */
 
 /* --- Brand Variables --- */
 :root {
@@ -104,14 +104,14 @@ header p {
 }
 
 /* ==========================================================================
-   Navigation Menu Layout (Styled like Email Layout Buttons)
+   Navigation Menu Layout (With Custom Mitered Frames)
    ========================================================================== */
 nav {
     background-color: var(--navy-brand);
-    padding: 15px 20px;
+    padding: 20px;
     display: flex;
     justify-content: center;
-    gap: 15px; /* Tighter gap matching structural block menus */
+    gap: 20px;
     flex-wrap: wrap;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -124,20 +124,32 @@ nav a {
     letter-spacing: 1.5px;
     color: #ffffff;
     
-    /* Email block-style tab design rules */
-    background-color: rgba(26, 43, 76, 0.7); /* Translucent container backdrop */
-    padding: 10px 20px;
-    border-radius: 3px;
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Thin framing line */
+    background-color: rgba(26, 43, 76, 0.8);
+    padding: 12px 24px;
+    display: inline-block;
+    position: relative;
     transition: all 0.3s ease;
+    
+    /* Elegant mitered joint border using individual edge colors */
+    border-top: 3px solid rgba(255, 255, 255, 0.4);
+    border-left: 3px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 3px solid rgba(255, 255, 255, 0.15);
+    border-right: 3px solid rgba(255, 255, 255, 0.15);
 }
 
-/* Gold active / hover transformation states */
+/* Hover turning to a crisp gold mitered frame look */
 nav a:hover,
 nav a.active {
     color: #ffffff;
-    background-color: var(--accent-gold);
-    border-color: var(--accent-gold);
+    background-color: rgba(26, 43, 76, 0.4);
+    
+    /* Swaps out to reveal structural looking gold corners */
+    border-top-color: #f1d299;
+    border-left-color: #f1d299;
+    border-bottom-color: var(--accent-gold);
+    border-right-color: var(--accent-gold);
+    
+    box-shadow: inset 0 0 8px rgba(179, 143, 77, 0.3);
 }
 
 /* ==========================================================================
@@ -183,11 +195,11 @@ body > p {
     }
 
     nav {
-        gap: 10px;
+        gap: 12px;
     }
     
     nav a {
-        padding: 8px 14px;
+        padding: 8px 16px;
         font-size: 0.85rem;
     }
 }
