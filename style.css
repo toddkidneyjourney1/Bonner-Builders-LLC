@@ -2,16 +2,7 @@
    Bonner Builders LLC - Main Stylesheet
    ========================================================================== */
 
-/* --- Brand Variables --- */
-:root {
-    --accent-gold: #b38f4d;
-    --navy-brand: #1a2b4c;
-    --text-dark: #333333;
-    --bg-light: #fdfbf7;/* ==========================================================================
-   Bonner Builders LLC - Main Stylesheet
-   ========================================================================== */
-
-/* --- Brand Variables --- */
+/* --- Brand Colors --- */
 :root {
     --accent-gold: #b38f4d;
     --navy-brand: #1a2b4c;
@@ -19,7 +10,7 @@
     --bg-light: #fdfbf7;
 }
 
-/* --- Global Styles --- */
+/* --- Global Reset --- */
 * {
     margin: 0;
     padding: 0;
@@ -41,339 +32,73 @@ h1, h2, h3 {
 }
 
 /* ==========================================================================
-   Navigation Header
+   Full Width Header Image Banner
    ========================================================================== */
 header {
+    width: 100%;
     background-image: url('images/landing.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    padding: 120px 20px; /* Gives the background image height and breathing room */
     text-align: center;
-    padding: 80px 20px;
-    border-bottom: 5px solid var(--accent-gold);
-    position: relative;
+    border-bottom: 4px solid var(--accent-gold);
 }
 
-/* Dark transparent overlay so the white text reads clearly over the banner image */
-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(26, 43, 76, 0.55);
-    z-index: 1;
-}
-
-/* Pull content above the background image tint overlay */
+/* Hide or reset any text elements sitting inside the header container if you only want the image visible */
 header h1, 
-header p, 
-header nav {
-    position: relative;
-    z-index: 2;
-}
-
-header h1 {
-    font-size: 3rem;
-    color: #ffffff; /* Bright white title text over dark overlay */
-    letter-spacing: 2px;
-    margin-bottom: 5px;
-    font-weight: 700;
-}
-
 header p {
-    font-size: 1.1rem;
     color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin-bottom: 30px;
-    font-weight: 600;
-    opacity: 0.9;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
-/* --- Navigation Links Menu --- */
-header nav {
+/* ==========================================================================
+   Navigation Bar Layout (Sits cleanly below the banner)
+   ========================================================================== */
+nav {
+    background-color: #ffffff;
+    border-bottom: 2px solid #e2e2e2;
+    padding: 15px 20px;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     flex-wrap: wrap;
 }
 
-header nav a {
+nav a {
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: #ffffff;
-    background-color: rgba(26, 43, 76, 0.7);
-    padding: 10px 20px;
-    border-radius: 3px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
-}
-
-/* Golden interactive state on hover */
-header nav a:hover {
-    color: #ffffff;
-    background-color: var(--accent-gold);
-    border-color: var(--accent-gold);
-}
-
-/* ==========================================================================
-   Main Content Sections
-   ========================================================================== */
-.container,
-body > h2,
-body > p {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-body > h2 {
-    margin-top: 60px;
-    font-size: 2.2rem;
-    color: var(--navy-brand);
-    text-transform: uppercase;
     letter-spacing: 1px;
-}
-
-body > p {
-    font-size: 1.15rem;
-    color: #444444;
-    margin-bottom: 20px;
-}
-
-/* ==========================================================================
-   Responsive Settings --- Mobile Viewports
-   ========================================================================== */
-@media (max-width: 768px) {
-    header {
-        padding: 50px 15px;
-    }
-
-    header h1 {
-        font-size: 2.2rem;
-    }
-
-    header nav {
-        gap: 10px;
-    }
-
-    header nav a {
-        padding: 8px 14px;
-        font-size: 0.85rem;
-    }
-}}
-
-/* --- Global Styles --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    line-height: 1.6;
-    color: var(--text-dark);
-    background-color: var(--bg-light);
-}
-
-/* --- Typography --- */
-h1, h2, h3 {
-    font-family: 'Playfair Display', Georgia, serif;
     color: var(--navy-brand);
-    margin-bottom: 15px;
-}
-
-a {
-    text-decoration: none;
-    color: var(--navy-brand);
+    padding: 6px 12px;
     transition: color 0.3s ease;
 }
 
-/* ==========================================================================
-   Navigation Header
-   ========================================================================== */
-header {
-    background-color: #ffffff;
-    border-bottom: 3px solid var(--accent-gold);
-    padding: 25px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
-
-.nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    display: flex;
-    flex-direction: column;
-}
-
-.logo img {
-    max-width: 220px;
-    height: auto;
-    display: block;
-}
-
-/* --- Navigation Menu --- */
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-    align-items: center;
-}
-
-.nav-menu a {
-    font-size: 0.95rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--navy-brand);
-    padding: 8px 4px;
-}
-
-.nav-menu a:hover,
-.nav-menu a.active {
+nav a:hover {
     color: var(--accent-gold);
-}
-
-/* ==========================================================================
-   Homepage Hero Banner
-   ========================================================================== */
-#home {
-    text-align: center;
-    padding: 140px 20px;
-    background-image: url('images/landing.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: var(--navy-brand);
-    border-bottom: 4px solid var(--accent-gold);
-    position: relative;
-}
-
-/* Tint overlay to make the logo and typography readable over the background */
-#home::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(26, 43, 76, 0.4); /* Subtle navy overlay */
-    z-index: 1;
-}
-
-#home .container {
-    position: relative;
-    z-index: 2;
-    margin: 0 auto;
-}
-
-#home img {
-    max-width: 320px;
-    height: auto;
-    margin-bottom: 20px;
 }
 
 /* ==========================================================================
    Main Content Layout
    ========================================================================== */
-.container {
-    max-width: 1200px;
-    margin: 60px auto;
+.container,
+body > h2,
+body > p {
+    max-width: 900px;
+    margin: 40px auto;
     padding: 0 20px;
 }
 
-.section-title {
-    text-align: center;
+body > h2 {
     font-size: 2.2rem;
-    margin-bottom: 40px;
-    position: relative;
+    color: var(--navy-brand);
+    margin-bottom: 20px;
 }
 
-.section-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: var(--accent-gold);
-    margin: 15px auto 0 auto;
-}
-
-/* Services Grid Layout */
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.service-card {
-    background-color: #ffffff;
-    border: 1px solid #e2e2e2;
-    border-radius: 4px;
-    padding: 30px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-}
-
-.service-card h3 {
-    font-size: 1.5rem;
-    margin-top: 15px;
-}
-
-/* ==========================================================================
-   Footer
-   ========================================================================== */
-footer {
-    background-color: var(--navy-brand);
-    color: #ffffff;
-    text-align: center;
-    padding: 40px 20px;
-    margin-top: 60px;
-}
-
-footer p {
-    font-size: 0.9rem;
-    opacity: 0.8;
-    letter-spacing: 0.5px;
-}
-
-/* ==========================================================================
-   Responsive Media Queries
-   ========================================================================== */
-@media (max-width: 768px) {
-    .nav-container {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-    }
-    
-    .nav-menu {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    #home {
-        padding: 90px 20px;
-    }
+body > p {
+    font-size: 1.1rem;
+    color: #444444;
+    margin-bottom: 20px;
 }
