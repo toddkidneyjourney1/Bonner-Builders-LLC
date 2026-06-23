@@ -2,7 +2,6 @@
    Bonner Builders LLC - Main Stylesheet
    ========================================================================== */
 
-/* --- Brand Colors --- */
 :root {
     --accent-gold: #b38f4d;
     --navy-brand: #1a2b4c;
@@ -10,7 +9,6 @@
     --bg-light: #fdfbf7;
 }
 
-/* --- Global Reset --- */
 * {
     margin: 0;
     padding: 0;
@@ -24,81 +22,67 @@ body {
     background-color: var(--bg-light);
 }
 
-/* --- Typography Defaults --- */
-h1, h2, h3 {
-    font-family: 'Playfair Display', Georgia, serif;
-    color: var(--navy-brand);
-    margin-bottom: 15px;
-}
-
-/* ==========================================================================
-   Full Width Header Image Banner
-   ========================================================================== */
+/* --- Navigation Header Banner --- */
 header {
     width: 100%;
-    background-image: url('images/landing.jpg');
+    background: linear-gradient(rgba(26, 43, 76, 0.55), rgba(26, 43, 76, 0.55)), url('images/landing.jpg') no-repeat center center;
     background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 120px 20px; /* Gives the background image height and breathing room */
+    padding: 100px 20px;
     text-align: center;
     border-bottom: 4px solid var(--accent-gold);
 }
 
-/* Hide or reset any text elements sitting inside the header container if you only want the image visible */
-header h1, 
-header p {
+header h1 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 3rem;
     color: #ffffff;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    letter-spacing: 2px;
+    margin-bottom: 10px;
 }
 
-/* ==========================================================================
-   Navigation Bar Layout (Sits cleanly below the banner)
-   ========================================================================== */
-nav {
-    background-color: #ffffff;
-    border-bottom: 2px solid #e2e2e2;
-    padding: 15px 20px;
+header p {
+    font-size: 1.1rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+/* --- Inline Navigation Menu --- */
+header nav {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
-nav a {
+header nav a {
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
+    color: #ffffff;
+    background-color: rgba(26, 43, 76, 0.7);
+    padding: 10px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+header nav a:hover {
+    background-color: var(--accent-gold);
+    border-color: var(--accent-gold);
+}
+
+/* --- Main Layout Defaults --- */
+h2, h3 {
+    font-family: 'Playfair Display', Georgia, serif;
     color: var(--navy-brand);
-    padding: 6px 12px;
-    transition: color 0.3s ease;
 }
 
-nav a:hover {
-    color: var(--accent-gold);
-}
-
-/* ==========================================================================
-   Main Content Layout
-   ========================================================================== */
-.container,
-body > h2,
-body > p {
+.container, body > h2, body > p {
     max-width: 900px;
     margin: 40px auto;
     padding: 0 20px;
-}
-
-body > h2 {
-    font-size: 2.2rem;
-    color: var(--navy-brand);
-    margin-bottom: 20px;
-}
-
-body > p {
-    font-size: 1.1rem;
-    color: #444444;
-    margin-bottom: 20px;
 }
