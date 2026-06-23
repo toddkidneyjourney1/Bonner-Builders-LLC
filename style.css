@@ -2,7 +2,7 @@
    Bonner Builders LLC - Main Stylesheet
    ========================================================================== */
 
-/* Global Reset & Base Styles */
+/* Global Reset */
 * {
     margin: 0;
     padding: 0;
@@ -16,29 +16,26 @@ body {
     background-color: #fdfbf7;
 }
 
-/* Typography & Base Links */
+/* Typography & Links */
 h1, h2, h3 {
     font-family: 'Playfair Display', Georgia, serif;
     color: #1a2b4c; /* Deep Navy Blue */
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 a {
     text-decoration: none;
-    color: #1a2b4c; /* Deep Navy Blue Links */
+    color: #1a2b4c;
     transition: color 0.3s ease;
 }
 
 /* ==========================================================================
-   Navigation Header & Layout Fixes
+   Navigation Header Fixes
    ========================================================================== */
 header {
     background-color: #ffffff;
     border-bottom: 3px solid #b38f4d; /* Muted Gold Accent Line */
-    padding: 30px 20px; /* Generous breathing room for the header */
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    padding: 30px 40px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
@@ -50,7 +47,7 @@ header {
     align-items: center;
 }
 
-/* For your header identity layout */
+/* Identity Style */
 .logo {
     display: flex;
     flex-direction: column;
@@ -58,9 +55,10 @@ header {
 
 .logo h1 {
     font-size: 2.2rem;
-    color: #1a2b4c; /* Locked-in Deep Navy */
-    margin-bottom: 5px;
+    color: #1a2b4c;
+    font-weight: 700;
     letter-spacing: 1px;
+    margin: 0;
 }
 
 .logo p {
@@ -69,29 +67,29 @@ header {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-weight: 600;
+    margin-top: 5px;
 }
 
-/* Navigation Links Menu */
-.nav-menu {
+/* Navigation Link Alignment */
+nav {
     display: flex;
-    list-style: none;
-    gap: 25px;
     align-items: center;
 }
 
-.nav-menu a {
+/* Style for standard link groups or horizontal structures */
+nav a {
     font-size: 0.95rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: #1a2b4c; /* Deep Navy Text */
-    padding: 8px 4px;
+    color: #1a2b4c;
+    padding: 8px 16px;
+    display: inline-block;
 }
 
-/* Hover & Active Link States */
-.nav-menu a:hover,
-.nav-menu a.active {
-    color: #b38f4d; /* Muted Gold Accent */
+/* Hover and Active Link Actions */
+nav a:hover {
+    color: #b38f4d; /* Turns Gold on Hover */
 }
 
 /* ==========================================================================
@@ -124,7 +122,7 @@ header {
 }
 
 /* ==========================================================================
-   Responsive Media Queries
+   Responsive Viewports
    ========================================================================== */
 @media (max-width: 768px) {
     header {
@@ -137,9 +135,8 @@ header {
         text-align: center;
     }
     
-    .nav-menu {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
+    nav a {
+        padding: 8px 10px;
+        font-size: 0.85rem;
     }
 }
