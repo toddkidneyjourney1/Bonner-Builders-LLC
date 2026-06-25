@@ -199,3 +199,14 @@ textarea {
     margin: 40px auto; /* This adds space above and below your content */
     padding: 20px;
 }css3pm
+/* Ensure the address card text is always small and consistent */
+.header-info {
+    text-align: right; 
+    font-size: 0.75rem; /* This sets the font size to be small and uniform */
+}
+
+/* Ensure the h3 (Business Name) in the header doesn't blow out the layout */
+.header-info h3 {
+    margin: 0;
+    font-size: 1rem; /* Adjust this value if you want the title slightly larger or smaller */
+}
