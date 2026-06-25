@@ -5,13 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Bonner Builders LLC</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide { min-width: 100%; }
+        .slide img { width: 100%; display: block; }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            background: rgba(0,0,0,0.5);
+            color: white;
+            border: none;
+            padding: 15px;
+            cursor: pointer;
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+    </style>
 </head>
 <body>
-
     <header>
-        <div class="logo-side">
-            <img src="images/logo.png" alt="Bonner Builders Logo">
-        </div>
+        <div class="logo-side"><img src="images/logo.png" alt="Bonner Builders Logo"></div>
         <div class="header-info">
             <h3>Bonner Builders LLC</h3>
             <p>📞 (603) 539-7512</p>
@@ -33,19 +57,26 @@
     <div class="container">
         <h2>Our Featured Projects</h2>
         <p>Take a look at some of our recent custom carpentry, framing, and remodeling work across the Lakes Region.</p>
-
-        <!-- Carousel Container -->
-        <div class="carousel-container">
-            <div class="carousel-slide">
-                <img src="images/project1.jpg" alt="Project 1">
-                <img src="images/project2.jpg" alt="Project 2">
-                <img src="images/project3.jpg" alt="Project 3">
-                <img src="images/project4.jpg" alt="Project 4">
-                <img src="images/project5.jpg" alt="Project 5">
-                <img src="images/project6.jpg" alt="Project 6">
+        
+        <div class="slider-container">
+            <div class="slider">
+                <div class="slide"><img src="images/project1.jpg" alt="Project 1"></div>
+                <div class="slide"><img src="images/project2.jpg" alt="Project 2"></div>
+                <div class="slide"><img src="images/project3.jpg" alt="Project 3"></div>
             </div>
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
         </div>
     </div>
 
+    <script>
+        let currentSlide = 0;
+        function changeSlide(direction) {
+            const slides = document.querySelector('.slider');
+            const totalSlides = document.querySelectorAll('.slide').length;
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+    </script>
 </body>
 </html>
