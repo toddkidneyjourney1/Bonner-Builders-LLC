@@ -39,7 +39,7 @@ header {
     background-image: url('images/landing.jpg'); /* Your requested header background */
     background-size: cover;
     background-position: center;
-    padding: 20px 40px;
+    padding: 20px 20px;
     border-bottom: 4px solid var(--accent-gold);
     color: var(--white);
     display: flex; /* Aligns contents side-by-side */
