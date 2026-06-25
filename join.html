@@ -37,31 +37,24 @@
             <h1>Join Our Team</h1>
             <p>We are always looking for skilled craftsmen to join the Bonner Builders team. Please fill out the form below to tell us about your experience.</p>
             
-            <form action="#" method="post" class="application-form">
-                <div class="form-group">
-                    <label for="name">Full Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="experience">Trade / Years of Experience:</label>
-                    <input type="text" id="experience" name="experience" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Why do you want to work with us?</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                </div>
+          <form action="#" method="post">
+    <label for="name">Full Name:*</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="phone">Phone Number:*</label>
+    <input type="text" id="phone" name="phone" required>
+
+    <label for="email">Email Address:*</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="trade">Trade / Years of Experience:*</label>
+    <input type="text" id="trade" name="trade" required>
+
+    <label for="why">Why do you want to work with us?*</label>
+    <textarea id="why" name="why" rows="4" required></textarea>
+
+    <button type="submit">Submit Application</button>
+</form>
                 
                 <button type="submit" class="submit-button">Submit Application</button>
             </form>
