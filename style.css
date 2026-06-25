@@ -176,3 +176,20 @@ nav a:hover {
         width: 90%;
     }
 }
+/* --- Adjusting Contact Form Inputs --- */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;        /* Makes them stretch to fit the container */
+    padding: 15px;      /* Adds breathing room inside the boxes */
+    margin-bottom: 15px;
+    font-size: 16px;    /* Increases the text size */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding doesn't push it out of bounds */
+}
+
+/* Make the textarea even taller for better visibility */
+textarea {
+    height: 150px;      
+}
