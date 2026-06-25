@@ -123,3 +123,19 @@ nav a:hover {
 
 .prev { left: 10px; }
 .next { right: 10px; }
+/* Container for your images */
+.image-gallery {
+    display: flex;
+    justify-content: center; /* Centers them */
+    gap: 20px;               /* Adds space between images */
+    flex-wrap: wrap;         /* Allows them to stack if the screen is too small */
+    width: 100%;
+}
+
+/* Specific styling for the images */
+.image-gallery img {
+    max-width: 45%;          /* Limits each to just under half the screen width */
+    height: 300px;           /* Sets a consistent height */
+    object-fit: cover;       /* Ensures the image fills the space nicely */
+    border-radius: 8px;      /* Optional: rounds the corners */
+}
