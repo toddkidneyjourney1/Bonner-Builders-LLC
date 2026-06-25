@@ -267,3 +267,44 @@ textarea {
   /* 4s (fade in) + 8s (hold) + 2s (fade out) = 14s total duration */
   animation: fadeInOut 14s ease-in-out forwards; 
 }
+/* --- Modern Form Styling --- */
+
+/* Style the form container for better spacing */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.05); /* Subtle background */
+    border-radius: 8px;
+}
+
+/* Style all input fields and textareas */
+input[type="text"], 
+input[type="email"], 
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    border: 1px solid var(--accent-gold);
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    box-sizing: border-box; /* Ensures padding doesn't break layout */
+    font-size: 1rem;
+}
+
+/* Style the Submit button */
+button[type="submit"] {
+    background-color: var(--accent-gold);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #d4ac0d; /* Slightly darker gold on hover */
+}
