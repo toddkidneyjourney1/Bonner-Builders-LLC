@@ -264,8 +264,8 @@ textarea {
 }
 
 .fade-in-element {
-  /* 4s (fade in) + 8s (hold) + 2s (fade out) = 14s total duration */
-  animation: fadeInOut 14s ease-in-out forwards; 
+  opacity: 0; /* Force the starting point to be invisible */
+  animation: fadeInOut 14s ease-in-out forwards;
 }
 /* --- Modern Form Styling --- */
 
