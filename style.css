@@ -139,3 +139,32 @@ nav a:hover {
     object-fit: cover;       /* Ensures the image fills the space nicely */
     border-radius: 8px;      /* Optional: rounds the corners */
 }
+/* Container to hold the two images side-by-side */
+.about-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+/* Constrain images to fit within the screen */
+.about-gallery img {
+    width: 45%;         /* Both images will fit on one line */
+    height: 300px;      /* Consistent height */
+    object-fit: cover;  /* Fills the space nicely */
+    border-radius: 8px;
+}
+
+/* Responsive: stack them if the screen is very small */
+@media (max-width: 600px) {
+    .about-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-gallery img {
+        width: 90%;
+    }
+}
