@@ -308,3 +308,27 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #d4ac0d; /* Slightly darker gold on hover */
 }
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Stacks on small screens */
+    gap: 40px;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.contact-details, .contact-form-container {
+    flex: 1; /* Both sides take equal width */
+    min-width: 300px; /* Ensures they don't get too squished */
+}
+
+/* Style the form to be compact */
+.contact-form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form-container input, 
+.contact-form-container textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+}
