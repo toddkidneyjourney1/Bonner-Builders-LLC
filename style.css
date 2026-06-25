@@ -1,131 +1,173 @@
-/* --- Global Styles --- */
+/* --- Variables --- */
 :root {
+    --primary-blue: #1a2b4c;
     --accent-gold: #b38f4d;
-    --dark-blue: #1a2a40;
     --white: #ffffff;
 }
 
+/* --- Global Styles --- */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--primary-blue);
 }
 
 .container {
-    max-width: 1000px;
-    margin: 40px auto;
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: var(--primary-blue);
     padding: 20px;
-    background-color: var(--white);
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    color: var(--white);
 }
 
-/* --- Consistent Header --- */
+/* --- Consistent Header Styling --- */
 header {
     width: 100%;
+    height: 150px; /* Fixed height for all pages */
+    background-image: url('images/landing.jpg');
+    background-size: cover;
+    background-position: center;
     padding: 20px;
-    background-color: var(--dark-blue);
-    border-bottom: 4px solid var(--accent-gold);
-    color: var(--white);
+    border-bottom: 4px solid #b38f4d; /* Use your accent gold color */
+    color: #fff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Ensures padding doesn't add to the height */
 }
 
-header h1 {
-    margin: 0;
+/* Ensure the logo inside is also consistent */
+header .logo-container img {
+    max-height: 120px; /* Keeps the logo proportional to the header */
+    width: auto;
 }
 
-.contact-info {
-    background-color: var(--accent-gold);
-    padding: 15px;
-    border-radius: 8px;
-    color: var(--white);
+header img {
+    max-width: 150px; /* Further constrained for a slimmer header */
+    height: auto;
+}
+
+.header-info {
     text-align: right;
+    font-size: 0.75rem; /* Smaller text for compact header */
 }
 
-.contact-info h3, .contact-info p {
-    margin: 5px 0;
-}
-
-/* --- Navigation --- */
 nav {
-    background-color: var(--dark-blue);
-    padding: 10px;
-    text-align: center;
+    background-color: var(--primary-blue);
+    width: 100%;
+    padding: 8px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 nav a {
-    color: var(--white);
-    margin: 0 15px;
     text-decoration: none;
-    font-weight: bold;
+    color: var(--white);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 6px 10px;
+    border: 1px solid var(--white);
+    border-radius: 4px;
+    transition: 0.3s;
 }
 
-/* --- Gallery Styles --- */
+nav a:hover {
+    background-color: var(--white);
+    color: var(--primary-blue);
+}
+
+/* --- Portfolio Slider --- */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 3px solid var(--accent-gold);
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%;
+    height: 400px; /* Fixed height for consistent screen fit */
+    object-fit: contain; /* Ensures entire image is visible without cropping */
+    display: block;
+    background-color: #000;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+/* Container for your images */
+.image-gallery {
+    display: flex;
+    justify-content: center; /* Centers them */
+    gap: 20px;               /* Adds space between images */
+    flex-wrap: wrap;         /* Allows them to stack if the screen is too small */
+    width: 100%;
+}
+
+/* Specific styling for the images */
+.image-gallery img {
+    max-width: 45%;          /* Limits each to just under half the screen width */
+    height: 300px;           /* Sets a consistent height */
+    object-fit: cover;       /* Ensures the image fills the space nicely */
+    border-radius: 8px;      /* Optional: rounds the corners */
+}
+/* Container to hold the two images side-by-side */
 .about-gallery {
     display: flex;
     justify-content: center;
     gap: 20px;
     width: 100%;
     margin-top: 20px;
-}
-
-.about-gallery img {
-    width: 45%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-/* --- Contact Page Layout --- */
-.contact-page {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    flex-wrap: wrap;
-}
-
-.contact-left, .contact-right {
-    flex: 1;
-    min-width: 300px;
-}
-
-/* --- Form Inputs --- */
-input[type="text"],
-input[type="email"],
-textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 15px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 0 10px;
     box-sizing: border-box;
 }
 
-textarea {
-    height: 150px;
+/* Constrain images to fit within the screen */
+.about-gallery img {
+    width: 45%;         /* Both images will fit on one line */
+    height: 300px;      /* Consistent height */
+    object-fit: cover;  /* Fills the space nicely */
+    border-radius: 8px;
 }
 
-button {
-    background-color: var(--accent-gold);
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 100%;
-}
-
-/* --- Mobile Responsiveness --- */
-@media (max-width: 768px) {
-    .contact-page {
-        flex-direction: column;
-    }
+/* Responsive: stack them if the screen is very small */
+@media (max-width: 600px) {
     .about-gallery {
         flex-direction: column;
         align-items: center;
@@ -134,3 +176,26 @@ button {
         width: 90%;
     }
 }
+/* --- Adjusting Contact Form Inputs --- */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;        /* Makes them stretch to fit the container */
+    padding: 15px;      /* Adds breathing room inside the boxes */
+    margin-bottom: 15px;
+    font-size: 16px;    /* Increases the text size */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding doesn't push it out of bounds */
+}
+
+/* Make the textarea even taller for better visibility */
+textarea {
+    height: 150px;      
+}
+/* Add this to style.css */
+.container {
+    max-width: 1000px;
+    margin: 40px auto; /* This adds space above and below your content */
+    padding: 20px;
+}css3pm
