@@ -255,7 +255,15 @@ textarea {
   margin: 0;
 }
 
-/* Applies the animation when the page loads */
+/* --- Fade In and Fade Out Animation --- */
+@keyframes fadeInOut {
+  0% { opacity: 0; }        /* Start hidden */
+  10% { opacity: 1; }       /* Fade in quickly */
+  80% { opacity: 1; }       /* Stay visible for most of the duration */
+  100% { opacity: 0; }      /* Fade out at the end */
+}
+
 .fade-in-element {
-  animation: fadeIn 4s ease-in; /* Change 4s to make it slower (e.g., 6s) or faster */
+  /* 4s (fade in) + 8s (hold) + 2s (fade out) = 14s total duration */
+  animation: fadeInOut 14s ease-in-out forwards; 
 }
