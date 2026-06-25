@@ -49,7 +49,7 @@ header {
 
 /* Constrains logo size */
 header img {
-    max-width: 150px; /* Adjust this to make the logo smaller */
+    max-width: 100px; /* Adjust this to make the logo smaller */
     height: auto;
 }
 
