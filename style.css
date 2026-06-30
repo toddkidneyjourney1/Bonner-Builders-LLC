@@ -400,11 +400,12 @@ header {
 
 /* Style for the Navigation Bar */
 nav {
-    display: flex;
-    justify-content: flex-end; /* Pushes all nav links to the right */
-    gap: 20px; /* Adds space between the links */
-    padding: 10px 20px;
-    background-color: #002244; /* Match your existing dark blue theme */
+  display: flex;
+  justify-content: center; /* This centers the nav links */
+  align-items: center;     /* This keeps them vertically aligned */
+  gap: 20px;               /* Adjust this for the spacing between links */
+  padding: 10px 20px;
+  background-color: #002244; 
 }
 
 nav a {
