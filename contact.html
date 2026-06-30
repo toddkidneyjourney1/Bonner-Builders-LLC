@@ -50,6 +50,17 @@
         <!-- Right Side: The Form -->
         <div class="contact-form-container">
             <form action="#" method="post">
+                <form action="https://api.staticforms.dev/submit" method="POST">
+    <!-- Static Forms API Key -->
+    <input type="hidden" name="apiKey" value="sf_a66bca4711256ac8e68b286d">
+    
+    <!-- Your existing form fields below this line -->
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    
+    <button type="submit">Send Message</button>
+</form>
                 <input type="text" placeholder="Your Name*" required>
                 <input type="email" placeholder="Your Email*" required>
                 <label for="phone">Phone Number:*</label>
