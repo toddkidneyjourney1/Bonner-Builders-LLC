@@ -88,10 +88,23 @@ nav a:hover {
     background-color: var(--white);
     color: var(--primary-blue);
 }
+/* Update the slider for slower speed */
 .slider {
     display: flex;
-    width: 1200%; /* 12 images * 100% */
-    animation: slideLoop 60s infinite linear; /* Adjust 60s to make it faster/slower */
+    width: 1200%; /* For 12 images */
+    animation: slideLoop 120s infinite linear; /* Increased to 120s for slower motion */
+}
+
+/* Add a gold frame around each image */
+.slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover; /* Changed to cover for a cleaner look in the frame */
+    display: block;
+    border: 5px solid #b38f4d; /* Adds the gold frame */
+    box-sizing: border-box;    /* Ensures border doesn't break layout */
+    padding: 5px;              /* Adds space between image and frame */
+    background-color: #000;
 }
 }
 
@@ -277,7 +290,7 @@ input[type="text"],
 input[type="email"], 
 textarea {
     width: 100%;
-    padding: 12px;
+    padding: 12px;.slide
     margin-top: 8px;
     margin-bottom: 20px;
     border: 1px solid var(--accent-gold);
@@ -494,18 +507,18 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-}@keyframes slideLoop {
+@keyframes slideLoop {
     0%   { transform: translateX(0%); }
-    8.33%  { transform: translateX(-8.33%); }  /* Image 2 */
-    16.66% { transform: translateX(-16.66%); } /* Image 3 */
-    25%    { transform: translateX(-25%); }    /* Image 4 */
-    33.33% { transform: translateX(-33.33%); } /* Image 5 */
-    41.66% { transform: translateX(-41.66%); } /* Image 6 */
-    50%    { transform: translateX(-50%); }    /* Image 7 */
-    58.33% { transform: translateX(-58.33%); } /* Image 8 */
-    66.66% { transform: translateX(-66.66%); } /* Image 9 */
-    75%    { transform: translateX(-75%); }    /* Image 10 */
-    83.33% { transform: translateX(-83.33%); } /* Image 11 */
-    91.66% { transform: translateX(-91.66%); } /* Image 12 */
-    100%   { transform: translateX(0%); }      /* Jump back to Image 1 */
+    8.33%  { transform: translateX(-8.33%); }
+    16.66% { transform: translateX(-16.66%); }
+    25%    { transform: translateX(-25%); }
+    33.33% { transform: translateX(-33.33%); }
+    41.66% { transform: translateX(-41.66%); }
+    50%    { transform: translateX(-50%); }
+    58.33% { transform: translateX(-58.33%); }
+    66.66% { transform: translateX(-66.66%); }
+    75%    { transform: translateX(-75%); }
+    83.33% { transform: translateX(-83.33%); }
+    91.66% { transform: translateX(-91.66%); }
+    100%   { transform: translateX(0%); }
 }
