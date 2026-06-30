@@ -443,3 +443,17 @@ nav a {
 .info-block a:hover {
     text-decoration: underline;             /* Underline effect on hover */
 }
+.nav-container {
+    display: flex;
+    justify-content: center; /* Centers links horizontally */
+    gap: 20px;               /* Adds space between your links */
+    padding: 20px 0;         /* Adds vertical space for the nav bar */
+}
+
+/* Optional: Style your links to look good */
+.nav-container a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 600;
+    text-transform: uppercase;
+}
