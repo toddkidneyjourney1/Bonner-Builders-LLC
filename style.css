@@ -393,3 +393,29 @@ footer {
     justify-content: flex-start; /* Aligns social icons to the left */
     gap: 15px;
 }
+/* Style for the Header */
+header {
+    display: flex;
+    justify-content: space-between; /* Pushes logo to left, info to right */
+    align-items: center;
+    padding: 20px;
+}
+
+.header-info {
+    text-align: right; /* Aligns text inside the block to the right */
+}
+
+/* Style for the Navigation Bar */
+nav {
+    display: flex;
+    justify-content: flex-end; /* Pushes all nav links to the right */
+    gap: 20px; /* Adds space between the links */
+    padding: 10px 20px;
+    background-color: #002244; /* Match your existing dark blue theme */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
