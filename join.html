@@ -3,11 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Us | Bonner Builders LLC</title><!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join Us | Bonner Builders LLC</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -26,12 +21,12 @@
     <main>
         <h1>Join Our Team</h1>
         
+        <!-- This is the only form on the page -->
         <form action="https://api.staticforms.dev/submit" method="POST">
-            <!-- Replace with your actual Access Key -->
+            <!-- Remember to insert your actual Access Key below -->
             <input type="hidden" name="accessKey" value="YOUR_ACCESS_KEY_HERE">
             <input type="hidden" name="redirectTo" value="https://toddkidneyjourney1.github.io/Bonner-Builders-LLC/thank-you.html">
 
-            <!-- Name and Email -->
             <div class="form-group">
                 <label for="name">Full Name*</label>
                 <input type="text" id="name" name="name" required>
@@ -47,7 +42,6 @@
                 <input type="tel" id="phone" name="phone" required>
             </div>
 
-            <!-- New Fields -->
             <div class="form-group">
                 <label for="availability">Availability (e.g., Start Date, Days/Hours)*</label>
                 <input type="text" id="availability" name="availability" required>
@@ -65,60 +59,6 @@
                     <option value="framer">Skilled Framer</option>
                     <option value="carpenter">Finish Carpenter</option>
                     <option value="both">Both / General Lead</option>
-                </select>
-            </div>
-
-            <button type="submit">Submit Application</button>
-        </form>
-    </main>
-
-</body>
-</html>    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <!-- Header and Nav -->
-    <header>
-        <div class="logo-side">
-            <img src="images/logo.png" alt="Bonner Builders Logo">
-        </div>
-        <div class="header-info">
-            <h3>Bonner Builders LLC</h3>
-            <p>📞 (603) 707-0049</p>
-        </div>
-        <!-- Add your navigation links here -->
-    </header>
-
-    <main>
-        <h1>Join Our Team</h1>
-        
-        <!-- Updated Form with Static Forms Integration -->
-        <form action="https://api.staticforms.dev/submit" method="POST">
-            <!-- Replace YOUR_ACCESS_KEY_HERE with your key from Static Forms -->
-            <input type="hidden" name="accessKey" value="YOUR_ACCESS_KEY_HERE">
-            
-            <!-- Redirect to your Thank You page -->
-            <input type="hidden" name="redirectTo" value="https://toddkidneyjourney1.github.io/Bonner-Builders-LLC/thank-you.html">
-            
-            <!-- Optional: HoneyPot to prevent spam -->
-            <input type="text" name="honeypot" style="display:none">
-
-            <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
-
-            <div class="form-group">
-                <label for="trade">Primary Specialty</label>
-                <select id="trade" name="trade" required>
-                    <option value="" disabled selected>Select your trade</option>
-                    <option value="framer">Skilled Framer</option>
-                    <option value="carpenter">Finish Carpenter</option>
                 </select>
             </div>
 
