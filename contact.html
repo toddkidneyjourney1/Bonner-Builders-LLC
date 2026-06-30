@@ -8,72 +8,70 @@
 </head>
 <body>
 
-<header>
-    <div class="logo-side">
-        <img src="images/logo.png" alt="Bonner Builders Logo">
-    </div>
-    <div class="header-info">
-        <h3>Bonner Builders LLC</h3>
-        <p>📞 (603) 707-0049</p>
-        <p>✉️ bonnerbuilders@yahoo.com</p>
-        <p>📍 Lakes Region, NH</p>
-    </div>
-</header>
-<nav>
-    <a href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="services.html">Services</a>
-    <a href="testimonials.html">Testimonials</a>
-    <a href="join.html">Join Us</a>
-    <a href="contact.html">Contact</a>
-    <a href="about.html">About</a>
-</nav>
-
-<main class="container">
-    <section class="contact-wrapper">
-        <!-- Left Side: Contact Info -->
-<div class="contact-details">
-    <h2>Get In Touch</h2>
-    <p><strong>Phone:</strong> (603) 707-0049</p>
-    <p><strong>Email:</strong> bonnerbuilders@yahoo.com</p>
-    <p><strong>Location:</strong> Serving the Lakes Region, NH</p>
-    <p><em>Office Hours: Mon–Fri, 8am–5pm</em></p>
-    
-    <!-- New Social Links -->
-    <div class="social-links">
-        <p><strong>Follow our work:</strong></p>
-        <a href="YOUR_FACEBOOK_URL" target="_blank">Facebook</a> | 
-        <a href="YOUR_INSTAGRAM_URL" target="_blank">Instagram</a>
-    </div>
-</div>
-
-        <!-- Right Side: The Form -->
-        <div class="contact-form-container">
-            <form action="#" method="post">
-                <form action="https://api.staticforms.dev/submit" method="POST">
-    <!-- Static Forms API Key -->
-    <input type="hidden" name="apiKey" value="sf_a66bca4711256ac8e68b286d">
-    
-    <!-- Your existing form fields below this line -->
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Your Message" required></textarea>
-    
-    <button type="submit">Send Message</button>
-</form>
-                <input type="text" placeholder="Your Name*" required>
-                <input type="email" placeholder="Your Email*" required>
-                <label for="phone">Phone Number:*</label>
-<input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required>
-                <textarea placeholder="Tell us about your project...*" rows="5"></textarea>
-                <button type="submit">Send Your Vision</button>
-            </form>
+    <header>
+        <div class="logo-side">
+            <img src="images/logo.png" alt="Bonner Builders Logo">
         </div>
-    </section>
-</main>
-</main>
-<!-- Main content ends above this -->
-    <!-- Main content ends above this -->
+        <div class="header-info">
+            <h3>Bonner Builders LLC</h3>
+            <p>📞 (603) 707-0049</p>
+            <p>✉️ bonnerbuilders@yahoo.com</p>
+            <p>📍 Lakes Region, NH</p>
+        </div>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="services.html">Services</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="join.html">Join Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+    </nav>
+
+    <main class="container">
+        <section class="contact-wrapper">
+            <!-- Left Side: Contact Info -->
+            <div class="contact-details">
+                <h2>Get In Touch</h2>
+                <p><strong>Phone:</strong> (603) 707-0049</p>
+                <p><strong>Email:</strong> bonnerbuilders@yahoo.com</p>
+                <p><strong>Location:</strong> Serving the Lakes Region, NH</p>
+                <p><em>Office Hours: Mon–Fri, 8am–5pm</em></p>
+                
+                <div class="social-links">
+                    <p><strong>Follow our work:</strong></p>
+                    <a href="YOUR_FACEBOOK_URL" target="_blank">Facebook</a> | 
+                    <a href="YOUR_INSTAGRAM_URL" target="_blank">Instagram</a>
+                </div>
+            </div>
+
+            <!-- Right Side: The Form -->
+            <div class="contact-form-container">
+                <form action="https://api.staticforms.dev/submit" method="POST">
+                    <!-- Static Forms API Key -->
+                    <input type="hidden" name="apiKey" value="sf_a66bca4711256ac8e68b286d">
+                    
+                    <!-- Form Fields -->
+                    <label for="name">Your Name*</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                    
+                    <label for="email">Your Email*</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    
+                    <label for="phone">Phone Number:*</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(555) 555-5555" required>
+                    
+                    <label for="message">Tell us about your project...*</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Details..." required></textarea>
+                    
+                    <button type="submit">Send Your Vision</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
     <footer>
         <div class="social-links">
             <a href="YOUR_FACEBOOK_URL" target="_blank">
@@ -85,5 +83,6 @@
         </div>
         <p>&copy; 2026 Bonner Builders LLC. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
