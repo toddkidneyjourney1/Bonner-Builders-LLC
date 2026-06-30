@@ -447,3 +447,8 @@ nav a {
     font-weight: 600;
     text-transform: uppercase;
 }
+/* Center text inside the main container */
+.container h2, 
+.container p {
+    text-align: center;
+}
