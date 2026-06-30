@@ -6,25 +6,31 @@
     <title>Thank You | Bonner Builders LLC</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        /* --- Standard Header & Nav Styles --- */
+        header {
+            background-color: #ffffff;
+            border-bottom: 4px solid #c5a059;
+            padding: 20px;
+            text-align: center;
+        }
+        .logo-area h1 { font-size: 2.2rem; text-transform: uppercase; }
+        .main-nav { margin-top: 20px; padding: 15px 0; border-top: 1px solid #e0e0e0; }
+        .main-nav ul { list-style: none; display: flex; justify-content: center; gap: 30px; }
+        .main-nav a { text-decoration: none; color: #1a1a1a; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; }
+        .main-nav a:hover { color: #c5a059; }
+
+        /* --- Thank You Box Styling --- */
         .thank-you-container {
             text-align: center;
             padding: 60px 20px;
             max-width: 600px;
             margin: 40px auto;
-            /* Black box styling */
             background-color: #1a1a1a; 
             border: 2px solid #c5a059;
             border-radius: 8px;
+            color: #ffffff;
         }
-        .thank-you-container h1 {
-            color: #c5a059; /* Gold text */
-            margin-bottom: 20px;
-        }
-        .thank-you-container p {
-            font-size: 1.2rem;
-            color: #ffffff; /* White text for better readability on black */
-            margin-bottom: 30px;
-        }
+        .thank-you-container h1 { color: #c5a059; margin-bottom: 20px; }
         .btn-home {
             display: inline-block;
             background-color: #c5a059;
@@ -33,20 +39,31 @@
             text-decoration: none;
             border-radius: 4px;
             font-weight: bold;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-side">
-            <img src="images/logo.png" alt="Bonner Builders Logo">
+        <div class="logo-area">
+            <h1>Bonner Builders</h1>
+            <p>LLC</p>
         </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About Us</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#gallery">Gallery</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main class="thank-you-container">
         <h1>Message Received!</h1>
-        <p>Thank you for reaching out to Bonner Builders. We appreciate your interest in joining our team. We've received your application and will review it shortly.</p>
+        <p>Thank you for reaching out to Bonner Builders. We appreciate your interest and will review your details shortly.</p>
         <a href="index.html" class="btn-home">Return to Home Page</a>
     </main>
 
