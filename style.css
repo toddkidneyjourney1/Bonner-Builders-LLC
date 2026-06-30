@@ -419,3 +419,23 @@ nav a {
     text-decoration: none;
     font-weight: bold;
 }
+/* Styling for the new info block */
+.info-block {
+    background-color: rgba(26, 26, 26, 0.85); /* Semi-transparent dark background */
+    border: 2px solid #c5a059;              /* Gold border */
+    color: #ffffff;                         /* White text */
+    padding: 15px;
+    border-radius: 8px;
+    margin-left: auto;                      /* Pushes the block to the right */
+    text-align: right;
+}
+
+.info-block a {
+    color: #c5a059;                         /* Gold color for links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.info-block a:hover {
+    text-decoration: underline;             /* Underline effect on hover */
+}
