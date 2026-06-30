@@ -353,3 +353,19 @@ button[type="submit"]:hover {
     background-color: var(--accent-gold-hover);
     transform: scale(1.05);
 }
+/* Header info styling for better readability */
+.header-info {
+    line-height: 1.8; /* Increases spacing between lines */
+    color: #333;      /* A dark charcoal is easier on the eyes than pure black */
+    font-size: 1rem;
+}
+
+.header-info h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #1a1a1a;   /* Slightly darker for contrast */
+}
+
+.header-info p {
+    margin: 2px 0;
+}
