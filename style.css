@@ -1,87 +1,421 @@
-/* --- Global Resets --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* --- Variables --- */
+:root {
+    --primary-blue: #1a2b4c;
+    --accent-gold: #b38f4d;
+    --white: #ffffff;
 }
 
+/* --- Global Styles --- */
 body {
-    background-color: #f4eee1; /* Your site's background */
-    color: #1a1a1a;
-    line-height: 1.6;
-}
-
-/* --- Header Layout --- */
-header {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--white);
     display: flex;
-    justify-content: space-between; /* Logo on left, info on right */
+    flex-direction: column;
     align-items: center;
-    padding: 20px;
-    background-color: #ffffff;
-    border-bottom: 4px solid #c5a059;
+    min-height: 100vh;
+    background-color: var(--primary-blue);
 }
 
-.logo-side img {
-    max-height: 80px;
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: var(--primary-blue);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    color: var(--white);
+}
+
+/* --- Consistent Header Styling --- */
+header {
+    width: 100%;
+    height: 150px; /* Fixed height for all pages */
+    background-image: url('images/landing.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    border-bottom: 4px solid #b38f4d; /* Use your accent gold color */
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box; /* Ensures padding doesn't add to the height */
+}
+
+/* Ensure the logo inside is also consistent */
+header .logo-container img {
+    max-height: 120px; /* Keeps the logo proportional to the header */
+    width: auto;
+}
+
+header img {
+    max-width: 150px; /* Further constrained for a slimmer header */
+    height: auto;
 }
 
 .header-info {
-    text-align: right; /* Aligns contact info to the right */
+    text-align: right;
+    font-size: 0.75rem; /* Smaller text for compact header */
 }
 
-/* --- Navigation Layout --- */
 nav {
+    background-color: var(--primary-blue);
+    width: 100%;
+    padding: 8px 0;
     display: flex;
-    justify-content: flex-end; /* Aligns all nav links to the right */
-    gap: 20px; /* Space between links */
-    padding: 15px 20px;
-    background-color: #002244; /* Dark blue background */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 nav a {
-    color: #ffffff;
     text-decoration: none;
+    color: var(--white);
+    font-size: 0.85rem;
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 0.9rem;
+    padding: 6px 10px;
+    border: 1px solid var(--white);
+    border-radius: 4px;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    color: #c5a059; /* Gold hover effect */
+    background-color: var(--white);
+    color: var(--primary-blue);
 }
 
-/* --- Main Content Container --- */
-.container {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-/* --- Form Styling --- */
-.form-group {
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-input, textarea, select {
+/* --- Portfolio Slider --- */
+.slider-container {
+    position: relative;
     width: 100%;
-    padding: 10px;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 3px solid var(--accent-gold);
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%;
+    height: 400px; /* Fixed height for consistent screen fit */
+    object-fit: contain; /* Ensures entire image is visible without cropping */
+    display: block;
+    background-color: #000;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+/* Container for your images */
+.image-gallery {
+    display: flex;
+    justify-content: center; /* Centers them */
+    gap: 20px;               /* Adds space between images */
+    flex-wrap: wrap;         /* Allows them to stack if the screen is too small */
+    width: 100%;
+}
+
+/* Specific styling for the images */
+.image-gallery img {
+    max-width: 45%;          /* Limits each to just under half the screen width */
+    height: 300px;           /* Sets a consistent height */
+    object-fit: cover;       /* Ensures the image fills the space nicely */
+    border-radius: 8px;      /* Optional: rounds the corners */
+}
+/* Container to hold the two images side-by-side */
+.about-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+/* Constrain images to fit within the screen */
+.about-gallery img {
+    width: 45%;         /* Both images will fit on one line */
+    height: 300px;      /* Consistent height */
+    object-fit: cover;  /* Fills the space nicely */
+    border-radius: 8px;
+}
+
+/* Responsive: stack them if the screen is very small */
+@media (max-width: 600px) {
+    .about-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-gallery img {
+        width: 90%;
+    }
+}
+/* --- Adjusting Contact Form Inputs --- */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;        /* Makes them stretch to fit the container */
+    padding: 15px;      /* Adds breathing room inside the boxes */
+    margin-bottom: 15px;
+    font-size: 16px;    /* Increases the text size */
     border: 1px solid #ccc;
     border-radius: 4px;
+    box-sizing: border-box; /* Ensures padding doesn't push it out of bounds */
 }
 
-button {
-    background-color: #c5a059;
-    color: #ffffff;
+/* Make the textarea even taller for better visibility */
+textarea {
+    height: 150px;      
+}
+/* Add this to style.css */
+.container {
+    max-width: 1000px;
+    margin: 40px auto; /* This adds space above and below your content */
+    padding: 20px;
+}css3pm
+/* Ensure the address card text is always small and consistent */
+.header-info {
+    text-align: right; 
+    font-size: 0.75rem; /* This sets the font size to be small and uniform */
+}
+
+/* Ensure the h3 (Business Name) in the header doesn't blow out the layout */
+.header-info h3 {
+    margin: 0;
+    font-size: 1rem; /* Adjust this value if you want the title slightly larger or smaller */
+}
+/* --- Fade In Animation --- */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.fade-in-element {
+    animation: fadeIn 6s ease-in-out;
+}
+/* --- Hero Text Overlay & Fade-In Animation --- */
+
+/* Keyframe animation that goes from invisible to fully visible */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Container to position the image and text together */
+.hero-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Style for the text box itself */
+.hero-text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the text box perfectly */
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+  color: #ffffff; /* White text */
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 80%;
+  box-sizing: border-box;
+}
+
+/* Increases the text size within the overlay */
+.hero-text-overlay p {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- Fade In and Fade Out Animation --- */
+@keyframes fadeInOut {
+  0% { opacity: 0; }        /* Start hidden */
+  10% { opacity: 1; }       /* Fade in quickly */
+  80% { opacity: 1; }       /* Stay visible for most of the duration */
+  100% { opacity: 0; }      /* Fade out at the end */
+}
+
+.fade-in-element {
+  opacity: 0; /* Force the starting point to be invisible */
+  animation: fadeInOut 14s ease-in-out forwards;
+}
+/* --- Modern Form Styling --- */
+
+/* Style the form container for better spacing */
+form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.05); /* Subtle background */
+    border-radius: 8px;
+}
+
+/* Style all input fields and textareas */
+input[type="text"], 
+input[type="email"], 
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    border: 1px solid var(--accent-gold);
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    box-sizing: border-box; /* Ensures padding doesn't break layout */
+    font-size: 1rem;
+}
+
+/* Style the Submit button */
+button[type="submit"] {
+    background-color: var(--accent-gold);
+    color: white;
+    padding: 12px 24px;
     border: none;
-    padding: 12px 20px;
+    border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
-    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #d4ac0d; /* Slightly darker gold on hover */
+}
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Stacks on small screens */
+    gap: 40px;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.contact-details, .contact-form-container {
+    flex: 1; /* Both sides take equal width */
+    min-width: 300px; /* Ensures they don't get too squished */
+}
+
+/* Style the form to be compact */
+.contact-form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form-container input, 
+.contact-form-container textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+}
+.floating-cta {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--accent-gold);
+    color: var(--dark-charcoal);
+    padding: 15px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: transform 0.2s, background-color 0.2s;
+    z-index: 9999;
+}
+
+.floating-cta:hover {
+    background-color: var(--accent-gold-hover);
+    transform: scale(1.05);
+}
+.header-info {
+    /* Opaque background block */
+    background-color: rgba(26, 26, 26, 0.8); /* Dark semi-transparent background */
+    padding: 15px;
+    border-radius: 8px;
+    
+    /* Text styling */
+    color: #ffffff; /* White text for contrast */
+    line-height: 1.4; /* Reduced line spacing */
+    font-size: 0.9rem; /* Smaller, more professional size */
+    
+    /* Alignment */
+    display: inline-block;
+    text-align: left;
+}
+
+.header-info h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.2rem; /* Reduced header size */
+    color: #c5a059; /* Keeping your gold accent for the title */
+}
+
+.header-info p {
+    margin: 2px 0;
+}
+footer {
+    text-align: left; /* Aligns all text and icons to the left */
+    padding: 30px 20px;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border-top: 1px solid var(--accent-gold);
+    margin-top: 40px;
+}
+
+.social-links {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: flex-start; /* Aligns social icons to the left */
+    gap: 15px;
+}
+/* Style for the Header */
+header {
+    display: flex;
+    justify-content: space-between; /* Pushes logo to left, info to right */
+    align-items: center;
+    padding: 20px;
+}
+
+.header-info {
+    text-align: right; /* Aligns text inside the block to the right */
+}
+
+/* Style for the Navigation Bar */
+nav {
+    display: flex;
+    justify-content: flex-end; /* Pushes all nav links to the right */
+    gap: 20px; /* Adds space between the links */
+    padding: 10px 20px;
+    background-color: #002244; /* Match your existing dark blue theme */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }
