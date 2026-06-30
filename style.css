@@ -229,8 +229,12 @@ textarea {
 
 /* Container to position the image and text together */
 .hero-container {
-  position: relative;
-  width: 100%;
+    position: relative;
+    width: 100%;
+    min-height: 60vh; /* Adjust this percentage to show more/less of the image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Style for the text box itself */
