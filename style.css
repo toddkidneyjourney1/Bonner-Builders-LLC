@@ -452,3 +452,45 @@ nav a {
 .container p {
     text-align: center;
 }
+/* Container for the background image/hero section */
+.hero-fade-container {
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('images/landing.jpg') no-repeat center center/cover;
+}
+
+/* The semi-transparent grey box */
+.fade-in-box {
+    background-color: rgba(50, 50, 50, 0.7); /* Grey with 70% opacity */
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    max-width: 600px;
+    border: 1px solid #b38f4d; /* Subtle gold border */
+    
+    /* Animation settings */
+    opacity: 0;
+    animation: fadeInAnimation 2s ease-in forwards;
+}
+
+/* The fade-in animation */
+@keyframes fadeInAnimation {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Button style inside the box */
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #b38f4d;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
