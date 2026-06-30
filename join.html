@@ -9,67 +9,53 @@
 <body>
 
     <!-- Header and Nav -->
-<header>
-    <div class="logo-side">
-        <img src="images/logo.png" alt="Bonner Builders Logo">
-    </div>
-    <div class="header-info">
-        <h3>Bonner Builders LLC</h3>
-        <p>📞 (603) 707-0049</p>
-        <p>✉️ bonnerbuilders@yahoo.com</p>
-        <p>📍 Lakes Region, NH</p>
-    </div>
-</header>
-
-<nav>
-    <a href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="services.html">Services</a>
-    <a href="testimonials.html">Testimonials</a>
-    <a href="join.html">Join Us</a>
-    <a href="contact.html">Contact</a>
-    <a href="about.html">About</a>
-</nav>
-
-    <!-- Join Us Section -->
-    <main class="container">
-        <section>
-            <h1>Join Our Team</h1>
-            <p>We are always looking for skilled craftsmen to join the Bonner Builders team. Please fill out the form below to tell us about your experience.</p>
-            
-          <form action="#" method="post">
-    <label for="name">Full Name:*</label>
-    <input type="text" id="name" name="name" required>
-
-    <label for="phone">Phone Number:*</label>
-    <input type="text" id="phone" name="phone" required>
-
-    <label for="email">Email Address:*</label>
-    <input type="email" id="email" name="email" required>
-
-    <label for="trade">Trade / Years of Experience:*</label>
-    <input type="text" id="trade" name="trade" required>
-
-    <label for="why">Why do you want to work with us?*</label>
-    <textarea id="why" name="why" rows="4" required></textarea>
-
-    <button type="submit">Submit Application</button>
-</form>
-                
-               
-        </section>
-    </main>
-<!-- Main content ends above this -->
-    <footer>
-        <div class="social-links">
-            <a href="YOUR_FACEBOOK_URL" target="_blank">
-                <img src="facebook-icon.png" alt="Facebook" style="width:30px; height:30px;">
-            </a>
-            <a href="YOUR_INSTAGRAM_URL" target="_blank">
-                <img src="instagram-icon.png" alt="Instagram" style="width:30px; height:30px;">
-            </a>
+    <header>
+        <div class="logo-side">
+            <img src="images/logo.png" alt="Bonner Builders Logo">
         </div>
-        <p>&copy; 2026 Bonner Builders LLC. All rights reserved.</p>
-    </footer>
+        <div class="header-info">
+            <h3>Bonner Builders LLC</h3>
+            <p>📞 (603) 707-0049</p>
+        </div>
+        <!-- Add your navigation links here -->
+    </header>
+
+    <main>
+        <h1>Join Our Team</h1>
+        
+        <!-- Updated Form with Static Forms Integration -->
+        <form action="https://api.staticforms.dev/submit" method="POST">
+            <!-- Replace YOUR_ACCESS_KEY_HERE with your key from Static Forms -->
+            <input type="hidden" name="accessKey" value="YOUR_ACCESS_KEY_HERE">
+            
+            <!-- Redirect to your Thank You page -->
+            <input type="hidden" name="redirectTo" value="https://toddkidneyjourney1.github.io/Bonner-Builders-LLC/thank-you.html">
+            
+            <!-- Optional: HoneyPot to prevent spam -->
+            <input type="text" name="honeypot" style="display:none">
+
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="trade">Primary Specialty</label>
+                <select id="trade" name="trade" required>
+                    <option value="" disabled selected>Select your trade</option>
+                    <option value="framer">Skilled Framer</option>
+                    <option value="carpenter">Finish Carpenter</option>
+                </select>
+            </div>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </main>
+
 </body>
 </html>
