@@ -378,3 +378,18 @@ button[type="submit"]:hover {
 .header-info p {
     margin: 2px 0;
 }
+footer {
+    text-align: left; /* Aligns all text and icons to the left */
+    padding: 30px 20px;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border-top: 1px solid var(--accent-gold);
+    margin-top: 40px;
+}
+
+.social-links {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: flex-start; /* Aligns social icons to the left */
+    gap: 15px;
+}
