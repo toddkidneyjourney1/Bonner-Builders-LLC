@@ -53,13 +53,18 @@
 
 <!-- Simple Script to handle clicking -->
 <script>
-    function openLightbox(imageSrc) {
-        document.getElementById('lightbox-img').src = imageSrc;
-        document.getElementById('lightbox').style.display = 'flex';
-    }
-    function closeLightbox() {
-        document.getElementById('lightbox').style.display = 'none';
-    }
+  function openLightbox(imageSrc) {
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightbox = document.getElementById('lightbox');
+    
+    lightboxImg.src = imageSrc;
+    lightbox.style.display = 'flex';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+</script>
 </script>
     // Get all images in your carousel
 const carouselImages = document.querySelectorAll('.carousel img'); // Adjust selector if needed
