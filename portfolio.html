@@ -32,76 +32,65 @@
    <div class="container">
     <h2>Our Featured Projects</h2>
     <p>Explore our recent custom carpentry and remodeling work.</p>
-
-    <div class="carousel-container">
+<div class="carousel-container">
     <ul class="carousel-track">
-        <!-- Project 2 -->
+        <!-- Project 2 through 13 -->
+        <!-- Copy this pattern for all 12 -->
         <li class="carousel-item">
             <input type="checkbox" id="img1" class="lightbox-toggle">
             <label for="img1"><img src="images/pool (2).JPG" alt="Project 2"></label>
             <div class="lightbox"><label for="img1" class="close-overlay"></label><img src="images/pool (2).JPG" alt="Project 2"></div>
         </li>
-        <!-- Project 3 -->
         <li class="carousel-item">
             <input type="checkbox" id="img2" class="lightbox-toggle">
             <label for="img2"><img src="images/pool (3).JPG" alt="Project 3"></label>
             <div class="lightbox"><label for="img2" class="close-overlay"></label><img src="images/pool (3).JPG" alt="Project 3"></div>
         </li>
-        <!-- Project 4 -->
         <li class="carousel-item">
             <input type="checkbox" id="img3" class="lightbox-toggle">
             <label for="img3"><img src="images/pool (4).JPG" alt="Project 4"></label>
             <div class="lightbox"><label for="img3" class="close-overlay"></label><img src="images/pool (4).JPG" alt="Project 4"></div>
         </li>
-        <!-- Project 5 -->
         <li class="carousel-item">
             <input type="checkbox" id="img4" class="lightbox-toggle">
             <label for="img4"><img src="images/pool (5).JPG" alt="Project 5"></label>
             <div class="lightbox"><label for="img4" class="close-overlay"></label><img src="images/pool (5).JPG" alt="Project 5"></div>
         </li>
-        <!-- Project 6 -->
         <li class="carousel-item">
             <input type="checkbox" id="img5" class="lightbox-toggle">
             <label for="img5"><img src="images/pool (6).JPG" alt="Project 6"></label>
             <div class="lightbox"><label for="img5" class="close-overlay"></label><img src="images/pool (6).JPG" alt="Project 6"></div>
         </li>
-        <!-- Project 7 -->
         <li class="carousel-item">
             <input type="checkbox" id="img6" class="lightbox-toggle">
             <label for="img6"><img src="images/pool (7).JPG" alt="Project 7"></label>
             <div class="lightbox"><label for="img6" class="close-overlay"></label><img src="images/pool (7).JPG" alt="Project 7"></div>
         </li>
-        <!-- Project 8 -->
         <li class="carousel-item">
             <input type="checkbox" id="img7" class="lightbox-toggle">
             <label for="img7"><img src="images/pool (8).JPG" alt="Project 8"></label>
             <div class="lightbox"><label for="img7" class="close-overlay"></label><img src="images/pool (8).JPG" alt="Project 8"></div>
         </li>
-        <!-- Project 9 -->
         <li class="carousel-item">
             <input type="checkbox" id="img8" class="lightbox-toggle">
             <label for="img8"><img src="images/pool (9).JPG" alt="Project 9"></label>
             <div class="lightbox"><label for="img8" class="close-overlay"></label><img src="images/pool (9).JPG" alt="Project 9"></div>
         </li>
-        <!-- Project 10 -->
         <li class="carousel-item">
             <input type="checkbox" id="img9" class="lightbox-toggle">
             <label for="img9"><img src="images/pool (10).JPG" alt="Project 10"></label>
             <div class="lightbox"><label for="img9" class="close-overlay"></label><img src="images/pool (10).JPG" alt="Project 10"></div>
         </li>
-        <!-- Project 11 -->
         <li class="carousel-item">
             <input type="checkbox" id="img10" class="lightbox-toggle">
             <label for="img10"><img src="images/pool (11).JPG" alt="Project 11"></label>
             <div class="lightbox"><label for="img10" class="close-overlay"></label><img src="images/pool (11).JPG" alt="Project 11"></div>
         </li>
-        <!-- Project 12 -->
         <li class="carousel-item">
             <input type="checkbox" id="img11" class="lightbox-toggle">
             <label for="img11"><img src="images/pool (12).JPG" alt="Project 12"></label>
             <div class="lightbox"><label for="img11" class="close-overlay"></label><img src="images/pool (12).JPG" alt="Project 12"></div>
         </li>
-        <!-- Project 13 -->
         <li class="carousel-item">
             <input type="checkbox" id="img12" class="lightbox-toggle">
             <label for="img12"><img src="images/pool (13).JPG" alt="Project 13"></label>
@@ -109,17 +98,3 @@
         </li>
     </ul>
 </div>
-    <script>
-        let currentSlide = 0;
-        function changeSlide(direction) {
-            const slider = document.querySelector('.slider');
-            const slides = document.querySelectorAll('.slide');
-            if (slides.length === 0) return;
-            
-            currentSlide = (currentSlide + direction + slides.length) % slides.length;
-            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-        }
-    </script>
-    <a href="contact.html" class="floating-cta">Start a Conversation</a>
-</body>
-</html>
