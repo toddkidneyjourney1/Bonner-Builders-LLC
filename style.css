@@ -487,46 +487,27 @@ nav a {
 .carousel-track { display: flex; list-style: none; padding: 0; margin: 0; gap: 20px; }
 .carousel-item { min-width: 300px; height: 400px; border: 8px solid #b38f4d; box-sizing: border-box; background-color: #000; cursor: pointer; }
 .carousel-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
 /* --- Lightbox Functionality --- */
 .lightbox {
   display: none;        /* Hidden by default */
-  position: fixed;      /* Fixed to the viewport */
-  z-index: 99999;       /* Extremely high to stay on top */
+  position: fixed;      /* Pins the element to the viewport */
+  z-index: 99999;       /* Ensures it sits on top of everything else */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-  display: none;        /* This will be toggled by JS */
+  background-color: rgba(0, 0, 0, 0.9); /* Dark background */
   align-items: center;
   justify-content: center;
 }
 
 #lightbox-img {
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 90%;       /* Keeps image from being too wide */
+  max-height: 90%;      /* Keeps image from being too tall */
   border: 3px solid white;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  object-fit: contain;  /* Ensures the whole image stays visible */
 }
-/* Modal Background */
-.modal {
-  display: none; 
-  position: fixed; 
-  z-index: 9999; 
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0,0,0,0.8);
-  cursor: pointer;
-}
-
-/* Modal Content (The Image) */
-.modal-content {
-  margin: auto;
-  display: block;
-  width: 80%; 
-  max-width: 700px;
-  animation: zoom 0.3s; /* Smooth expansion */
 }
 
 @keyframes zoom {
