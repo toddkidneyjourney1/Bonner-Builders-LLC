@@ -511,3 +511,32 @@ nav a {
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
   object-fit: contain;
 }
+/* Mobile-only header adjustments */
+@media (max-width: 767px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px 10px;
+  }
+
+  .logo-side img {
+    max-width: 150px; /* Adjust this size as needed */
+    margin-bottom: 10px;
+  }
+
+  .header-info {
+    margin-top: 5px;
+  }
+
+  .header-info h3 {
+    margin: 5px 0;
+    font-size: 1.2rem;
+  }
+
+  .header-info p {
+    margin: 2px 0;
+    font-size: 0.9rem;
+  }
+}
