@@ -1,71 +1,67 @@
-.<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Bonner Builders LLC</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Bonner Builders LLC</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo-side">
-            <img src="images/logo.png" alt="Bonner Builders Logo">
-        </div>
-        <div class="header-info">
-            <h3>Bonner Builders LLC</h3>
-            <p>📞 (603) 707-0049</p>
-            <p>✉️ bonnerbuilders@yahoo.com</p>
-            <p>📍 Lakes Region, NH</p>
-        </div>
-    </header>
+  <header>
+    <div class="logo-side">
+      <img src="images/logo.png" alt="Bonner Builders Logo">
+    </div>
+    <div class="header-info">
+      <h3>Bonner Builders LLC</h3>
+      <p>📞 (603) 707-0049</p>
+      <p>✉️ bonnerbuilders@yahoo.com</p>
+      <p>📍 Lakes Region, NH</p>
+    </div>
+  </header>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="services.html">Services</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="join.html">Join Us</a>
-        <a href="contact.html">Contact</a>
-        <a href="about.html">About</a>
-    </nav>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="services.html">Services</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="join.html">Join Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+  </nav>
 
-   <div class="carousel-container">
+  <div class="carousel-container">
     <ul class="carousel-track" id="carousel">
-        <li class="carousel-item"><img src="images/pool (2).JPG" alt="Project 2" onclick="openLightbox(this.src)"></li>
-        <li class="carousel-item"><img src="images/pool (3).JPG" alt="Project 3" onclick="openLightbox(this.src)"></li>
-        <li class="carousel-item"><img src="images/pool (4).JPG" alt="Project 4" onclick="openLightbox(this.src)"></li>
-        <li class="carousel-item"><img src="images/pool (5).JPG" alt="Project 5" onclick="openLightbox(this.src)"></li>
-        <li class="carousel-item"><img src="images/pool (6).JPG" alt="Project 6" onclick="openLightbox(this.src)"></li>
-        <li class="carousel-item"><img src="images/pool (7).JPG" alt="Project 7" onclick="openLightbox(this.src)"></li>
-        <li class="carousel-item"><img src="images/pool (8).JPG" alt="Project 8" onclick="openLightbox(this.src)"></li>
-        <li class="carousel-item"><img src="images/pool (9).JPG" alt="Project 9" onclick="openLightbox(this.src)"></li>
-        <li class="carousel-item"><img src="images/pool (10).JPG" alt="Project 10" onclick="openLightbox(this.src)"></li>
-        <li class="carousel-item"><img src="images/pool (11).JPG" alt="Project 11" onclick="openLightbox(this.src)"></li>
-        <li class="carousel-item"><img src="images/pool (12).JPG" alt="Project 12" onclick="openLightbox(this.src)"></li>
-        <li class="carousel-item"><img src="images/pool (13).JPG" alt="Project 13" onclick="openLightbox(this.src)"></li>
+      <li class="carousel-item"><img src="images/pool (2).JPG" alt="Project 2" onclick="openLightbox(this.src)"></li>
+      <li class="carousel-item"><img src="images/pool (3).JPG" alt="Project 3" onclick="openLightbox(this.src)"></li>
+      <li class="carousel-item"><img src="images/pool (4).JPG" alt="Project 4" onclick="openLightbox(this.src)"></li>
+      <li class="carousel-item"><img src="images/pool (5).JPG" alt="Project 5" onclick="openLightbox(this.src)"></li>
+      <li class="carousel-item"><img src="images/pool (6).JPG" alt="Project 6" onclick="openLightbox(this.src)"></li>
+      <li class="carousel-item"><img src="images/pool (7).JPG" alt="Project 7" onclick="openLightbox(this.src)"></li>
+      <li class="carousel-item"><img src="images/pool (8).JPG" alt="Project 8" onclick="openLightbox(this.src)"></li>
+      <li class="carousel-item"><img src="images/pool (9).JPG" alt="Project 9" onclick="openLightbox(this.src)"></li>
+      <li class="carousel-item"><img src="images/pool (10).JPG" alt="Project 10" onclick="openLightbox(this.src)"></li>
+      <li class="carousel-item"><img src="images/pool (11).JPG" alt="Project 11" onclick="openLightbox(this.src)"></li>
+      <li class="carousel-item"><img src="images/pool (12).JPG" alt="Project 12" onclick="openLightbox(this.src)"></li>
+      <li class="carousel-item"><img src="images/pool (13).JPG" alt="Project 13" onclick="openLightbox(this.src)"></li>
     </ul>
-</div>
+  </div>
 
-<!-- Lightbox Overlay -->
-<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <!-- Lightbox Overlay -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
     <img id="lightbox-img" src="" alt="Expanded View">
-</div>
+  </div>
 
-<!-- Simple Script to handle clicking -->
-<script>
-  function openLightbox(imageSrc) {
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightbox = document.getElementById('lightbox');
-    
-    lightboxImg.src = imageSrc;
-    lightbox.style.display = 'flex';
-  }
+  <script>
+    function openLightbox(imageSrc) {
+      const lightboxImg = document.getElementById('lightbox-img');
+      const lightbox = document.getElementById('lightbox');
+      lightboxImg.src = imageSrc;
+      lightbox.style.display = 'flex';
+    }
 
-  function closeLightbox() {
-    document.getElementById('lightbox').style.display = 'none';
-  }
-</script>
-</script>
-  
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
