@@ -491,26 +491,20 @@ nav a {
 .lightbox {
   display: none;        /* Hidden by default */
   position: fixed;      /* Pins the element to the viewport */
-  z-index: 99999;       /* Ensures it sits on top of everything else */
+  z-index: 999999 !important; /* Force it on top of everything */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.9); /* Dark background */
+  background-color: rgba(0, 0, 0, 0.9);
   align-items: center;
   justify-content: center;
 }
 
 #lightbox-img {
-  max-width: 90%;       /* Keeps image from being too wide */
-  max-height: 90%;      /* Keeps image from being too tall */
+  max-width: 90%;
+  max-height: 90%;
   border: 3px solid white;
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
-  object-fit: contain;  /* Ensures the whole image stays visible */
-}
-}
-
-@keyframes zoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
+  object-fit: contain;
 }
