@@ -535,3 +535,28 @@ nav a {
     font-size: 0.9rem;
   }
 }
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 15px;
+  padding: 15px;
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.grid-item img:hover {
+  transform: scale(1.03);
+}
+
+/* Responsive adjustment for small mobile screens */
+@media (max-width: 600px) {
+  .masonry-grid {
+    grid-template-columns: 1fr; /* Single column on mobile */
+  }
+}
