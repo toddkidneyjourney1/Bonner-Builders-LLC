@@ -61,6 +61,17 @@
         document.getElementById('lightbox').style.display = 'none';
     }
 </script>
+    // Get all images in your carousel
+const carouselImages = document.querySelectorAll('.carousel img'); // Adjust selector if needed
+const modal = document.getElementById("imageModal");
+const modalImg = document.getElementById("expandedImg");
+
+carouselImages.forEach(img => {
+  img.addEventListener('click', function(){
+    modal.style.display = "block";
+    modalImg.src = this.src;
+  });
+});
     <!-- Modal Overlay -->
 <div id="imageModal" class="modal" onclick="this.style.display='none'">
   <span class="close">&times;</span>
