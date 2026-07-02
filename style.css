@@ -540,3 +540,19 @@ nav a {
     font-size: 0.9rem;
   }
 }
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .header-info h3 {
+    margin-bottom: 5px;
+  }
+
+  .header-info p {
+    margin: 2px 0;
+    font-size: 0.9rem; /* Slightly smaller text for mobile */
+  }
+}
