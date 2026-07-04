@@ -31,33 +31,49 @@ body {
 /* --- Consistent Header Styling --- */
 header {
     width: 100%;
-    height: 150px; /* Fixed height for all pages */
+    min-height: 150px;
     background-image: url('images/landing.jpg');
     background-size: cover;
     background-position: center;
     padding: 20px;
-    border-bottom: 4px solid #b38f4d; /* Use your accent gold color */
+    border-bottom: 4px solid #b38f4d;
     color: #fff;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    box-sizing: border-box; /* Ensures padding doesn't add to the height */
+    text-align: center;
+    box-sizing: border-box;
+    gap: 6px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: clamp(1.4rem, 4vw, 2.2rem);
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+}
+
+header p {
+    margin: 0;
+    font-size: clamp(0.85rem, 2.6vw, 1rem);
+    letter-spacing: 0.8px;
 }
 
 /* Ensure the logo inside is also consistent */
 header .logo-container img {
-    max-height: 120px; /* Keeps the logo proportional to the header */
+    max-height: 120px;
     width: auto;
 }
 
 header img {
-    max-width: 150px; /* Further constrained for a slimmer header */
+    max-width: 150px;
     height: auto;
 }
 
 .header-info {
     text-align: right;
-    font-size: 0.75rem; /* Smaller text for compact header */
+    font-size: 0.75rem;
 }
 
 nav {
@@ -65,8 +81,8 @@ nav {
     width: 100%;
     padding: 8px 0;
     display: flex;
-    justify-content: center; /* This centers the nav links */
-    align-items: center;     /* This ensures vertical alignment */
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
     gap: 8px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -91,9 +107,9 @@ nav a:hover {
 /* Container holds the track, allowing hidden overflow */
 .carousel-container {
     width: 100%;
-    overflow-x: auto; /* Enables touch-swiping and scrolling */
+    overflow-x: auto;
     padding: 20px 0;
-    scrollbar-width: thin; /* Modern scrollbar */
+    scrollbar-width: thin;
 }
 
 /* Horizontal track for images */
@@ -102,14 +118,14 @@ nav a:hover {
     list-style: none;
     padding: 0;
     margin: 0;
-    gap: 20px; /* Space between framed images */
+    gap: 20px;
 }
 
 /* Each framed image item */
 .carousel-item {
     min-width: 300px;
     height: 400px;
-    border: 8px solid #b38f4d; /* Your accent gold frame */
+    border: 8px solid #b38f4d;
     box-sizing: border-box;
     background-color: #000;
 }
@@ -117,16 +133,16 @@ nav a:hover {
 .carousel-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures images fill the frame neatly */
+    object-fit: cover;
     display: block;
 }
 }
 
 /* Constrain images to fit within the screen */
 .about-gallery img {
-    width: 45%;         /* Both images will fit on one line */
-    height: 300px;      /* Consistent height */
-    object-fit: cover;  /* Fills the space nicely */
+    width: 45%;
+    height: 300px;
+    object-fit: cover;
     border-radius: 8px;
 }
 
@@ -144,35 +160,35 @@ nav a:hover {
 input[type="text"],
 input[type="email"],
 textarea {
-    width: 100%;        /* Makes them stretch to fit the container */
-    padding: 15px;      /* Adds breathing room inside the boxes */
+    width: 100%;
+    padding: 15px;
     margin-bottom: 15px;
-    font-size: 16px;    /* Increases the text size */
+    font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    box-sizing: border-box; /* Ensures padding doesn't push it out of bounds */
+    box-sizing: border-box;
 }
 
 /* Make the textarea even taller for better visibility */
 textarea {
-    height: 150px;      
+    height: 150px;
 }
 /* Add this to style.css */
 .container {
     max-width: 1000px;
-    margin: 40px auto; /* This adds space above and below your content */
+    margin: 40px auto;
     padding: 20px;
-}css3pm
+}
 /* Ensure the address card text is always small and consistent */
 .header-info {
-    text-align: right; 
-    font-size: 0.75rem; /* This sets the font size to be small and uniform */
+    text-align: right;
+    font-size: 0.75rem;
 }
 
 /* Ensure the h3 (Business Name) in the header doesn't blow out the layout */
 .header-info h3 {
     margin: 0;
-    font-size: 1rem; /* Adjust this value if you want the title slightly larger or smaller */
+    font-size: 1rem;
 }
 /* --- Fade In Animation --- */
 @keyframes fadeIn {
@@ -195,7 +211,7 @@ textarea {
 .hero-container {
     position: relative;
     width: 100%;
-    min-height: 60vh; /* Adjust this percentage to show more/less of the image */
+    min-height: 60vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -206,9 +222,9 @@ textarea {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centers the text box perfectly */
-  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
-  color: #ffffff; /* White text */
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
   padding: 30px;
   border-radius: 10px;
   text-align: center;
@@ -225,14 +241,14 @@ textarea {
 
 /* --- Fade In and Fade Out Animation --- */
 @keyframes fadeInOut {
-  0% { opacity: 0; }        /* Start hidden */
-  10% { opacity: 1; }       /* Fade in quickly */
-  80% { opacity: 1; }       /* Stay visible for most of the duration */
-  100% { opacity: 0; }      /* Fade out at the end */
+  0% { opacity: 0; }
+  10% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 .fade-in-element {
-  opacity: 0; /* Force the starting point to be invisible */
+  opacity: 0;
   animation: fadeInOut 14s ease-in-out forwards;
 }
 /* --- Modern Form Styling --- */
@@ -242,7 +258,7 @@ form {
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.05); /* Subtle background */
+    background-color: rgba(255, 255, 255, 0.05);
     border-radius: 8px;
 }
 
@@ -251,13 +267,13 @@ input[type="text"],
 input[type="email"], 
 textarea {
     width: 100%;
-    padding: 12px;.slide
+    padding: 12px;
     margin-top: 8px;
     margin-bottom: 20px;
     border: 1px solid var(--accent-gold);
     border-radius: 4px;
     background-color: #f9f9f9;
-    box-sizing: border-box; /* Ensures padding doesn't break layout */
+    box-sizing: border-box;
     font-size: 1rem;
 }
 
@@ -274,19 +290,19 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #d4ac0d; /* Slightly darker gold on hover */
+    background-color: #d4ac0d;
 }
 .contact-wrapper {
     display: flex;
-    flex-wrap: wrap; /* Stacks on small screens */
+    flex-wrap: wrap;
     gap: 40px;
     align-items: flex-start;
     padding: 20px;
 }
 
 .contact-details, .contact-form-container {
-    flex: 1; /* Both sides take equal width */
-    min-width: 300px; /* Ensures they don't get too squished */
+    flex: 1;
+    min-width: 300px;
 }
 
 /* Style the form to be compact */
@@ -322,32 +338,27 @@ button[type="submit"]:hover {
     transform: scale(1.05);
 }
 .header-info {
-    /* Opaque background block */
-    background-color: rgba(26, 26, 26, 0.8); /* Dark semi-transparent background */
+    background-color: rgba(26, 26, 26, 0.8);
     padding: 15px;
     border-radius: 8px;
-    
-    /* Text styling */
-    color: #ffffff; /* White text for contrast */
-    line-height: 1.4; /* Reduced line spacing */
-    font-size: 0.9rem; /* Smaller, more professional size */
-    
-    /* Alignment */
+    color: #ffffff;
+    line-height: 1.4;
+    font-size: 0.9rem;
     display: inline-block;
     text-align: left;
 }
 
 .header-info h3 {
     margin: 0 0 5px 0;
-    font-size: 1.2rem; /* Reduced header size */
-    color: #c5a059; /* Keeping your gold accent for the title */
+    font-size: 1.2rem;
+    color: #c5a059;
 }
 
 .header-info p {
     margin: 2px 0;
 }
 footer {
-    text-align: left; /* Aligns all text and icons to the left */
+    text-align: left;
     padding: 30px 20px;
     background-color: var(--primary-blue);
     color: var(--white);
@@ -358,27 +369,27 @@ footer {
 .social-links {
     margin-bottom: 15px;
     display: flex;
-    justify-content: flex-start; /* Aligns social icons to the left */
+    justify-content: flex-start;
     gap: 15px;
 }
 /* Style for the Header */
 header {
     display: flex;
-    justify-content: space-between; /* Pushes logo to left, info to right */
+    justify-content: center;
     align-items: center;
     padding: 20px;
 }
 
 .header-info {
-    text-align: right; /* Aligns text inside the block to the right */
+    text-align: right;
 }
 
 /* Style for the Navigation Bar */
 nav {
   display: flex;
-  justify-content: center; /* This centers the nav links */
-  align-items: center;     /* This keeps them vertically aligned */
-  gap: 20px;               /* Adjust this for the spacing between links */
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
   padding: 10px 20px;
   background-color: #002244; 
 }
@@ -390,29 +401,29 @@ nav a {
 }
 /* Styling for the new info block */
 .info-block {
-    background-color: rgba(26, 26, 26, 0.85); /* Semi-transparent dark background */
-    border: 2px solid #c5a059;              /* Gold border */
-    color: #ffffff;                         /* White text */
+    background-color: rgba(26, 26, 26, 0.85);
+    border: 2px solid #c5a059;
+    color: #ffffff;
     padding: 15px;
     border-radius: 8px;
-    margin-left: auto;                      /* Pushes the block to the right */
+    margin-left: auto;
     text-align: right;
 }
 
 .info-block a {
-    color: #c5a059;                         /* Gold color for links */
+    color: #c5a059;
     text-decoration: none;
     font-weight: bold;
 }
 
 .info-block a:hover {
-    text-decoration: underline;             /* Underline effect on hover */
+    text-decoration: underline;
 }
 .nav-container {
     display: flex;
-    justify-content: center; /* Centers links horizontally */
-    gap: 20px;               /* Adds space between your links */
-    padding: 20px 0;         /* Adds vertical space for the nav bar */
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
 }
 
 /* Optional: Style your links to look good */
@@ -439,15 +450,13 @@ nav a {
 
 /* The semi-transparent grey box */
 .fade-in-box {
-    background-color: rgba(50, 50, 50, 0.7); /* Grey with 70% opacity */
+    background-color: rgba(50, 50, 50, 0.7);
     padding: 40px;
     border-radius: 15px;
     text-align: center;
     color: white;
     max-width: 600px;
-    border: 1px solid #b38f4d; /* Subtle gold border */
-    
-    /* Animation settings */
+    border: 1px solid #b38f4d;
     opacity: 0;
     animation: fadeInAnimation 2s ease-in forwards;
 }
@@ -468,6 +477,8 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
+}
+
 @keyframes slideLoop {
     0%   { transform: translateX(0%); }
     8.33%  { transform: translateX(-8.33%); }
@@ -483,6 +494,7 @@ nav a {
     91.66% { transform: translateX(-91.66%); }
     100%   { transform: translateX(0%); }
 }
+
 /* 1. Reset the carousel's stacking context */
 .carousel-container {
   position: relative;
@@ -493,7 +505,7 @@ nav a {
 .lightbox {
   display: none;
   position: fixed;
-  z-index: 2147483647 !important; /* Maximum possible z-index value */
+  z-index: 2147483647 !important;
   top: 0;
   left: 0;
   width: 100vw;
@@ -501,9 +513,9 @@ nav a {
   background-color: rgba(0, 0, 0, 0.9);
   align-items: center;
   justify-content: center;
-  /* This is the final layer of protection */
   position: fixed !important; 
 }
+
 #lightbox-img {
   max-width: 90%;
   max-height: 90%;
@@ -511,18 +523,37 @@ nav a {
   box-shadow: 0 0 20px rgba(0,0,0,0.5);
   object-fit: contain;
 }
+
 /* Mobile-only header adjustments */
 @media (max-width: 767px) {
   header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 15px 10px;
+    min-height: 110px;
+    padding: 14px 10px;
+    gap: 4px;
+  }
+
+  header h1 {
+    font-size: 1.25rem;
+    line-height: 1.15;
+  }
+
+  header p {
+    font-size: 0.78rem;
+    line-height: 1.25;
+  }
+
+  nav {
+    padding: 8px;
+    gap: 6px;
+  }
+
+  nav a {
+    font-size: 0.72rem;
+    padding: 5px 8px;
   }
 
   .logo-side img {
-    max-width: 150px; /* Adjust this size as needed */
+    max-width: 150px;
     margin-bottom: 10px;
   }
 
@@ -540,11 +571,29 @@ nav a {
     font-size: 0.9rem;
   }
 }
+
 @media (max-width: 600px) {
   header {
-    flex-direction: column;
-    text-align: center;
-    padding: 10px;
+    min-height: 100px;
+    padding: 10px 8px;
+  }
+
+  header h1 {
+    font-size: 1.05rem;
+  }
+
+  header p {
+    font-size: 0.72rem;
+  }
+
+  nav {
+    padding: 6px;
+    gap: 5px;
+  }
+
+  nav a {
+    font-size: 0.68rem;
+    padding: 4px 6px;
   }
 
   .header-info h3 {
@@ -553,6 +602,6 @@ nav a {
 
   .header-info p {
     margin: 2px 0;
-    font-size: 0.9rem; /* Slightly smaller text for mobile */
+    font-size: 0.9rem;
   }
 }
