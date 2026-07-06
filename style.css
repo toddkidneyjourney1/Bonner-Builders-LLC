@@ -578,6 +578,16 @@ nav a {
     margin: 1px 0;
     font-size: 0.8rem;
   }
+
+  .floating-cta {
+    right: 12px;
+    bottom: 12px;
+    padding: 10px 16px;
+    font-size: 0.78rem;
+    letter-spacing: 0.5px;
+    border-radius: 999px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.18);
+  }
 }
 
 @media (max-width: 600px) {
@@ -612,6 +622,13 @@ nav a {
     margin: 1px 0;
     font-size: 0.8rem;
   }
+
+  .floating-cta {
+    right: 10px;
+    bottom: 10px;
+    padding: 9px 14px;
+    font-size: 0.72rem;
+  }
 }
 
 @media (max-width: 420px) {
@@ -636,5 +653,13 @@ nav a {
   nav a {
     font-size: 0.6rem;
     padding: 4px 6px;
+  }
+
+  .floating-cta {
+    right: 8px;
+    bottom: 8px;
+    padding: 8px 12px;
+    font-size: 0.66rem;
+    letter-spacing: 0.35px;
   }
 }
