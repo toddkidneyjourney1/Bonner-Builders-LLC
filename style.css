@@ -540,16 +540,23 @@ nav a {
   header p {
     font-size: 0.78rem;
     line-height: 1.25;
+    letter-spacing: 0.4px;
   }
 
   nav {
-    padding: 8px;
-    gap: 6px;
+    padding: 10px 12px;
+    gap: 8px;
+    justify-content: center;
   }
 
   nav a {
-    font-size: 0.72rem;
-    padding: 5px 8px;
+    font-size: 0.78rem;
+    padding: 8px 10px;
+    line-height: 1.2;
+    flex: 1 1 calc(50% - 8px);
+    max-width: 180px;
+    text-align: center;
+    box-sizing: border-box;
   }
 
   .logo-side img {
@@ -587,13 +594,14 @@ nav a {
   }
 
   nav {
-    padding: 6px;
-    gap: 5px;
+    padding: 8px 10px;
+    gap: 6px;
   }
 
   nav a {
-    font-size: 0.68rem;
-    padding: 4px 6px;
+    font-size: 0.72rem;
+    padding: 8px;
+    flex-basis: calc(50% - 6px);
   }
 
   .header-info h3 {
@@ -603,5 +611,12 @@ nav a {
   .header-info p {
     margin: 2px 0;
     font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 420px) {
+  nav a {
+    flex-basis: 100%;
+    max-width: none;
   }
 }
