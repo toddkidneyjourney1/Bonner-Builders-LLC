@@ -10,7 +10,7 @@
     "@context": "https://schema.org",
     "@type": "GeneralContractor",
     "name": "Bonner Builders LLC",
-    "image": "https://bonner-builders-llc.com/images/logo.png",
+    "image": "https://bonner-builders-llc.com/assets/logo.png",
     "telephone": "(603) 707-0049",
     "email": "bonnerbuilders@yahoo.com",
     "areaServed": "Lakes Region, NH",
@@ -153,8 +153,7 @@
 <body>
   <header>
     <div class="logo-side">
-      <!-- Fixed folder path from imges/ to images/ -->
-      <img src="images/logo.png" alt="Bonner Builders Logo" decoding="async">
+      <img src="assets/logo.png" alt="Bonner Builders Logo" decoding="async">
     </div>
     <div class="header-info">
       <h3>Bonner Builders LLC</h3>
@@ -197,30 +196,30 @@
   </div>
 
   <script>
-    // 1. Manage all portfolio photos in one simple list
+    // 1. Portfolio items mapped to the assets folder
     const portfolioItems = [
-      { category: 'framing', src: 'images/bb (1).jpg', alt: 'Custom structural framing', caption: 'Custom Structural Framing' },
-      { category: 'framing', src: 'images/frame1.jpg.jpg', alt: 'Structural framing overview', caption: 'Structural Framing Overview' },
-      { category: 'framing', src: 'images/bb (10).jpg', alt: 'Precision framing detail', caption: 'Precision Framing Detail' },
-      { category: 'framing', src: 'images/bb (11).jpg', alt: 'New construction structural framing', caption: 'New Construction Build-out' },
-      { category: 'framing', src: 'images/bb (12).jpg', alt: 'Wall framing and support', caption: 'Wall Framing & Support' },
-      { category: 'framing', src: 'images/bb (13).jpg', alt: 'Framing progress view', caption: 'Framing Progress View' },
-      { category: 'framing', src: 'images/bb (14).jpg', alt: 'Custom carpentry', caption: 'Custom Carpentry' },
-      { category: 'framing', src: 'images/bb (15).jpg', alt: 'Structural carpentry', caption: 'Structural Carpentry' },
-      { category: 'framing', src: 'images/bb (16).jpg', alt: 'Jobsite progress', caption: 'Jobsite Progress' },
-      { category: 'framing', src: 'images/bb (17).jpg', alt: 'Framework installation', caption: 'Framework Installation' },
-      { category: 'framing', src: 'images/bb (18).jpg', alt: 'Framing construction stage', caption: 'Construction Stage' },
-      { category: 'framing', src: 'images/bb (19).jpg', alt: 'Lakes Region build', caption: 'Lakes Region Build' },
-      { category: 'framing', src: 'images/bb (20).jpg', alt: 'Construction detail', caption: 'Construction Detail' },
-      { category: 'framing', src: 'images/bb (21).jpg', alt: 'Roof and wall framing', caption: 'Roof & Wall Framing' },
-      { category: 'framing', src: 'images/bb (22).jpg', alt: 'Subfloor and framing structure', caption: 'Subfloor & Structure' },
-      { category: 'decks', src: 'images/bb (23).jpg', alt: 'Custom outdoor deck construction', caption: 'Custom Outdoor Deck' },
-      { category: 'decks', src: 'images/bb (24).jpg', alt: 'Porch and deck layout', caption: 'Porch & Deck Layout' },
-      { category: 'interiors', src: 'images/bb (26).jpg', alt: 'Interior home renovation project', caption: 'Interior Home Renovation' },
-      { category: 'pools', src: 'images/bb (30).jpg', alt: 'Custom pool project phase 1', caption: 'Pool Project - Phase 1' },
-      { category: 'pools', src: 'images/bb (7).jpg', alt: 'Custom pool project detail', caption: 'Pool Build Detail' },
-      { category: 'pools', src: 'images/bb (8).jpg', alt: 'Custom pool installation', caption: 'Pool Installation' },
-      { category: 'pools', src: 'images/bb (9).jpg', alt: 'Pool outdoor living setup', caption: 'Outdoor Pool Setup' }
+      { category: 'framing', src: 'assets/bb (1).jpg', alt: 'Custom structural framing', caption: 'Custom Structural Framing' },
+      { category: 'framing', src: 'assets/frame1.jpg.jpg', alt: 'Structural framing overview', caption: 'Structural Framing Overview' },
+      { category: 'framing', src: 'assets/bb (10).jpg', alt: 'Precision framing detail', caption: 'Precision Framing Detail' },
+      { category: 'framing', src: 'assets/bb (11).jpg', alt: 'New construction structural framing', caption: 'New Construction Build-out' },
+      { category: 'framing', src: 'assets/bb (12).jpg', alt: 'Wall framing and support', caption: 'Wall Framing & Support' },
+      { category: 'framing', src: 'assets/bb (13).jpg', alt: 'Framing progress view', caption: 'Framing Progress View' },
+      { category: 'framing', src: 'assets/bb (14).jpg', alt: 'Custom carpentry', caption: 'Custom Carpentry' },
+      { category: 'framing', src: 'assets/bb (15).jpg', alt: 'Structural carpentry', caption: 'Structural Carpentry' },
+      { category: 'framing', src: 'assets/bb (16).jpg', alt: 'Jobsite progress', caption: 'Jobsite Progress' },
+      { category: 'framing', src: 'assets/bb (17).jpg', alt: 'Framework installation', caption: 'Framework Installation' },
+      { category: 'framing', src: 'assets/bb (18).jpg', alt: 'Framing construction stage', caption: 'Construction Stage' },
+      { category: 'framing', src: 'assets/bb (19).jpg', alt: 'Lakes Region build', caption: 'Lakes Region Build' },
+      { category: 'framing', src: 'assets/bb (20).jpg', alt: 'Construction detail', caption: 'Construction Detail' },
+      { category: 'framing', src: 'assets/bb (21).jpg', alt: 'Roof and wall framing', caption: 'Roof & Wall Framing' },
+      { category: 'framing', src: 'assets/bb (22).jpg', alt: 'Subfloor and framing structure', caption: 'Subfloor & Structure' },
+      { category: 'decks', src: 'assets/bb (23).jpg', alt: 'Custom outdoor deck construction', caption: 'Custom Outdoor Deck' },
+      { category: 'decks', src: 'assets/bb (24).jpg', alt: 'Porch and deck layout', caption: 'Porch & Deck Layout' },
+      { category: 'interiors', src: 'assets/bb (26).jpg', alt: 'Interior home renovation project', caption: 'Interior Home Renovation' },
+      { category: 'pools', src: 'assets/bb (30).jpg', alt: 'Custom pool project phase 1', caption: 'Pool Project - Phase 1' },
+      { category: 'pools', src: 'assets/bb (7).jpg', alt: 'Custom pool project detail', caption: 'Pool Build Detail' },
+      { category: 'pools', src: 'assets/bb (8).jpg', alt: 'Custom pool installation', caption: 'Pool Installation' },
+      { category: 'pools', src: 'assets/bb (9).jpg', alt: 'Pool outdoor living setup', caption: 'Outdoor Pool Setup' }
     ];
 
     // 2. Automatically generate the HTML grid on page load
