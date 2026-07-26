@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio | Bonner Builders LLC</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="preload" as="image" href="imges/bb (1).jpg" fetchpriority="high">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -19,7 +18,6 @@
   }
   </script>
   <style>
-    /* Responsive Grid Layout & Sticky Filter Updates */
     .filter-container {
       position: sticky;
       top: 0;
@@ -106,7 +104,6 @@
       margin: 0;
     }
 
-    /* Lightbox Styles */
     .lightbox {
       display: none;
       position: fixed;
@@ -140,7 +137,6 @@
       font-size: 1.1rem;
     }
 
-    /* Responsive adjustments */
     @media (max-width: 900px) {
       .portfolio-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -186,149 +182,9 @@
     <button class="filter-btn" onclick="filterGallery('pools', this)">Pools & Outdoor</button>
   </div>
 
-  <!-- Responsive CSS Grid Layout using exact inventory filenames -->
+  <!-- Dynamic Grid Container -->
   <div class="portfolio-grid-container">
-    <ul class="portfolio-grid" id="portfolio-grid">
-      <!-- Framing Category -->
-      <li class="portfolio-item" data-category="framing">
-        <div class="img-wrapper">
-          <img src="imges/bb (1).jpg" alt="Custom structural framing" onclick="openLightbox(this.src, this.alt)" loading="eager" fetchpriority="high" decoding="async" width="1200" height="900">
-        </div>
-        <p class="img-caption">Custom Structural Framing</p>
-      </li>
-      <li class="portfolio-item" data-category="framing">
-        <div class="img-wrapper">
-          <img src="imges/frame1.jpg.jpg" alt="Structural framing overview" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
-        </div>
-        <p class="img-caption">Structural Framing Overview</p>
-      </li>
-      <li class="portfolio-item" data-category="framing">
-        <div class="img-wrapper">
-          <img src="imges/bb (10).jpg" alt="Precision framing detail" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
-        </div>
-        <p class="img-caption">Precision Framing Detail</p>
-      </li>
-      <li class="portfolio-item" data-category="framing">
-        <div class="img-wrapper">
-          <img src="imges/bb (11).jpg" alt="New construction structural framing" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
-        </div>
-        <p class="img-caption">New Construction Build-out</p>
-      </li>
-      <li class="portfolio-item" data-category="framing">
-        <div class="img-wrapper">
-          <img src="imges/bb (12).jpg" alt="Wall framing and support" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
-        </div>
-        <p class="img-caption">Wall Framing & Support</p>
-      </li>
-      <li class="portfolio-item" data-category="framing">
-        <div class="img-wrapper">
-          <img src="imges/bb (13).jpg" alt="Framing progress view" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
-        </div>
-        <p class="img-caption">Framing Progress View</p>
-      </li>
-      <li class="portfolio-item" data-category="framing">
-        <div class="img-wrapper">
-          <img src="imges/bb (14).jpg" alt="Custom carpentry" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
-        </div>
-        <p class="img-caption">Custom Carpentry</p>
-      </li>
-      <li class="portfolio-item" data-category="framing">
-        <div class="img-wrapper">
-          <img src="imges/bb (15).jpg" alt="Structural carpentry" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
-        </div>
-        <p class="img-caption">Structural Carpentry</p>
-      </li>
-      <li class="portfolio-item" data-category="framing">
-        <div class="img-wrapper">
-          <img src="imges/bb (16).jpg" alt="Jobsite progress" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
-        </div>
-        <p class="img-caption">Jobsite Progress</p>
-      </li>
-      <li class="portfolio-item" data-category="framing">
-        <div class="img-wrapper">
-          <img src="imges/bb (17).jpg" alt="Framework installation" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
-        </div>
-        <p class="img-caption">Framework Installation</p>
-      </li>
-      <li class="portfolio-item" data-category="framing">
-        <div class="img-wrapper">
-          <img src="imges/bb (18).jpg" alt="Framing construction stage" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
-        </div>
-        <p class="img-caption">Construction Stage</p>
-      </li>
-      <li class="portfolio-item" data-category="framing">
-        <div class="img-wrapper">
-          <img src="imges/bb (19).jpg" alt="Lakes Region build" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
-        </div>
-        <p class="img-caption">Lakes Region Build</p>
-      </li>
-      <li class="portfolio-item" data-category="framing">
-        <div class="img-wrapper">
-          <img src="imges/bb (20).jpg" alt="Construction detail" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
-        </div>
-        <p class="img-caption">Construction Detail</p>
-      </li>
-      <li class="portfolio-item" data-category="framing">
-        <div class="img-wrapper">
-          <img src="imges/bb (21).jpg" alt="Roof and wall framing" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
-        </div>
-        <p class="img-caption">Roof & Wall Framing</p>
-      </li>
-      <li class="portfolio-item" data-category="framing">
-        <div class="img-wrapper">
-          <img src="imges/bb (22).jpg" alt="Subfloor and framing structure" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
-        </div>
-        <p class="img-caption">Subfloor & Structure</p>
-      </li>
-
-      <!-- Decks & Porches Category -->
-      <li class="portfolio-item" data-category="decks">
-        <div class="img-wrapper">
-          <img src="imges/bb (23).jpg" alt="Custom outdoor deck construction" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
-        </div>
-        <p class="img-caption">Custom Outdoor Deck</p>
-      </li>
-      <li class="portfolio-item" data-category="decks">
-        <div class="img-wrapper">
-          <img src="imges/bb (24).jpg" alt="Porch and deck layout" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
-        </div>
-        <p class="img-caption">Porch & Deck Layout</p>
-      </li>
-
-      <!-- Interiors & Remodels Category -->
-      <li class="portfolio-item" data-category="interiors">
-        <div class="img-wrapper">
-          <img src="imges/bb (26).jpg" alt="Interior home renovation project" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
-        </div>
-        <p class="img-caption">Interior Home Renovation</p>
-      </li>
-
-      <!-- Pools & Outdoor Category -->
-      <li class="portfolio-item" data-category="pools">
-        <div class="img-wrapper">
-          <img src="imges/bb (30).jpg" alt="Custom pool project phase 1" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
-        </div>
-        <p class="img-caption">Pool Project - Phase 1</p>
-      </li>
-      <li class="portfolio-item" data-category="pools">
-        <div class="img-wrapper">
-          <img src="imges/bb (7).jpg" alt="Custom pool project detail" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
-        </div>
-        <p class="img-caption">Pool Build Detail</p>
-      </li>
-      <li class="portfolio-item" data-category="pools">
-        <div class="img-wrapper">
-          <img src="imges/bb (8).jpg" alt="Custom pool installation" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
-        </div>
-        <p class="img-caption">Pool Installation</p>
-      </li>
-      <li class="portfolio-item" data-category="pools">
-        <div class="img-wrapper">
-          <img src="imges/bb (9).jpg" alt="Pool outdoor living setup" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
-        </div>
-        <p class="img-caption">Outdoor Pool Setup</p>
-      </li>
-    </ul>
+    <ul class="portfolio-grid" id="portfolio-grid"></ul>
   </div>
 
   <!-- Lightbox Overlay -->
@@ -340,6 +196,47 @@
   </div>
 
   <script>
+    // 1. Manage all portfolio photos in one simple list
+    const portfolioItems = [
+      { category: 'framing', src: 'imges/bb (1).jpg', alt: 'Custom structural framing', caption: 'Custom Structural Framing' },
+      { category: 'framing', src: 'imges/frame1.jpg.jpg', alt: 'Structural framing overview', caption: 'Structural Framing Overview' },
+      { category: 'framing', src: 'imges/bb (10).jpg', alt: 'Precision framing detail', caption: 'Precision Framing Detail' },
+      { category: 'framing', src: 'imges/bb (11).jpg', alt: 'New construction structural framing', caption: 'New Construction Build-out' },
+      { category: 'framing', src: 'imges/bb (12).jpg', alt: 'Wall framing and support', caption: 'Wall Framing & Support' },
+      { category: 'framing', src: 'imges/bb (13).jpg', alt: 'Framing progress view', caption: 'Framing Progress View' },
+      { category: 'framing', src: 'imges/bb (14).jpg', alt: 'Custom carpentry', caption: 'Custom Carpentry' },
+      { category: 'framing', src: 'imges/bb (15).jpg', alt: 'Structural carpentry', caption: 'Structural Carpentry' },
+      { category: 'framing', src: 'imges/bb (16).jpg', alt: 'Jobsite progress', caption: 'Jobsite Progress' },
+      { category: 'framing', src: 'imges/bb (17).jpg', alt: 'Framework installation', caption: 'Framework Installation' },
+      { category: 'framing', src: 'imges/bb (18).jpg', alt: 'Framing construction stage', caption: 'Construction Stage' },
+      { category: 'framing', src: 'imges/bb (19).jpg', alt: 'Lakes Region build', caption: 'Lakes Region Build' },
+      { category: 'framing', src: 'imges/bb (20).jpg', alt: 'Construction detail', caption: 'Construction Detail' },
+      { category: 'framing', src: 'imges/bb (21).jpg', alt: 'Roof and wall framing', caption: 'Roof & Wall Framing' },
+      { category: 'framing', src: 'imges/bb (22).jpg', alt: 'Subfloor and framing structure', caption: 'Subfloor & Structure' },
+      { category: 'decks', src: 'imges/bb (23).jpg', alt: 'Custom outdoor deck construction', caption: 'Custom Outdoor Deck' },
+      { category: 'decks', src: 'imges/bb (24).jpg', alt: 'Porch and deck layout', caption: 'Porch & Deck Layout' },
+      { category: 'interiors', src: 'imges/bb (26).jpg', alt: 'Interior home renovation project', caption: 'Interior Home Renovation' },
+      { category: 'pools', src: 'imges/bb (30).jpg', alt: 'Custom pool project phase 1', caption: 'Pool Project - Phase 1' },
+      { category: 'pools', src: 'imges/bb (7).jpg', alt: 'Custom pool project detail', caption: 'Pool Build Detail' },
+      { category: 'pools', src: 'imges/bb (8).jpg', alt: 'Custom pool installation', caption: 'Pool Installation' },
+      { category: 'pools', src: 'imges/bb (9).jpg', alt: 'Pool outdoor living setup', caption: 'Outdoor Pool Setup' }
+    ];
+
+    // 2. Automatically generate the HTML grid on page load
+    const gridEl = document.getElementById('portfolio-grid');
+    portfolioItemsforEach = portfolioItems.forEach(item => {
+      const li = document.createElement('li');
+      li.className = 'portfolio-item';
+      li.setAttribute('data-category', item.category);
+      li.innerHTML = `
+        <div class="img-wrapper">
+          <img src="${item.src}" alt="${item.alt}" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
+        </div>
+        <p class="img-caption">${item.caption}</p>
+      `;
+      gridEl.appendChild(li);
+    });
+
     function openLightbox(imageSrc, imageAlt) {
       const lightboxImg = document.getElementById('lightbox-img');
       const lightboxCaption = document.getElementById('lightbox-caption');
@@ -370,7 +267,6 @@
       });
     }
 
-    // Keyboard navigation (Escape to close lightbox)
     document.addEventListener('keydown', function(event) {
       if (event.key === 'Escape') {
         closeLightbox();
