@@ -14,42 +14,8 @@
     "image": "https://bonner-builders-llc.com/images/logo.png",
     "telephone": "(603) 707-0049",
     "email": "bonnerbuilders@yahoo.com",
-    "areaServed": "Lakes Region, NH",<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Bonner Builders LLC</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preload" as="image" href="images/bb_1.jpg" fetchpriority="high">
-    <script type="application/ld+json">
-    {
-    "@context": "https://schema.org",
-    "@type": "GeneralContractor",
-    "name": "Bonner Builders LLC",
-    "image": "https://bonner-builders-llc.com/images/logo.png",
-    "telephone": "(603) 707-0049",
-    "email": "bonnerbuilders@yahoo.com",
     "areaServed": "Lakes Region, NH",
     "url": "https://bonner-builders-llc.com"
-    }
-    </script>
-    <style>
-    /* Responsive Grid Layout & Sticky Filter Updates */
-    .filter-container {
-        position: sticky;
-        top: 0;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(8px);
-        z-index: 100;
-        padding: 15px 0;
-    }
-    </style>
-</head>
-<body>
-    <!-- Portfolio content with broken image items removed -->
-</body>
-</html>    "url": "https://bonner-builders-llc.com"
   }
   </script>
   <style>
@@ -213,11 +179,11 @@
 
   <!-- Sticky Category Filters -->
   <div class="filter-container">
-    <button class="filter-btn active" onclick="filterGallery('all')">All Work</button>
-    <button class="filter-btn" onclick="filterGallery('framing')">Framing</button>
-    <button class="filter-btn" onclick="filterGallery('decks')">Decks & Porches</button>
-    <button class="filter-btn" onclick="filterGallery('interiors')">Interiors & Remodels</button>
-    <button class="filter-btn" onclick="filterGallery('pools')">Pools & Outdoor</button>
+    <button class="filter-btn active" onclick="filterGallery('all', this)">All Work</button>
+    <button class="filter-btn" onclick="filterGallery('framing', this)">Framing</button>
+    <button class="filter-btn" onclick="filterGallery('decks', this)">Decks & Porches</button>
+    <button class="filter-btn" onclick="filterGallery('interiors', this)">Interiors & Remodels</button>
+    <button class="filter-btn" onclick="filterGallery('pools', this)">Pools & Outdoor</button>
   </div>
 
   <!-- Responsive CSS Grid Layout with All Repository Images Sorted -->
@@ -694,16 +660,16 @@
       document.getElementById('lightbox').style.display = 'none';
     }
 
-    function filterGallery(category) {
+    function filterGallery(category, buttonElement) {
       const items = document.querySelectorAll('.portfolio-item');
       const buttons = document.querySelectorAll('.filter-btn');
 
       buttons.forEach(btn => btn.classList.remove('active'));
-      event.target.classList.add('active');
+      buttonElement.classList.add('active');
 
       items.forEach(item => {
         if (category === 'all' || item.getAttribute('data-category') === category) {
-          item.style.display = 'block';
+          item.style.display = ''; // Reverts to CSS default (grid child) instead of forcing 'block'
         } else {
           item.style.display = 'none';
         }
