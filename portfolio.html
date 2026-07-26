@@ -6,6 +6,124 @@
   <title>Portfolio | Bonner Builders LLC</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preload" as="image" href="images/bb_1.jpg" fetchpriority="high">
+  <style>
+    /* Responsive Grid Layout & Sticky Filter Updates */
+    .filter-container {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      padding: 15px 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      text-align: center;
+      margin: 0;
+    }
+
+    .portfolio-grid-container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .portfolio-item {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+
+    .img-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background-color: #e5e7eb;
+      overflow: hidden;
+    }
+
+    .img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .img-wrapper img:hover {
+      transform: scale(1.03);
+    }
+
+    .img-caption {
+      padding: 12px 15px;
+      font-size: 0.95rem;
+      color: #333;
+      font-weight: 500;
+      text-align: center;
+      margin: 0;
+    }
+
+    /* Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 85vh;
+      text-align: center;
+    }
+
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 75vh;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .lightbox-content p {
+      color: #fff;
+      margin-top: 12px;
+      font-size: 1.1rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 900px) {
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .portfolio-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -30,54 +148,48 @@
     <a href="about.html">About</a>
   </nav>
 
-  <!-- Suggestion 1: Interactive Category Filters -->
-  <div class="filter-container" style="text-align: center; margin: 20px 0;">
+  <!-- Sticky Category Filters -->
+  <div class="filter-container">
     <button class="filter-btn active" onclick="filterGallery('all')">All Work</button>
     <button class="filter-btn" onclick="filterGallery('framing')">Framing</button>
     <button class="filter-btn" onclick="filterGallery('decks')">Decks & Porches</button>
     <button class="filter-btn" onclick="filterGallery('interiors')">Interiors & Remodels</button>
   </div>
 
-  <div class="carousel-container">
-    <!-- Suggestion 3: Carousel Navigation Controls -->
-    <button class="carousel-nav-btn prev-btn" onclick="scrollCarousel(-1)">&#10094;</button>
-    
-    <ul class="carousel-track" id="carousel">
-      <!-- Suggestion 2: Contextual Captions & Suggestion 4: Blur-Up/Lazy Loading Strategy (Verified Working Images Only) -->
-      <li class="carousel-item" data-category="framing">
-        <div class="img-wrapper" style="background-color: #e5e7eb;">
+  <!-- Responsive CSS Grid Layout -->
+  <div class="portfolio-grid-container">
+    <ul class="portfolio-grid" id="portfolio-grid">
+      <li class="portfolio-item" data-category="framing">
+        <div class="img-wrapper">
           <img src="images/bb_1.jpg" alt="Custom framing and structural carpentry in the Lakes Region" onclick="openLightbox(this.src, this.alt)" loading="eager" fetchpriority="high" decoding="async" width="1200" height="900">
         </div>
         <p class="img-caption">Custom Structural Framing</p>
       </li>
-      <li class="carousel-item" data-category="framing">
-        <div class="img-wrapper" style="background-color: #e5e7eb;">
+      <li class="portfolio-item" data-category="framing">
+        <div class="img-wrapper">
           <img src="images/bb_3.jpg" alt="Precision framing detail" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
         </div>
         <p class="img-caption">Precision Framing Detail</p>
       </li>
-      <li class="carousel-item" data-category="framing">
-        <div class="img-wrapper" style="background-color: #e5e7eb;">
+      <li class="portfolio-item" data-category="framing">
+        <div class="img-wrapper">
           <img src="images/bb_4.jpg" alt="New construction structural framing" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
         </div>
         <p class="img-caption">New Construction Build-out</p>
       </li>
-      <li class="carousel-item" data-category="framing">
-        <div class="img-wrapper" style="background-color: #e5e7eb;">
+      <li class="portfolio-item" data-category="framing">
+        <div class="img-wrapper">
           <img src="images/bb_5.jpg" alt="Heavy timber and wall framing" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
         </div>
         <p class="img-caption">Wall Framing & Support</p>
       </li>
-      <li class="carousel-item" data-category="decks">
-        <div class="img-wrapper" style="background-color: #e5e7eb;">
+      <li class="portfolio-item" data-category="decks">
+        <div class="img-wrapper">
           <img src="images/bb_7.jpg" alt="Custom outdoor deck construction" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
         </div>
         <p class="img-caption">Custom Outdoor Deck</p>
       </li>
     </ul>
-
-    <!-- Suggestion 3: Carousel Navigation Controls -->
-    <button class="carousel-nav-btn next-btn" onclick="scrollCarousel(1)">&#10095;</button>
   </div>
 
   <!-- Lightbox Overlay -->
@@ -103,14 +215,8 @@
       document.getElementById('lightbox').style.display = 'none';
     }
 
-    function scrollCarousel(direction) {
-      const carousel = document.getElementById('carousel');
-      const scrollAmount = 350; // Pixels to scroll horizontally per click
-      carousel.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-    }
-
     function filterGallery(category) {
-      const items = document.querySelectorAll('.carousel-item');
+      const items = document.querySelectorAll('.portfolio-item');
       const buttons = document.querySelectorAll('.filter-btn');
 
       buttons.forEach(btn => btn.classList.remove('active'));
@@ -118,12 +224,19 @@
 
       items.forEach(item => {
         if (category === 'all' || item.getAttribute('data-category') === category) {
-          item.style.display = 'inline-block';
+          item.style.display = 'block';
         } else {
           item.style.display = 'none';
         }
       });
     }
+
+    // Keyboard navigation (Escape to close lightbox)
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeLightbox();
+      }
+    });
   </script>
 </body>
 </html>
