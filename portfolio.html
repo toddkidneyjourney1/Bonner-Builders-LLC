@@ -18,39 +18,50 @@
   }
   </script>
   <style>
+    :root {
+      --page-max: 1280px;
+      --gap-desktop: 20px;
+      --gap-tablet: 16px;
+      --gap-mobile: 12px;
+      --card-radius: 10px;
+      --shadow: 0 2px 10px rgba(0,0,0,0.08);
+      --shadow-hover: 0 8px 20px rgba(0,0,0,0.14);
+    }
+
     .portfolio-grid-container {
-      max-width: 1200px;
-      margin: 30px auto;
-      padding: 0 20px;
+      width: min(100% - 2rem, var(--page-max));
+      margin: clamp(20px, 3vw, 36px) auto;
     }
 
     .portfolio-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--gap-desktop);
       list-style: none;
       padding: 0;
       margin: 0;
+      align-items: stretch;
     }
 
     .portfolio-item {
       background: #fff;
-      border-radius: 8px;
+      border-radius: var(--card-radius);
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      box-shadow: var(--shadow);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      will-change: transform;
     }
 
     .portfolio-item:hover {
       transform: translateY(-4px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+      box-shadow: var(--shadow-hover);
     }
 
     .img-wrapper {
       position: relative;
       width: 100%;
       aspect-ratio: 4 / 3;
-      background-color: #e5e7eb;
+      background: linear-gradient(135deg, #eef2f7, #e5e7eb);
       overflow: hidden;
     }
 
@@ -58,8 +69,9 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      cursor: pointer;
+      cursor: zoom-in;
       transition: transform 0.3s ease;
+      display: block;
     }
 
     .img-wrapper img:hover {
@@ -70,38 +82,65 @@
       display: none;
       position: fixed;
       z-index: 1000;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.85);
+      inset: 0;
+      background: rgba(0, 0, 0, 0.88);
       justify-content: center;
       align-items: center;
-      flex-direction: column;
+      padding: 20px;
     }
 
     .lightbox-content {
-      max-width: 90%;
-      max-height: 85vh;
+      width: min(96vw, 1600px);
+      max-height: 92vh;
       text-align: center;
     }
 
     .lightbox-content img {
       max-width: 100%;
-      max-height: 75vh;
+      max-height: 88vh;
       object-fit: contain;
-      border-radius: 4px;
+      border-radius: 6px;
+      background: #111;
+    }
+
+    @media (max-width: 1200px) {
+      .portfolio-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: var(--gap-desktop);
+      }
     }
 
     @media (max-width: 900px) {
       .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--gap-tablet);
       }
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 560px) {
+      .portfolio-grid-container {
+        width: min(100% - 1rem, var(--page-max));
+        margin: 16px auto 22px;
+      }
+
       .portfolio-grid {
         grid-template-columns: 1fr;
+        gap: var(--gap-mobile);
+      }
+
+      .lightbox {
+        padding: 10px;
+      }
+
+      .lightbox-content img {
+        max-height: 82vh;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .portfolio-item,
+      .img-wrapper img {
+        transition: none;
       }
     }
   </style>
@@ -133,7 +172,7 @@
     <ul class="portfolio-grid" id="portfolio-grid"></ul>
   </div>
 
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()" aria-hidden="true">
     <div class="lightbox-content" onclick="event.stopPropagation()">
       <img id="lightbox-img" src="" alt="Expanded View" decoding="async">
     </div>
@@ -141,58 +180,88 @@
 
   <script>
     const portfolioItems = [
-      { src: 'assets/bb (1).jpg', alt: 'Custom home framing during early construction' },
-      { src: 'assets/frame1.jpg.jpg', alt: 'Residential framing skeleton and wall layout' },
-      { src: 'assets/bb (10).jpg', alt: 'Precision framing detail with beam layout' },
-      { src: 'assets/bb (11).jpg', alt: 'New construction framing with wall sections in place' },
-      { src: 'assets/bb (12).jpg', alt: 'Wall framing and structural support details' },
-      { src: 'assets/bb (13).jpg', alt: 'Framing progress on active jobsite' },
-      { src: 'assets/bb (14).jpg', alt: 'Custom carpentry and structural woodwork' },
-      { src: 'assets/bb (15).jpg', alt: 'Structural carpentry elements in place' },
-      { src: 'assets/bb (16).jpg', alt: 'Jobsite framing progress with materials staged' },
-      { src: 'assets/bb (17).jpg', alt: 'Framework installation underway' },
-      { src: 'assets/bb (18).jpg', alt: 'Construction stage showing framed structure' },
-      { src: 'assets/bb (19).jpg', alt: 'Lakes Region residential build in progress' },
-      { src: 'assets/bb (20).jpg', alt: 'Framing detail with structural elements' },
-      { src: 'assets/bb (21).jpg', alt: 'Roof and wall framing on a custom build' },
-      { src: 'assets/bb (22).jpg', alt: 'Subfloor and framing structure preparation' },
-      { src: 'assets/bb (23).jpg', alt: 'Custom outdoor deck construction near completion' },
-      { src: 'assets/bb (24).jpg', alt: 'Porch and deck layout for an outdoor living space' },
-      { src: 'assets/bb (26).jpg', alt: 'Interior home renovation with updated finishes' },
-      { src: 'assets/bb (30).jpg', alt: 'Custom pool project during early phase construction' },
-      { src: 'assets/bb (7).jpg', alt: 'Pool build detail showing surrounding site work' },
-      { src: 'assets/bb (8).jpg', alt: 'Custom pool installation in progress' },
-      { src: 'assets/bb (9).jpg', alt: 'Outdoor pool setup with living area integration' }
+      { src: 'assets/bb (1).jpg', alt: 'Bonner Builders project photo 1' },
+      { src: 'assets/bb (2).jpg', alt: 'Bonner Builders project photo 2' },
+      { src: 'assets/bb (3).jpg', alt: 'Bonner Builders project photo 3' },
+      { src: 'assets/bb (4).jpg', alt: 'Bonner Builders project photo 4' },
+      { src: 'assets/bb (5).jpg', alt: 'Bonner Builders project photo 5' },
+      { src: 'assets/bb (6).jpg', alt: 'Bonner Builders project photo 6' },
+      { src: 'assets/bb (7).jpg', alt: 'Bonner Builders project photo 7' },
+      { src: 'assets/bb (8).jpg', alt: 'Bonner Builders project photo 8' },
+      { src: 'assets/bb (9).jpg', alt: 'Bonner Builders project photo 9' },
+      { src: 'assets/bb (10).jpg', alt: 'Bonner Builders project photo 10' },
+      { src: 'assets/bb (11).jpg', alt: 'Bonner Builders project photo 11' },
+      { src: 'assets/bb (12).jpg', alt: 'Bonner Builders project photo 12' },
+      { src: 'assets/bb (13).jpg', alt: 'Bonner Builders project photo 13' },
+      { src: 'assets/bb (14).jpg', alt: 'Bonner Builders project photo 14' },
+      { src: 'assets/bb (15).jpg', alt: 'Bonner Builders project photo 15' },
+      { src: 'assets/bb (16).jpg', alt: 'Bonner Builders project photo 16' },
+      { src: 'assets/bb (17).jpg', alt: 'Bonner Builders project photo 17' },
+      { src: 'assets/bb (18).jpg', alt: 'Bonner Builders project photo 18' },
+      { src: 'assets/bb (19).jpg', alt: 'Bonner Builders project photo 19' },
+      { src: 'assets/bb (20).jpg', alt: 'Bonner Builders project photo 20' },
+      { src: 'assets/bb (21).jpg', alt: 'Bonner Builders project photo 21' },
+      { src: 'assets/bb (22).jpg', alt: 'Bonner Builders project photo 22' },
+      { src: 'assets/bb (23).jpg', alt: 'Bonner Builders project photo 23' },
+      { src: 'assets/bb (24).jpg', alt: 'Bonner Builders project photo 24' },
+      { src: 'assets/bb (25).jpg', alt: 'Bonner Builders project photo 25' },
+      { src: 'assets/bb (26).jpg', alt: 'Bonner Builders project photo 26' },
+      { src: 'assets/bb (27).jpg', alt: 'Bonner Builders project photo 27' },
+      { src: 'assets/bb (28).jpg', alt: 'Bonner Builders project photo 28' },
+      { src: 'assets/bb (29).jpg', alt: 'Bonner Builders project photo 29' },
+      { src: 'assets/bb (30).jpg', alt: 'Bonner Builders project photo 30' },
+      { src: 'assets/frame1.jpg.jpg', alt: 'Bonner Builders framing detail image' }
     ];
 
     const gridEl = document.getElementById('portfolio-grid');
-    portfolioItems.forEach(item => {
+
+    function createPortfolioItem(item, index) {
       const li = document.createElement('li');
       li.className = 'portfolio-item';
-      li.innerHTML = `
-        <div class="img-wrapper">
-          <img src="${item.src}" alt="${item.alt}" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
-        </div>
-      `;
-      gridEl.appendChild(li);
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'img-wrapper';
+
+      const img = document.createElement('img');
+      img.src = item.src;
+      img.alt = item.alt;
+      img.loading = index < 8 ? 'eager' : 'lazy';
+      img.fetchPriority = index < 4 ? 'high' : 'low';
+      img.decoding = 'async';
+      img.width = 1200;
+      img.height = 900;
+      img.addEventListener('click', () => openLightbox(item.src, item.alt));
+
+      wrapper.appendChild(img);
+      li.appendChild(wrapper);
+      return li;
+    }
+
+    const fragment = document.createDocumentFragment();
+    portfolioItems.forEach((item, index) => {
+      fragment.appendChild(createPortfolioItem(item, index));
     });
+    gridEl.appendChild(fragment);
 
     function openLightbox(imageSrc, imageAlt) {
-      const lightboxImg = document.getElementById('lightbox-img');
       const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
       lightboxImg.src = imageSrc;
       lightboxImg.alt = imageAlt;
       lightbox.style.display = 'flex';
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
     }
 
     function closeLightbox() {
-      document.getElementById('lightbox').style.display = 'none';
+      const lightbox = document.getElementById('lightbox');
+      lightbox.style.display = 'none';
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
     }
 
     document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape') {
-        closeLightbox();
-      }
+      if (event.key === 'Escape') closeLightbox();
     });
   </script>
 </body>
