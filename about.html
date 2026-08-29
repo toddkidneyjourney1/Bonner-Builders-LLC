@@ -5,6 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Bonner Builders LLC</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .about-hero {
+            background: linear-gradient(rgba(20, 20, 20, 0.72), rgba(20, 20, 20, 0.72)), url('images/paul.jpg') center/cover no-repeat;
+            color: #fff;
+            border-radius: 18px;
+            padding: 5rem 2rem;
+            text-align: center;
+            margin: 2rem 0;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+        }
+
+        .about-hero h1 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        .about-hero p {
+            max-width: 820px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 2rem;
+            align-items: start;
+            margin: 2.5rem 0;
+        }
+
+        .story-card,
+        .photo-card {
+            background: #fff;
+            border-radius: 18px;
+            padding: 1.75rem;
+            box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+        }
+
+        .story-card h2 {
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+
+        .story-card p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .highlight-box {
+            background: #f5f1ea;
+            border-left: 4px solid #8b5e3c;
+            padding: 1rem 1.1rem;
+            border-radius: 10px;
+            margin-top: 1.25rem;
+        }
+
+        .photo-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 14px;
+            display: block;
+            object-fit: cover;
+        }
+
+        .photo-card .caption {
+            margin-top: 0.85rem;
+            font-size: 0.95rem;
+            color: #666;
+            text-align: center;
+        }
+
+        .about-bullets {
+            margin-top: 1.5rem;
+            padding-left: 1.2rem;
+        }
+
+        .about-bullets li {
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 900px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -31,14 +120,43 @@
     </nav>
 
     <main class="container">
-        <h2>Our Story</h2>
-        <p>With over 45 years of experience in the Lakes Region, we pride ourselves on master-level craftsmanship and a commitment to quality that turns houses into homes.</p>
-        
-        <section class="about-gallery">
-            <img src="images/paul.jpg" alt="Paul">
-           
+        <section class="about-hero">
+            <h1>About Bonner Builders LLC</h1>
+            <p>Master craftsmanship, personalized service, and a legacy of building homes that reflect the families who live in them.</p>
+        </section>
+
+        <section class="about-content">
+            <article class="story-card">
+                <h2>Our Story</h2>
+                <p>
+                    Founded by Paul Bonner, Bonner Builders LLC brings over 45 years of master-level carpentry experience to the Lakes Region of New Hampshire.
+                    Rooted in traditional building techniques and an unwavering commitment to quality, Paul and his team specialize in turning houses
+                    into personalized, custom homes built to stand the test of time.
+                </p>
+
+                <p>
+                    From framing and finish work to full custom builds and renovations, every project is approached with the same care, precision, and pride
+                    that have defined Paul’s career from the very beginning.
+                </p>
+
+                <div class="highlight-box">
+                    <strong>Why homeowners choose Bonner Builders:</strong>
+                    <ul class="about-bullets">
+                        <li>Over four decades of hands-on building experience</li>
+                        <li>Attention to detail on every phase of the project</li>
+                        <li>Custom solutions tailored to your home and lifestyle</li>
+                        <li>A reputation built on trust, craftsmanship, and lasting results</li>
+                    </ul>
+                </div>
+            </article>
+
+            <aside class="photo-card">
+                <img src="images/paul.jpg" alt="Paul Bonner">
+                <div class="caption">Paul Bonner — Founder and Master Carpenter</div>
+            </aside>
         </section>
     </main>
+
 <!-- Main content ends above this -->
   <!-- Main content ends above this -->
     <footer>
