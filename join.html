@@ -3,22 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Join Us | Bonner Builders LLC</title>
+    <title>Join Our Team | Bonner Builders LLC</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .page-hero {
+            background: linear-gradient(rgba(20, 20, 20, 0.72), rgba(20, 20, 20, 0.72)), url('images/hero.jpg') center/cover no-repeat;
+            color: #fff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 12px;
+        }
+
+        .page-hero p {
+            max-width: 760px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .content-wrap {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px 70px;
+        }
+
+        .join-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .info-card,
+        .form-card {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        .card-header {
+            background: #1f1f1f;
+            color: #fff;
+            padding: 22px 26px;
+        }
+
+        .card-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .card-body {
+            padding: 26px;
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .info-list li {
+            margin-bottom: 16px;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .info-list strong {
+            display: block;
+            margin-bottom: 4px;
+            color: #111;
+        }
+
+        .benefits {
+            margin-top: 24px;
+            padding-top: 24px;
+            border-top: 1px solid #e8e8e8;
+        }
+
+        .benefits h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            color: #111;
+        }
+
+        .benefits ul {
+            padding-left: 18px;
+            margin: 0;
+            color: #444;
+            line-height: 1.7;
+        }
+
+        form {
+            display: grid;
+            gap: 16px;
+        }
+
+        label {
+            font-weight: 700;
+            color: #222;
+            margin-bottom: 6px;
+            display: inline-block;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #d7d7d7;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            background: #fafafa;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #8b6b3f;
+            box-shadow: 0 0 0 3px rgba(139, 107, 63, 0.15);
+            background: #fff;
+        }
+
+        .field {
+            display: grid;
+            gap: 6px;
+        }
+
+        .submit-btn {
+            background: #8b6b3f;
+            color: #fff;
+            border: none;
+            padding: 15px 22px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            background: #715630;
+            transform: translateY(-1px);
+        }
+
+        .note {
+            font-size: 0.95rem;
+            color: #666;
+            margin-top: -2px;
+        }
+
+        @media (max-width: 900px) {
+            .join-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .page-hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
     <header>
-    <div class="logo-side">
-        <img src="images/logo.png" alt="Bonner Builders Logo">
-    </div>
-    <div class="header-info">
-        <h3>Bonner Builders LLC</h3>
-        <p>📞 (603) 707-0049</p>
-        <p>✉️ bonnerbuilders@yahoo.com</p>
-        <p>📍 Lakes Region, NH</p>
-    </div>
-</header>
+        <div class="logo-side">
+            <img src="images/logo.png" alt="Bonner Builders Logo">
+        </div>
+        <div class="header-info">
+            <h3>Bonner Builders LLC</h3>
+            <p>📞 (603) 707-0049</p>
+            <p>✉️ bonnerbuilders@yahoo.com</p>
+            <p>📍 Lakes Region, NH</p>
+        </div>
+    </header>
 
     <nav>
         <a href="index.html">Home</a>
@@ -30,33 +193,93 @@
         <a href="about.html">About</a>
     </nav>
 
-    <main class="container">
-        <section>
-            <h1>Join Our Team</h1>
-            <p>We are always looking for skilled craftsmen to join the Bonner Builders team. Please fill out the form below to tell us about your experience.</p>
-            
-            <form action="https://api.staticforms.dev/submit" method="POST">
-                <input type="hidden" name="apiKey" value="sf_a66bca4711256ac8e68b286d">
-                <input type="hidden" name="redirectTo" value="https://toddkidneyjourney1.github.io/Bonner-Builders-LLC/thank-you.html">
+    <section class="page-hero">
+        <h1>Join Our Team</h1>
+        <p>
+            We’re always looking for dependable, skilled craftsmen who take pride in their work.
+            If you’re interested in becoming part of the Bonner Builders team, we’d love to hear from you.
+        </p>
+    </section>
 
-                <label for="name">Full Name:*</label>
-                <input type="text" id="name" name="name" required>
+    <main class="content-wrap">
+        <div class="join-layout">
+            <section class="info-card">
+                <div class="card-header">
+                    <h2>Why Work With Us?</h2>
+                </div>
+                <div class="card-body">
+                    <ul class="info-list">
+                        <li>
+                            <strong>Reliable Local Work</strong>
+                            Join a team serving the Lakes Region with quality-focused residential and commercial projects.
+                        </li>
+                        <li>
+                            <strong>Skilled Craftsmanship</strong>
+                            We value detail-oriented tradespeople who care about doing the job right.
+                        </li>
+                        <li>
+                            <strong>Team-Oriented Environment</strong>
+                            Work alongside a crew that respects professionalism, communication, and hard work.
+                        </li>
+                        <li>
+                            <strong>Growth Opportunities</strong>
+                            Bring your experience and grow with a company that takes pride in every build.
+                        </li>
+                    </ul>
 
-                <label for="phone">Phone Number:*</label>
-                <input type="text" id="phone" name="phone" required>
+                    <div class="benefits">
+                        <h3>Tell Us About You</h3>
+                        <ul>
+                            <li>Your trade and years of experience</li>
+                            <li>Relevant skills or certifications</li>
+                            <li>Why you’d like to work with Bonner Builders</li>
+                            <li>Best way to contact you</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-                <label for="email">Email Address:*</label>
-                <input type="email" id="email" name="email" required>
+            <section class="form-card">
+                <div class="card-header">
+                    <h2>Application Form</h2>
+                </div>
+                <div class="card-body">
+                    <form action="https://api.staticforms.dev/submit" method="POST">
+                        <input type="hidden" name="apiKey" value="sf_a66bca4711256ac8e68b286d">
+                        <input type="hidden" name="redirectTo" value="https://toddkidneyjourney1.github.io/Bonner-Builders-LLC/thank-you.html">
 
-                <label for="trade">Trade / Years of Experience:*</label>
-                <input type="text" id="trade" name="trade" required>
+                        <div class="field">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
 
-                <label for="why">Why do you want to work with us?*</label>
-                <textarea id="why" name="message" rows="4" required></textarea>
+                        <div class="field">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
 
-                <button type="submit">Submit Application</button>
-            </form>
-        </section>
+                        <div class="field">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="trade">Trade / Years of Experience *</label>
+                            <input type="text" id="trade" name="trade" required>
+                        </div>
+
+                        <div class="field">
+                            <label for="why">Why do you want to work with us? *</label>
+                            <textarea id="why" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <p class="note">* Required fields</p>
+
+                        <button type="submit" class="submit-btn">Submit Application</button>
+                    </form>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer>
