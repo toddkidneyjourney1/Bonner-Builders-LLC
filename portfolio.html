@@ -18,35 +18,6 @@
   }
   </script>
   <style>
-    .filter-container {
-      position: sticky;
-      top: 0;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(8px);
-      z-index: 100;
-      padding: 15px 0;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-      text-align: center;
-      margin: 0;
-    }
-
-    .filter-btn {
-      background: #f3f4f6;
-      border: 1px solid #d1d5db;
-      padding: 8px 16px;
-      margin: 0 5px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-weight: 500;
-      transition: all 0.2s ease;
-    }
-
-    .filter-btn.active, .filter-btn:hover {
-      background: #1f2937;
-      color: #fff;
-      border-color: #1f2937;
-    }
-
     .portfolio-grid-container {
       max-width: 1200px;
       margin: 30px auto;
@@ -95,15 +66,6 @@
       transform: scale(1.03);
     }
 
-    .img-caption {
-      padding: 12px 15px;
-      font-size: 0.95rem;
-      color: #333;
-      font-weight: 500;
-      text-align: center;
-      margin: 0;
-    }
-
     .lightbox {
       display: none;
       position: fixed;
@@ -129,12 +91,6 @@
       max-height: 75vh;
       object-fit: contain;
       border-radius: 4px;
-    }
-
-    .lightbox-content p {
-      color: #fff;
-      margin-top: 12px;
-      font-size: 1.1rem;
     }
 
     @media (max-width: 900px) {
@@ -173,97 +129,64 @@
     <a href="about.html">About</a>
   </nav>
 
-  <!-- Sticky Category Filters -->
-  <div class="filter-container">
-    <button class="filter-btn active" onclick="filterGallery('all', this)">All Work</button>
-    <button class="filter-btn" onclick="filterGallery('framing', this)">Framing</button>
-    <button class="filter-btn" onclick="filterGallery('decks', this)">Decks & Porches</button>
-    <button class="filter-btn" onclick="filterGallery('interiors', this)">Interiors & Remodels</button>
-    <button class="filter-btn" onclick="filterGallery('pools', this)">Pools & Outdoor</button>
-  </div>
-
-  <!-- Dynamic Grid Container -->
   <div class="portfolio-grid-container">
     <ul class="portfolio-grid" id="portfolio-grid"></ul>
   </div>
 
-  <!-- Lightbox Overlay -->
   <div id="lightbox" class="lightbox" onclick="closeLightbox()">
     <div class="lightbox-content" onclick="event.stopPropagation()">
       <img id="lightbox-img" src="" alt="Expanded View" decoding="async">
-      <p id="lightbox-caption"></p>
     </div>
   </div>
 
   <script>
-    // Portfolio items grouped by updated captions and categories
     const portfolioItems = [
-      { category: 'framing', src: 'assets/bb (1).jpg', alt: 'Custom home framing during early construction', caption: 'Custom Home Framing' },
-      { category: 'framing', src: 'assets/frame1.jpg.jpg', alt: 'Residential framing skeleton and wall layout', caption: 'Residential Framing Skeleton' },
-      { category: 'framing', src: 'assets/bb (10).jpg', alt: 'Precision framing detail with beam layout', caption: 'Precision Beam Layout' },
-      { category: 'framing', src: 'assets/bb (11).jpg', alt: 'New construction framing with wall sections in place', caption: 'New Construction Framing' },
-      { category: 'framing', src: 'assets/bb (12).jpg', alt: 'Wall framing and structural support details', caption: 'Wall Framing & Support' },
-      { category: 'framing', src: 'assets/bb (13).jpg', alt: 'Framing progress on active jobsite', caption: 'Framing Progress' },
-      { category: 'framing', src: 'assets/bb (14).jpg', alt: 'Custom carpentry and structural woodwork', caption: 'Custom Carpentry Work' },
-      { category: 'framing', src: 'assets/bb (15).jpg', alt: 'Structural carpentry elements in place', caption: 'Structural Carpentry' },
-      { category: 'framing', src: 'assets/bb (16).jpg', alt: 'Jobsite framing progress with materials staged', caption: 'Jobsite Progress' },
-      { category: 'framing', src: 'assets/bb (17).jpg', alt: 'Framework installation underway', caption: 'Framework Installation' },
-      { category: 'framing', src: 'assets/bb (18).jpg', alt: 'Construction stage showing framed structure', caption: 'Construction Stage' },
-      { category: 'framing', src: 'assets/bb (19).jpg', alt: 'Lakes Region residential build in progress', caption: 'Lakes Region Build' },
-      { category: 'framing', src: 'assets/bb (20).jpg', alt: 'Framing detail with structural elements', caption: 'Framing Detail' },
-      { category: 'framing', src: 'assets/bb (21).jpg', alt: 'Roof and wall framing on a custom build', caption: 'Roof & Wall Framing' },
-      { category: 'framing', src: 'assets/bb (22).jpg', alt: 'Subfloor and framing structure preparation', caption: 'Subfloor & Structure' },
-      { category: 'decks', src: 'assets/bb (23).jpg', alt: 'Custom outdoor deck construction near completion', caption: 'Custom Outdoor Deck' },
-      { category: 'decks', src: 'assets/bb (24).jpg', alt: 'Porch and deck layout for an outdoor living space', caption: 'Porch & Deck Layout' },
-      { category: 'interiors', src: 'assets/bb (26).jpg', alt: 'Interior home renovation with updated finishes', caption: 'Interior Home Renovation' },
-      { category: 'pools', src: 'assets/bb (30).jpg', alt: 'Custom pool project during early phase construction', caption: 'Pool Project - Phase 1' },
-      { category: 'pools', src: 'assets/bb (7).jpg', alt: 'Pool build detail showing surrounding site work', caption: 'Pool Build Detail' },
-      { category: 'pools', src: 'assets/bb (8).jpg', alt: 'Custom pool installation in progress', caption: 'Pool Installation' },
-      { category: 'pools', src: 'assets/bb (9).jpg', alt: 'Outdoor pool setup with living area integration', caption: 'Outdoor Pool Setup' }
+      { src: 'assets/bb (1).jpg', alt: 'Custom home framing during early construction' },
+      { src: 'assets/frame1.jpg.jpg', alt: 'Residential framing skeleton and wall layout' },
+      { src: 'assets/bb (10).jpg', alt: 'Precision framing detail with beam layout' },
+      { src: 'assets/bb (11).jpg', alt: 'New construction framing with wall sections in place' },
+      { src: 'assets/bb (12).jpg', alt: 'Wall framing and structural support details' },
+      { src: 'assets/bb (13).jpg', alt: 'Framing progress on active jobsite' },
+      { src: 'assets/bb (14).jpg', alt: 'Custom carpentry and structural woodwork' },
+      { src: 'assets/bb (15).jpg', alt: 'Structural carpentry elements in place' },
+      { src: 'assets/bb (16).jpg', alt: 'Jobsite framing progress with materials staged' },
+      { src: 'assets/bb (17).jpg', alt: 'Framework installation underway' },
+      { src: 'assets/bb (18).jpg', alt: 'Construction stage showing framed structure' },
+      { src: 'assets/bb (19).jpg', alt: 'Lakes Region residential build in progress' },
+      { src: 'assets/bb (20).jpg', alt: 'Framing detail with structural elements' },
+      { src: 'assets/bb (21).jpg', alt: 'Roof and wall framing on a custom build' },
+      { src: 'assets/bb (22).jpg', alt: 'Subfloor and framing structure preparation' },
+      { src: 'assets/bb (23).jpg', alt: 'Custom outdoor deck construction near completion' },
+      { src: 'assets/bb (24).jpg', alt: 'Porch and deck layout for an outdoor living space' },
+      { src: 'assets/bb (26).jpg', alt: 'Interior home renovation with updated finishes' },
+      { src: 'assets/bb (30).jpg', alt: 'Custom pool project during early phase construction' },
+      { src: 'assets/bb (7).jpg', alt: 'Pool build detail showing surrounding site work' },
+      { src: 'assets/bb (8).jpg', alt: 'Custom pool installation in progress' },
+      { src: 'assets/bb (9).jpg', alt: 'Outdoor pool setup with living area integration' }
     ];
 
     const gridEl = document.getElementById('portfolio-grid');
     portfolioItems.forEach(item => {
       const li = document.createElement('li');
       li.className = 'portfolio-item';
-      li.setAttribute('data-category', item.category);
       li.innerHTML = `
         <div class="img-wrapper">
           <img src="${item.src}" alt="${item.alt}" onclick="openLightbox(this.src, this.alt)" loading="lazy" decoding="async" width="1200" height="900">
         </div>
-        <p class="img-caption">${item.caption}</p>
       `;
       gridEl.appendChild(li);
     });
 
     function openLightbox(imageSrc, imageAlt) {
       const lightboxImg = document.getElementById('lightbox-img');
-      const lightboxCaption = document.getElementById('lightbox-caption');
       const lightbox = document.getElementById('lightbox');
-      
       lightboxImg.src = imageSrc;
-      lightboxCaption.textContent = imageAlt;
+      lightboxImg.alt = imageAlt;
       lightbox.style.display = 'flex';
     }
 
     function closeLightbox() {
       document.getElementById('lightbox').style.display = 'none';
-    }
-
-    function filterGallery(category, buttonElement) {
-      const items = document.querySelectorAll('.portfolio-item');
-      const buttons = document.querySelectorAll('.filter-btn');
-
-      buttons.forEach(btn => btn.classList.remove('active'));
-      buttonElement.classList.add('active');
-
-      items.forEach(item => {
-        if (category === 'all' || item.getAttribute('data-category') === category) {
-          item.style.display = ''; 
-        } else {
-          item.style.display = 'none';
-        }
-      });
     }
 
     document.addEventListener('keydown', function(event) {
