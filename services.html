@@ -6,44 +6,106 @@
     <title>Services | Bonner Builders LLC</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Forces exactly 3 horizontal columns on one screen, overriding the main stylesheet */
-        body main.container .services-grid {
-            display: grid !important;
-            grid-template-columns: repeat(3, 1fr) !important;
-            gap: 15px !important;
-            margin-top: 20px !important;
+        .services-section {
+            background: linear-gradient(135deg, #1a2332 0%, #23364f 100%);
+            padding: 60px 20px;
+            margin: 40px 0;
+            border-radius: 12px;
         }
 
-        /* Styles each individual service block */
-        .service-box {
-            background: #23364f;
-            padding: 0 0 12px 0;
-            border-radius: 6px;
-            border-top: 4px solid #c5a059;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            overflow: hidden;
+        .services-header {
             text-align: center;
+            margin-bottom: 50px;
         }
 
-        /* Shrinks photo height slightly to fit the vertical screen limits */
-        .service-box img {
-            width: 100%;
-            height: 18vh; 
-            object-fit: cover;
-            margin-bottom: 10px;
+        .services-header h2 {
+            color: #c5a059;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
-        .service-box h3 {
-            margin: 5px 10px;
-            font-size: 1.1rem;
+        .services-header p {
             color: #ffffff;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
         }
 
-        .service-box p {
-            margin: 5px 10px;
-            font-size: 0.85rem;
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 12px;
+            border: 2px solid #c5a059;
+            border-left: 5px solid #c5a059;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(197, 160, 89, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #c5a059;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            color: #c5a059;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .service-card p {
             color: #e0e0e0;
-            line-height: 1.4;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .services-header h2 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .service-card {
+                padding: 30px;
+            }
         }
     </style>
 </head>
@@ -70,42 +132,49 @@
     <a href="contact.html">Contact</a>
     <a href="about.html">About</a>
 </nav>
-    <main class="container">
-        <h2>Professional Carpentry & Remodeling</h2>
-        <p>With 45 years of experience in the Lakes Region, we provide expert craftsmanship for every stage of your home project.</p>
-        
+
+<main class="container">
+    <section class="services-section">
+        <div class="services-header">
+            <h2>Professional Carpentry & Remodeling</h2>
+            <p>With 45 years of experience in the Lakes Region, we provide expert craftsmanship for every stage of your home project.</p>
+        </div>
+
         <div class="services-grid">
-            <div class="service-box">
-                <img src="images/custom-carpentry.jpg" alt="Custom Carpentry">
+            <div class="service-card">
+                <div class="service-icon">🔨</div>
                 <h3>Custom Carpentry</h3>
-                <p>Master-level finish carpentry and custom trim work designed to elevate the character of your home.</p>
+                <p>Master-level finish carpentry and custom trim work designed to elevate the character of your home with precision and elegance.</p>
             </div>
-            
-            <div class="service-box">
-                <img src="images/remodeling-additions.jpg" alt="Remodeling & Additions">
+
+            <div class="service-card">
+                <div class="service-icon">🏠</div>
                 <h3>Remodeling & Additions</h3>
-                <p>Seamless home expansions and renovations that integrate perfectly with your existing structure.</p>
+                <p>Seamless home expansions and renovations that integrate perfectly with your existing structure and exceed your expectations.</p>
             </div>
-            
-            <div class="service-box">
-                <img src="images/frame1.jpg" alt="Structural Framing">
+
+            <div class="service-card">
+                <div class="service-icon">📐</div>
                 <h3>Structural Framing</h3>
-                <p>Precision framing techniques that ensure long-term structural integrity for your custom builds.</p>
+                <p>Precision framing techniques that ensure long-term structural integrity and stability for your custom builds and renovations.</p>
             </div>
         </div>
-    </main>
+    </section>
+</main>
+
 <a href="contact.html" class="floating-cta">Start a Conversation</a>
-  <!-- Main content ends above this -->
-    <footer>
-        <div class="social-links">
-            <a href="YOUR_FACEBOOK_URL" target="_blank">
-                <img src="facebook-icon.png" alt="Facebook" style="width:30px; height:30px;">
-            </a>
-            <a href="YOUR_INSTAGRAM_URL" target="_blank">
-                <img src="instagram-icon.png" alt="Instagram" style="width:30px; height:30px;">
-            </a>
-        </div>
-        <p>&copy; 2026 Bonner Builders LLC. All rights reserved.</p>
-    </footer>
+
+<footer>
+    <div class="social-links">
+        <a href="YOUR_FACEBOOK_URL" target="_blank">
+            <img src="facebook-icon.png" alt="Facebook" style="width:30px; height:30px;">
+        </a>
+        <a href="YOUR_INSTAGRAM_URL" target="_blank">
+            <img src="instagram-icon.png" alt="Instagram" style="width:30px; height:30px;">
+        </a>
+    </div>
+    <p>&copy; 2026 Bonner Builders LLC. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
