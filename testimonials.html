@@ -6,30 +6,114 @@
     <title>Testimonials | Bonner Builders LLC</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .testimonial-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 30px; 
-            margin-top: 40px; 
+        .testimonials-section {
+            background: linear-gradient(135deg, #1a2332 0%, #23364f 100%);
+            padding: 60px 20px;
+            margin: 40px 0;
+            border-radius: 12px;
         }
-        .card { 
-            background: #23364f; 
-            padding: 30px; 
-            border-radius: 8px; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15); 
-            border-top: 5px solid #c5a059; 
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 50px;
         }
-        .card p { 
-            font-style: italic; 
-            color: #ffffff; 
-            margin: 0 0 15px 0;
+
+        .testimonials-header h2 {
+            color: #c5a059;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
-        .card h4 { 
-            color: #c5a059; 
-            margin: 0; 
-            text-transform: uppercase; 
-            font-size: 0.95rem;
+
+        .testimonials-header p {
+            color: #ffffff;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 12px;
+            border: 2px solid #c5a059;
+            border-left: 5px solid #c5a059;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(197, 160, 89, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 4rem;
+            color: #c5a059;
+            opacity: 0.3;
+        }
+
+        .testimonial-content {
+            color: #ffffff;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(197, 160, 89, 0.3);
+        }
+
+        .author-name {
+            color: #c5a059;
+            font-weight: bold;
+            text-transform: uppercase;
             letter-spacing: 1px;
+            font-size: 0.95rem;
+        }
+
+        .stars {
+            color: #c5a059;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-header h2 {
+                font-size: 2rem;
+            }
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .testimonial-card {
+                padding: 30px;
+            }
         }
     </style>
 </head>
@@ -57,34 +141,46 @@
     <a href="about.html">About</a>
 </nav>
 
-    <main class="container">
-        <h2>What Our Clients Say</h2>
-        <p>With over 45 years of custom carpentry experience in the Lakes Region, we take pride in our master-level craftsmanship and customer satisfaction.</p>
+<main class="container">
+    <section class="testimonials-section">
+        <div class="testimonials-header">
+            <h2>What Our Clients Say</h2>
+            <p>With over 45 years of custom carpentry experience in the Lakes Region, we take pride in our master-level craftsmanship and customer satisfaction.</p>
+        </div>
         
         <div class="testimonial-grid">
-            <div class="card">
-                <p>"Paul Bonner was hired by me to construct our retirement home. The project involved a highly complex, 6000 square foot Adirondack style lake house. I worked closely with Paul and his workmen and I was on site most of the time. It was a pleasure to work with Paul professionally and personally. Together we worked out any and all issues that came up. Paul's commitment to excellence is evidenced by the end product. The house is exactly what I dreamed it would be. After living here full time for a few years I hired Paul to build our barn. It is truly a masterpiece. Paul is one of a kind. Dedicated, honest, and pleasant people like him are hard to come by. I would highly recommend Paul."</p>
-                <h4>— Lorraine Paul</h4>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-content">Paul Bonner was hired by me to construct our retirement home. The project involved a highly complex, 6000 square foot Adirondack style lake house. I worked closely with Paul and his workmen and I was on site most of the time. It was a pleasure to work with Paul professionally and personally. Together we worked out any and all issues that came up. Paul's commitment to excellence is evidenced by the end product. The house is exactly what I dreamed it would be. After living here full time for a few years I hired Paul to build our barn. It is truly a masterpiece. Paul is one of a kind. Dedicated, honest, and pleasant people like him are hard to come by. I would highly recommend Paul.</p>
+                <div class="testimonial-author">
+                    <div class="author-name">— Lorraine Paul</div>
+                </div>
             </div>
 
-            <div class="card">
-                <p>"We couldn't be happier with the work Bonner Builders did for us! The entire crew was wonderful—professional, friendly, neat, punctual, and a pleasure to work with. The workmanship was excellent, and they took pride in doing the job right. Communication throughout the entire process was also outstanding. We always knew what to expect and felt well taken care of. We highly recommend this company to anyone looking for quality work and a reliable, professional crew!"</p>
-                <h4>— Rachel and Dean Yeaton</h4>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-content">We couldn't be happier with the work Bonner Builders did for us! The entire crew was wonderful—professional, friendly, neat, punctual, and a pleasure to work with. The workmanship was excellent, and they took pride in doing the job right. Communication throughout the entire process was also outstanding. We always knew what to expect and felt well taken care of. We highly recommend this company to anyone looking for quality work and a reliable, professional crew!</p>
+                <div class="testimonial-author">
+                    <div class="author-name">— Rachel and Dean Yeaton</div>
+                </div>
             </div>
         </div>
-    </main>
+    </section>
+</main>
+
 <a href="contact.html" class="floating-cta">Start a Conversation</a>
-    <!-- Main content ends above this -->
-    <footer>
-        <div class="social-links">
-            <a href="YOUR_FACEBOOK_URL" target="_blank">
-                <img src="facebook-icon.png" alt="Facebook" style="width:30px; height:30px;">
-            </a>
-            <a href="YOUR_INSTAGRAM_URL" target="_blank">
-                <img src="instagram-icon.png" alt="Instagram" style="width:30px; height:30px;">
-            </a>
-        </div>
-        <p>&copy; 2026 Bonner Builders LLC. All rights reserved.</p>
-    </footer>
+
+<footer>
+    <div class="social-links">
+        <a href="YOUR_FACEBOOK_URL" target="_blank">
+            <img src="facebook-icon.png" alt="Facebook" style="width:30px; height:30px;">
+        </a>
+        <a href="YOUR_INSTAGRAM_URL" target="_blank">
+            <img src="instagram-icon.png" alt="Instagram" style="width:30px; height:30px;">
+        </a>
+    </div>
+    <p>&copy; 2026 Bonner Builders LLC. All rights reserved.</p>
+</footer>
+
 </body>
 </html>
