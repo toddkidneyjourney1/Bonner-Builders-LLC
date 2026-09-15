@@ -78,6 +78,15 @@
       transform: scale(1.03);
     }
 
+    .caption {
+      padding: 10px 12px 12px;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      color: #243041;
+      text-align: center;
+      background: #fff;
+    }
+
     .lightbox {
       display: none;
       position: fixed;
@@ -179,30 +188,33 @@
   </div>
 
   <script>
+    const sharedCaptionA = "Project In partnership with Wood & Clay, Inc. Moultonborough NH";
+    const sharedCaptionB = "Bonner Builders Project - Squam Lake Center harbor NH";
+
     const portfolioItems = [
-      { src: "assets/bb (1).jpg", alt: "Bonner Builders project photo 1" },
-      { src: "assets/bb (2).jpg", alt: "Bonner Builders project photo 2" },
-      { src: "assets/bb (3).jpg", alt: "Bonner Builders project photo 3" },
-      { src: "assets/bb (4).jpg", alt: "Bonner Builders project photo 4" },
-      { src: "assets/bb (5).jpg", alt: "Bonner Builders project photo 5" },
-      { src: "assets/bb (6).jpg", alt: "Bonner Builders project photo 6" },
-      { src: "assets/bb (7).jpg", alt: "Bonner Builders project photo 7" },
-      { src: "assets/bb (8).jpg", alt: "Bonner Builders project photo 8" },
-      { src: "assets/bb (9).jpg", alt: "Bonner Builders project photo 9" },
-      { src: "assets/bb (10).jpg", alt: "Bonner Builders project photo 10" },
-      { src: "assets/bb (11).jpg", alt: "Bonner Builders project photo 11" },
-      { src: "assets/bb (12).jpg", alt: "Bonner Builders project photo 12" },
-      { src: "assets/bb (13).jpg", alt: "Bonner Builders project photo 13" },
-      { src: "assets/bb (14).jpg", alt: "Bonner Builders project photo 14" },
-      { src: "assets/bb (15).jpg", alt: "Bonner Builders project photo 15" },
-      { src: "assets/bb (16).jpg", alt: "Bonner Builders project photo 16" },
-      { src: "assets/bb (17).jpg", alt: "Bonner Builders project photo 17" },
-      { src: "assets/bb (18).jpg", alt: "Bonner Builders project photo 18" },
-      { src: "assets/bb (19).jpg", alt: "Bonner Builders project photo 19" },
-      { src: "assets/bb (20).jpg", alt: "Bonner Builders project photo 20" },
-      { src: "assets/bb (21).jpg", alt: "Bonner Builders project photo 21" },
-      { src: "assets/bb (22).jpg", alt: "Bonner Builders project photo 22" },
-      { src: "assets/bb (23).jpg", alt: "Bonner Builders project photo 23" },
+      { src: "assets/bb (1).jpg", alt: "Bonner Builders project photo 1", caption: sharedCaptionA },
+      { src: "assets/bb (2).jpg", alt: "Bonner Builders project photo 2", caption: sharedCaptionA },
+      { src: "assets/bb (3).jpg", alt: "Bonner Builders project photo 3", caption: sharedCaptionA },
+      { src: "assets/bb (4).jpg", alt: "Bonner Builders project photo 4", caption: sharedCaptionA },
+      { src: "assets/bb (5).jpg", alt: "Bonner Builders project photo 5", caption: sharedCaptionA },
+      { src: "assets/bb (6).jpg", alt: "Bonner Builders project photo 6", caption: sharedCaptionA },
+      { src: "assets/bb (7).jpg", alt: "Bonner Builders project photo 7", caption: sharedCaptionA },
+      { src: "assets/bb (8).jpg", alt: "Bonner Builders project photo 8", caption: sharedCaptionA },
+      { src: "assets/bb (9).jpg", alt: "Bonner Builders project photo 9", caption: sharedCaptionA },
+      { src: "assets/bb (10).jpg", alt: "Bonner Builders project photo 10", caption: sharedCaptionA },
+      { src: "assets/bb (11).jpg", alt: "Bonner Builders project photo 11", caption: sharedCaptionA },
+      { src: "assets/bb (12).jpg", alt: "Bonner Builders project photo 12", caption: sharedCaptionA },
+      { src: "assets/bb (13).jpg", alt: "Bonner Builders project photo 13", caption: sharedCaptionA },
+      { src: "assets/bb (14).jpg", alt: "Bonner Builders project photo 14", caption: sharedCaptionB },
+      { src: "assets/bb (15).jpg", alt: "Bonner Builders project photo 15", caption: sharedCaptionB },
+      { src: "assets/bb (16).jpg", alt: "Bonner Builders project photo 16", caption: sharedCaptionB },
+      { src: "assets/bb (17).jpg", alt: "Bonner Builders project photo 17", caption: sharedCaptionB },
+      { src: "assets/bb (18).jpg", alt: "Bonner Builders project photo 18", caption: sharedCaptionB },
+      { src: "assets/bb (19).jpg", alt: "Bonner Builders project photo 19", caption: sharedCaptionA },
+      { src: "assets/bb (20).jpg", alt: "Bonner Builders project photo 20", caption: sharedCaptionA },
+      { src: "assets/bb (21).jpg", alt: "Bonner Builders project photo 21", caption: sharedCaptionB },
+      { src: "assets/bb (22).jpg", alt: "Bonner Builders project photo 22", caption: sharedCaptionA },
+      { src: "assets/bb (23).jpg", alt: "Bonner Builders project photo 23", caption: sharedCaptionA },
       { src: "assets/bb (24).jpg", alt: "Bonner Builders project photo 24" },
       { src: "assets/bb (25).jpg", alt: "Bonner Builders project photo 25" },
       { src: "assets/bb (26).jpg", alt: "Bonner Builders project photo 26" },
@@ -242,6 +254,14 @@
 
       wrapper.appendChild(img);
       li.appendChild(wrapper);
+
+      if (item.caption) {
+        const caption = document.createElement("div");
+        caption.className = "caption";
+        caption.textContent = item.caption;
+        li.appendChild(caption);
+      }
+
       return li;
     }
 
