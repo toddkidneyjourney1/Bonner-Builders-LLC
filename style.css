@@ -369,8 +369,40 @@ footer {
 .social-links {
     margin-bottom: 15px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: center;
     gap: 15px;
+    width: 100%;
+}
+
+.footer-pill-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border: 1px solid var(--accent-gold);
+    border-radius: 999px;
+    background-color: var(--white);
+    color: var(--primary-blue);
+    font-weight: 700;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.footer-pill-link:hover,
+.footer-pill-link:focus-visible {
+    background-color: var(--accent-gold);
+    border-color: var(--white);
+    color: var(--white);
+}
+
+.footer-pill-link:focus-visible {
+    outline: 2px solid var(--white);
+    outline-offset: 3px;
+}
+
+footer p {
+    margin: 0;
 }
 /* Style for the Header */
 header {
