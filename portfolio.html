@@ -193,12 +193,102 @@
 
     const portfolioItems = [
       { src: "assets/bb (1).jpg", alt: "Bonner Builders project photo 1", caption: woodClayCaption },
-      { src: "assets/bb (2).jpg", alt: "Bonner Builders project photo 2", caption: woodClayCaption },
+      { src: "assets/bb (2).JPG", alt: "Bonner Builders project photo 2", caption: woodClayCaption },
       { src: "assets/facebookpics (15).jpeg", alt: "Bonner Builders project photo 3", caption: woodClayCaption },
-      { src: "assets/bb (4).jpg", alt: "Bonner Builders project photo 4", caption: woodClayCaption },
-      { src: "assets/bb (5).jpg", alt: "Bonner Builders project photo 5", caption: woodClayCaption },
-      { src: "assets/bb (6).jpg", alt: "Bonner Builders project photo 6", caption: woodClayCaption },
+      { src: "assets/bb (4).JPG", alt: "Bonner Builders project photo 4", caption: woodClayCaption },
+      { src: "assets/bb (5) - Copy.jpeg", alt: "Bonner Builders project photo 5", caption: woodClayCaption },
+      { src: "assets/bb (6) - Copy.JPG", alt: "Bonner Builders project photo 6", caption: woodClayCaption },
       { src: "assets/bb (7).jpg", alt: "Bonner Builders project photo 7", caption: woodClayCaption },
       { src: "assets/bb (8).jpg", alt: "Bonner Builders project photo 8", caption: woodClayCaption },
       { src: "assets/bb (9).jpg", alt: "Bonner Builders project photo 9", caption: woodClayCaption },
-      { src: "assets/bb (10).jpg", alt: "Bonner Builders project photo 10",
+      { src: "assets/bb (10).jpg", alt: "Bonner Builders project photo 10", caption: woodClayCaption },
+      { src: "assets/bb (11).jpg", alt: "Bonner Builders project photo 11", caption: woodClayCaption },
+      { src: "assets/bb (12).jpg", alt: "Bonner Builders project photo 12", caption: woodClayCaption },
+      { src: "assets/bb (13).jpg", alt: "Bonner Builders project photo 13", caption: woodClayCaption },
+      { src: "assets/bb (14).jpg", alt: "Bonner Builders project photo 14", caption: bonnerCaption },
+      { src: "assets/bb (15).jpg", alt: "Bonner Builders project photo 15", caption: bonnerCaption },
+      { src: "assets/bb (16).jpg", alt: "Bonner Builders project photo 16", caption: bonnerCaption },
+      { src: "assets/bb (17).jpg", alt: "Bonner Builders project photo 17", caption: bonnerCaption },
+      { src: "assets/bb (18).jpg", alt: "Bonner Builders project photo 18", caption: bonnerCaption },
+      { src: "assets/bb (19).jpg", alt: "Bonner Builders project photo 19", caption: bonnerCaption },
+      { src: "assets/bb (20).jpg", alt: "Bonner Builders project photo 20", caption: bonnerCaption },
+      { src: "assets/bb (21).jpg", alt: "Bonner Builders project photo 21", caption: bonnerCaption },
+      { src: "assets/bb (22).jpg", alt: "Bonner Builders project photo 22", caption: bonnerCaption },
+      { src: "assets/bb (23).jpg", alt: "Bonner Builders project photo 23", caption: woodClayCaption },
+      { src: "assets/bb (24).jpg", alt: "Bonner Builders project photo 24", caption: bonnerCaption },
+      { src: "assets/bb (26).jpg", alt: "Bonner Builders project photo 26", caption: bonnerCaption },
+      { src: "assets/bb (27).jpg", alt: "Bonner Builders project photo 27", caption: bonnerCaption },
+      { src: "assets/bb (28).jpg", alt: "Bonner Builders project photo 28", caption: bonnerCaption },
+      { src: "assets/bb (29).jpg", alt: "Bonner Builders project photo 29", caption: bonnerCaption },
+      { src: "assets/bb (30).jpg", alt: "Bonner Builders project photo 30", caption: bonnerCaption },
+      { src: "assets/bb (31).jpg", alt: "Bonner Builders project photo 31", caption: bonnerCaption },
+      { src: "assets/facebookpics (10).jpeg", alt: "Bonner Builders Facebook gallery image 10", caption: bonnerCaption },
+      { src: "assets/facebookpics (11).jpeg", alt: "Bonner Builders Facebook gallery image 11", caption: bonnerCaption },
+      { src: "assets/facebookpics (12).jpeg", alt: "Bonner Builders Facebook gallery image 12", caption: bonnerCaption },
+      { src: "assets/facebookpics (13).jpeg", alt: "Bonner Builders Facebook gallery image 13", caption: bonnerCaption }
+    ];
+
+    const gridEl = document.getElementById("portfolio-grid");
+
+    function createPortfolioItem(item, index) {
+      const li = document.createElement("li");
+      li.className = "portfolio-item";
+
+      const wrapper = document.createElement("div");
+      wrapper.className = "img-wrapper";
+
+      const img = document.createElement("img");
+      img.src = item.src;
+      img.alt = item.alt;
+      img.loading = index < 8 ? "eager" : "lazy";
+      img.fetchPriority = index < 4 ? "high" : "low";
+      img.decoding = "async";
+      img.width = 1200;
+      img.height = 900;
+      img.addEventListener("click", () => openLightbox(item.src, item.alt));
+      img.addEventListener("error", () => {
+        li.remove();
+      });
+
+      wrapper.appendChild(img);
+      li.appendChild(wrapper);
+
+      if (item.caption) {
+        const caption = document.createElement("div");
+        caption.className = "caption";
+        caption.textContent = item.caption;
+        li.appendChild(caption);
+      }
+
+      return li;
+    }
+
+    const fragment = document.createDocumentFragment();
+    portfolioItems.forEach((item, index) => {
+      fragment.appendChild(createPortfolioItem(item, index));
+    });
+    gridEl.appendChild(fragment);
+
+    function openLightbox(imageSrc, imageAlt) {
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      lightboxImg.src = imageSrc;
+      lightboxImg.alt = imageAlt;
+      lightbox.style.display = "flex";
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById("lightbox");
+      lightbox.style.display = "none";
+      lightbox.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") closeLightbox();
+    });
+  </script>
+</body>
+</html>
