@@ -19,7 +19,7 @@
   </script>
   <style>
     :root {
-      --page-max: 1200px;
+      --page-max: 1320px;
       --card-radius: 14px;
       --card-blue-1: #162a45;
       --card-blue-2: #1e3557;
@@ -34,8 +34,9 @@
       width: min(100% - 2rem, var(--page-max));
       margin: clamp(32px, 5vw, 48px) auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 36px;
+      /* Forces all three cards into a single row on desktop */
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 28px;
     }
 
     .project-card {
@@ -71,12 +72,16 @@
     }
 
     .card-header {
-      padding: 24px 24px 16px;
+      padding: 22px 20px 14px;
       text-align: center;
+      min-height: 85px; /* Keeps header heights uniform across cards */
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .project-title {
-      font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+      font-size: clamp(1.1rem, 1.5vw, 1.35rem);
       color: #ffffff;
       margin: 0;
       font-weight: 700;
@@ -120,7 +125,7 @@
     }
 
     .card-footer {
-      padding: 20px 24px 24px;
+      padding: 18px 20px 22px;
       text-align: center;
       margin-top: auto;
     }
@@ -130,17 +135,31 @@
       background: var(--accent-gold);
       color: #162a45;
       font-weight: 700;
-      padding: 12px 24px;
+      padding: 10px 20px;
       border-radius: 6px;
       text-decoration: none;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
       transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+      font-size: 0.95rem;
     }
 
     .gallery-btn:hover {
       background: #ffffff;
       color: #162a45;
       transform: scale(1.02);
+    }
+
+    /* Responsive adjustments: Stack naturally on smaller tablet/mobile viewports */
+    @media (max-width: 1024px) {
+      .portfolio-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .portfolio-container {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -182,11 +201,11 @@
           Partnership with <a href="https://www.woodandclay.com" class="partner-link" target="_blank" rel="noopener noreferrer">Wood & Clay, Inc.</a> — Lakes Region, NH
         </h2>
       </div>
-      <a href="wood-and-clay gallery.html" class="card-img-container" aria-label="View Wood and Clay Partnership Gallery">
+      <a href="wood-and-clay-gallery.html" class="card-img-container" aria-label="View Wood and Clay Partnership Gallery">
         <img src="assets/bb (1).jpg" alt="Construction project showcase image" loading="eager" decoding="async" />
       </a>
       <div class="card-footer">
-        <a href="wood-and-clay gallery.html" class="gallery-btn">View Full Gallery (14 Photos)</a>
+        <a href="wood-and-clay-gallery.html" class="gallery-btn">View Full Gallery (14 Photos)</a>
       </div>
     </article>
 
