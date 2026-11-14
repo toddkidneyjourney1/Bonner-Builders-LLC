@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Squam Lake Project Gallery | Bonner Builders LLC</title>
+  <title>William Doucette Building Company Gallery | Bonner Builders LLC</title>
   <link rel="stylesheet" href="style.css" />
   <style>
     :root {
@@ -12,7 +12,7 @@
       --gap-tablet: 16px;
       --gap-mobile: 12px;
       --card-radius: 12px;
-      --card-blue: #1e3557; /* Distinct secondary slate tone */
+      --card-blue: #1e3557;
       --accent-bronze: #d99b43;
       --shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
     }
@@ -96,6 +96,22 @@
       overflow: hidden;
     }
 
+    /* Sequential Number Badge */
+    .photo-number {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(30, 53, 87, 0.88);
+      color: var(--accent-bronze);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 4px 10px;
+      border-radius: 4px;
+      border: 1px solid rgba(217, 155, 67, 0.5);
+      pointer-events: none;
+      z-index: 2;
+    }
+
     .img-wrapper img {
       width: 100%;
       height: 100%;
@@ -120,13 +136,25 @@
       padding: 20px;
     }
 
+    .lightbox-content {
+      position: relative;
+      text-align: center;
+    }
+
     .lightbox-content img {
       max-width: 100%;
-      max-height: 88vh;
+      max-height: 84vh;
       object-fit: contain;
       border: 3px solid #ffffff;
       border-radius: 6px;
       background: #111;
+    }
+
+    .lightbox-caption {
+      color: var(--accent-bronze);
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-top: 12px;
     }
 
     @media (max-width: 1200px) { .project-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
@@ -163,7 +191,7 @@
     </div>
 
     <section class="project-card">
-      <h1 class="project-title">In partnership with William Doucette Building, NH</h1>
+      <h1 class="project-title">William Doucette Building Company</h1>
       <ul class="project-grid" id="gallery-grid">
         <!-- Images loaded dynamically -->
       </ul>
@@ -173,6 +201,7 @@
   <div id="lightbox" class="lightbox" onclick="closeLightbox()" aria-hidden="true">
     <div class="lightbox-content" onclick="event.stopPropagation()">
       <img id="lightbox-img" src="" alt="Expanded View" decoding="async" />
+      <div id="lightbox-caption" class="lightbox-caption"></div>
     </div>
   </div>
 
@@ -195,15 +224,27 @@
       const wrapper = document.createElement("div");
       wrapper.className = "img-wrapper";
 
+      // Sequential number label badge
+      const badge = document.createElement("span");
+      badge.className = "photo-number";
+      const photoNum = index + 1;
+      badge.textContent = `#${photoNum}`;
+
       const img = document.createElement("img");
       img.src = src;
-      img.alt = "Squam Lake project showcase image";
+      img.alt = `William Doucette project showcase image #${photoNum}`;
       img.loading = index < 4 ? "eager" : "lazy";
       img.decoding = "async";
 
-      img.addEventListener("click", () => openLightbox(img.src, img.alt));
-      img.addEventListener("error", () => { li.remove(); });
+      img.addEventListener("click", () => openLightbox(img.src, img.alt, badge.textContent));
+      img.addEventListener("error", () => {
+        li.remove();
+        document.querySelectorAll(".photo-number").forEach((el, idx) => {
+          el.textContent = `#${idx + 1}`;
+        });
+      });
 
+      wrapper.appendChild(badge);
       wrapper.appendChild(img);
       li.appendChild(wrapper);
       fragment.appendChild(li);
@@ -211,9 +252,10 @@
 
     gridEl.appendChild(fragment);
 
-    function openLightbox(src, alt) {
+    function openLightbox(src, alt, label) {
       document.getElementById("lightbox-img").src = src;
       document.getElementById("lightbox-img").alt = alt;
+      document.getElementById("lightbox-caption").textContent = `William Doucette Building Company — Photo ${label}`;
       document.getElementById("lightbox").style.display = "flex";
       document.body.style.overflow = "hidden";
     }
