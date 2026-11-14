@@ -24,26 +24,46 @@
       --gap-tablet: 16px;
       --gap-mobile: 12px;
       --card-radius: 12px;
-      --card-blue: #162a45;
+      --card-blue-1: #162a45;
+      --card-blue-2: #1e3557; /* Richer slate-navy shade for card separation */
       --accent-gold: #f3c65f;
-      --shadow: 0 6px 20px rgba(0, 0, 0, 0.14);
-      --shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.22);
+      --accent-bronze: #d99b43;
+      --accent-ice: #7ab2ff;
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+      --shadow-hover: 0 14px 32px rgba(0, 0, 0, 0.26);
     }
 
     .portfolio-container {
       width: min(100% - 2rem, var(--page-max));
-      margin: clamp(24px, 4vw, 40px) auto;
+      margin: clamp(32px, 5vw, 48px) auto;
       display: flex;
       flex-direction: column;
-      gap: 40px;
+      gap: 48px;
     }
 
     .project-card {
-      background: var(--card-blue);
+      background: var(--card-blue-1);
       border-radius: var(--card-radius);
       box-shadow: var(--shadow);
       padding: clamp(24px, 3.5vw, 36px);
-      transition: box-shadow 0.3s ease;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      border-top: 6px solid var(--accent-gold);
+    }
+
+    /* Distinct top border accents and alternating backgrounds per card */
+    .project-card:nth-child(1) {
+      border-top-color: var(--accent-gold);
+      background: var(--card-blue-1);
+    }
+
+    .project-card:nth-child(2) {
+      border-top-color: var(--accent-bronze);
+      background: var(--card-blue-2);
+    }
+
+    .project-card:nth-child(3) {
+      border-top-color: var(--accent-ice);
+      background: var(--card-blue-1);
     }
 
     .project-card:hover {
@@ -166,6 +186,7 @@
       .portfolio-container {
         width: min(100% - 1rem, var(--page-max));
         margin: 16px auto 24px;
+        gap: 32px;
       }
       .project-grid {
         grid-template-columns: 1fr;
@@ -220,7 +241,7 @@
   </div>
 
   <script>
-    // Define the 3 grouped cards with optional partner links and accessible alt text
+    // Define the 3 grouped cards starting with Wood & Clay
     const projectGroups = [
       {
         titlePrefix: "Partnership with ",
@@ -282,11 +303,9 @@
     let globalIndex = 0;
 
     projectGroups.forEach((group) => {
-      // Create main card wrapper
       const cardEl = document.createElement("section");
       cardEl.className = "project-card";
 
-      // Create centered header for the card
       const headingEl = document.createElement("h2");
       headingEl.className = "project-title";
 
@@ -308,7 +327,6 @@
 
       cardEl.appendChild(headingEl);
 
-      // Create grid list for images
       const gridEl = document.createElement("ul");
       gridEl.className = "project-grid";
 
