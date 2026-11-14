@@ -19,38 +19,37 @@
   </script>
   <style>
     :root {
-      --page-max: 1280px;
-      --gap-desktop: 24px;
-      --gap-tablet: 16px;
-      --gap-mobile: 12px;
-      --card-radius: 12px;
+      --page-max: 1200px;
+      --card-radius: 14px;
       --card-blue-1: #162a45;
-      --card-blue-2: #1e3557; /* Richer slate-navy shade for card separation */
+      --card-blue-2: #1e3557;
       --accent-gold: #f3c65f;
       --accent-bronze: #d99b43;
       --accent-ice: #7ab2ff;
-      --shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-      --shadow-hover: 0 14px 32px rgba(0, 0, 0, 0.26);
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      --shadow-hover: 0 16px 36px rgba(0, 0, 0, 0.3);
     }
 
     .portfolio-container {
       width: min(100% - 2rem, var(--page-max));
       margin: clamp(32px, 5vw, 48px) auto;
-      display: flex;
-      flex-direction: column;
-      gap: 48px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 36px;
     }
 
     .project-card {
       background: var(--card-blue-1);
       border-radius: var(--card-radius);
       box-shadow: var(--shadow);
-      padding: clamp(24px, 3.5vw, 36px);
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       border-top: 6px solid var(--accent-gold);
     }
 
-    /* Distinct top border accents and alternating backgrounds per card */
+    /* Distinct top borders and slight tone variation for card separation */
     .project-card:nth-child(1) {
       border-top-color: var(--accent-gold);
       background: var(--card-blue-1);
@@ -67,16 +66,19 @@
     }
 
     .project-card:hover {
+      transform: translateY(-6px);
       box-shadow: var(--shadow-hover);
     }
 
-    .project-title {
-      font-size: clamp(1.35rem, 2.2vw, 1.7rem);
-      color: #ffffff;
+    .card-header {
+      padding: 24px 24px 16px;
       text-align: center;
-      margin: 0 auto 28px;
-      padding-bottom: 14px;
-      border-bottom: 2px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .project-title {
+      font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+      color: #ffffff;
+      margin: 0;
       font-weight: 700;
       letter-spacing: 0.3px;
     }
@@ -94,114 +96,55 @@
       text-decoration-color: #ffffff;
     }
 
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: var(--gap-desktop);
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      align-items: stretch;
-    }
-
-    .grid-item {
-      background: #ffffff;
-      border: 3px solid #ffffff;
-      border-radius: 8px;
-      overflow: hidden;
-      /* Pure CSS shadow - zero impact on image loading speed */
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      will-change: transform;
-    }
-
-    .grid-item:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.38);
-    }
-
-    .img-wrapper {
+    .card-img-container {
       position: relative;
       width: 100%;
-      aspect-ratio: 4 / 3;
-      background: #243b5a;
-      border-radius: 5px;
+      aspect-ratio: 16 / 10;
+      background: #0f1c2e;
       overflow: hidden;
+      display: block;
+      border-top: 3px solid #ffffff;
+      border-bottom: 3px solid #ffffff;
     }
 
-    .img-wrapper img {
+    .card-img-container img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      cursor: zoom-in;
-      transition: transform 0.3s ease;
+      transition: transform 0.4s ease;
       display: block;
     }
 
-    .img-wrapper img:hover {
-      transform: scale(1.03);
+    .project-card:hover .card-img-container img {
+      transform: scale(1.04);
     }
 
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.88);
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
-
-    .lightbox-content {
-      width: min(96vw, 1600px);
-      max-height: 92vh;
+    .card-footer {
+      padding: 20px 24px 24px;
       text-align: center;
+      margin-top: auto;
     }
 
-    .lightbox-content img {
-      max-width: 100%;
-      max-height: 88vh;
-      object-fit: contain;
-      border: 3px solid #ffffff;
+    .gallery-btn {
+      display: inline-block;
+      background: var(--accent-gold);
+      color: #162a45;
+      font-weight: 700;
+      padding: 12px 24px;
       border-radius: 6px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      background: #111;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
     }
 
-    @media (max-width: 1200px) {
-      .project-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 900px) {
-      .project-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: var(--gap-tablet);
-      }
-    }
-
-    @media (max-width: 560px) {
-      .portfolio-container {
-        width: min(100% - 1rem, var(--page-max));
-        margin: 16px auto 24px;
-        gap: 32px;
-      }
-      .project-grid {
-        grid-template-columns: 1fr;
-        gap: var(--gap-mobile);
-      }
-      .lightbox {
-        padding: 10px;
-      }
-      .lightbox-content img {
-        max-height: 82vh;
-      }
+    .gallery-btn:hover {
+      background: #ffffff;
+      color: #162a45;
+      transform: scale(1.02);
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .grid-item, .img-wrapper img, .partner-link {
+      .project-card, .card-img-container img, .gallery-btn, .partner-link {
         transition: none;
       }
     }
@@ -230,160 +173,49 @@
     <a href="about.html">About</a>
   </nav>
 
-  <main class="portfolio-container" id="portfolio-container">
-    <!-- Cards will be dynamically populated here -->
+  <main class="portfolio-container">
+    
+    <!-- Card 1: Wood & Clay Partnership -->
+    <article class="project-card">
+      <div class="card-header">
+        <h2 class="project-title">
+          Partnership with <a href="https://www.woodandclay.com" class="partner-link" target="_blank" rel="noopener noreferrer">Wood & Clay, Inc.</a> — Lakes Region, NH
+        </h2>
+      </div>
+      <a href="wood-and-clay-gallery.html" class="card-img-container" aria-label="View Wood and Clay Partnership Gallery">
+        <img src="assets/bb (1).jpg" alt="Construction project showcase image" loading="eager" decoding="async" />
+      </a>
+      <div class="card-footer">
+        <a href="wood-and-clay-gallery.html" class="gallery-btn">View Full Gallery (14 Photos)</a>
+      </div>
+    </article>
+
+    <!-- Card 2: Squam Lake Project -->
+    <article class="project-card">
+      <div class="card-header">
+        <h2 class="project-title">Squam Lake Project — Center Harbor, NH</h2>
+      </div>
+      <a href="squam-lake-gallery.html" class="card-img-container" aria-label="View Squam Lake Project Gallery">
+        <img src="assets/bb (14).jpg" alt="Construction project showcase image" loading="lazy" decoding="async" />
+      </a>
+      <div class="card-footer">
+        <a href="squam-lake-gallery.html" class="gallery-btn">View Full Gallery (16 Photos)</a>
+      </div>
+    </article>
+
+    <!-- Card 3: Featured Collection -->
+    <article class="project-card">
+      <div class="card-header">
+        <h2 class="project-title">Featured Gallery Collection</h2>
+      </div>
+      <a href="featured-gallery.html" class="card-img-container" aria-label="View Featured Collection Gallery">
+        <img src="assets/facebookpics (10).jpeg" alt="Construction project showcase image" loading="lazy" decoding="async" />
+      </a>
+      <div class="card-footer">
+        <a href="featured-gallery.html" class="gallery-btn">View Full Gallery (4 Photos)</a>
+      </div>
+    </article>
+
   </main>
-
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()" aria-hidden="true">
-    <div class="lightbox-content" onclick="event.stopPropagation()">
-      <img id="lightbox-img" src="" alt="Expanded View" decoding="async" />
-    </div>
-  </div>
-
-  <script>
-    // Define the 3 grouped cards starting with Wood & Clay
-    const projectGroups = [
-      {
-        titlePrefix: "Partnership with ",
-        partnerName: "Wood & Clay, Inc.",
-        partnerUrl: "https://www.woodandclay.com",
-        titleSuffix: " — Lakes Region, NH",
-        images: [
-          "assets/bb (1).jpg",
-          "assets/bb (2).JPG",
-          "assets/facebookpics (15).jpeg",
-          "assets/bb (4).JPG",
-          "assets/bb (5) - Copy.jpeg",
-          "assets/bb (6) - Copy.JPG",
-          "assets/bb (7).jpg",
-          "assets/bb (8).jpg",
-          "assets/bb (9).jpg",
-          "assets/bb (10).jpg",
-          "assets/bb (11).jpg",
-          "assets/bb (12).jpg",
-          "assets/bb (13).jpg",
-          "assets/bb (23).jpg"
-        ]
-      },
-      {
-        titlePrefix: "Squam Lake Project — Center Harbor, NH",
-        images: [
-          "assets/bb (14).jpg",
-          "assets/bb (15).jpg",
-          "assets/bb (16).jpg",
-          "assets/bb (17).jpg",
-          "assets/bb (18).jpg",
-          "assets/bb (19).jpg",
-          "assets/bb (20).jpg",
-          "assets/bb (21).jpg",
-          "assets/bb (22).jpg",
-          "assets/bb (24).jpg",
-          "assets/bb (26).jpg",
-          "assets/bb (27).jpg",
-          "assets/bb (28).jpg",
-          "assets/bb (29).jpg",
-          "assets/bb (30).jpg",
-          "assets/bb (31).jpg"
-        ]
-      },
-      {
-        titlePrefix: "Featured Gallery Collection",
-        images: [
-          "assets/facebookpics (10).jpeg",
-          "assets/facebookpics (11).jpeg",
-          "assets/facebookpics (12).jpeg",
-          "assets/facebookpics (13).jpeg"
-        ]
-      }
-    ];
-
-    const containerEl = document.getElementById("portfolio-container");
-    const fragment = document.createDocumentFragment();
-
-    let globalIndex = 0;
-
-    projectGroups.forEach((group) => {
-      const cardEl = document.createElement("section");
-      cardEl.className = "project-card";
-
-      const headingEl = document.createElement("h2");
-      headingEl.className = "project-title";
-
-      if (group.partnerName && group.partnerUrl) {
-        headingEl.appendChild(document.createTextNode(group.titlePrefix || ""));
-
-        const linkEl = document.createElement("a");
-        linkEl.href = group.partnerUrl;
-        linkEl.textContent = group.partnerName;
-        linkEl.className = "partner-link";
-        linkEl.target = "_blank";
-        linkEl.rel = "noopener noreferrer";
-        headingEl.appendChild(linkEl);
-
-        headingEl.appendChild(document.createTextNode(group.titleSuffix || ""));
-      } else {
-        headingEl.textContent = group.titlePrefix;
-      }
-
-      cardEl.appendChild(headingEl);
-
-      const gridEl = document.createElement("ul");
-      gridEl.className = "project-grid";
-
-      group.images.forEach((src) => {
-        const li = document.createElement("li");
-        li.className = "grid-item";
-
-        const wrapper = document.createElement("div");
-        wrapper.className = "img-wrapper";
-
-        const img = document.createElement("img");
-        img.src = src;
-        img.alt = "Construction project showcase image";
-
-        // Optimization: eager load top-fold images, lazy load the rest
-        img.loading = globalIndex < 4 ? "eager" : "lazy";
-        img.fetchPriority = globalIndex < 2 ? "high" : "low";
-        img.decoding = "async";
-        img.width = 1200;
-        img.height = 900;
-
-        img.addEventListener("click", () => openLightbox(img.src, img.alt));
-        img.addEventListener("error", () => { li.remove(); });
-
-        wrapper.appendChild(img);
-        li.appendChild(wrapper);
-        gridEl.appendChild(li);
-
-        globalIndex++;
-      });
-
-      cardEl.appendChild(gridEl);
-      fragment.appendChild(cardEl);
-    });
-
-    containerEl.appendChild(fragment);
-
-    function openLightbox(imageSrc, imageAlt) {
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImg = document.getElementById("lightbox-img");
-      lightboxImg.src = imageSrc;
-      lightboxImg.alt = imageAlt;
-      lightbox.style.display = "flex";
-      lightbox.setAttribute("aria-hidden", "false");
-      document.body.style.overflow = "hidden";
-    }
-
-    function closeLightbox() {
-      const lightbox = document.getElementById("lightbox");
-      lightbox.style.display = "none";
-      lightbox.setAttribute("aria-hidden", "true");
-      document.body.style.overflow = "";
-    }
-
-    document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape") closeLightbox();
-    });
-  </script>
 </body>
 </html>
