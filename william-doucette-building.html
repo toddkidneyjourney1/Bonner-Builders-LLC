@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Squam Lake Project Gallery | Bonner Builders LLC</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --page-max: 1280px;
+      --gap-desktop: 24px;
+      --gap-tablet: 16px;
+      --gap-mobile: 12px;
+      --card-radius: 12px;
+      --card-blue: #1e3557; /* Distinct secondary slate tone */
+      --accent-bronze: #d99b43;
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .portfolio-container {
+      width: min(100% - 2rem, var(--page-max));
+      margin: clamp(32px, 5vw, 48px) auto;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .back-nav {
+      margin-bottom: -16px;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #eef2f7;
+      color: #162a45;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .back-btn:hover {
+      background: var(--accent-bronze);
+      color: #fff;
+    }
+
+    .project-card {
+      background: var(--card-blue);
+      border-radius: var(--card-radius);
+      box-shadow: var(--shadow);
+      padding: clamp(24px, 3.5vw, 36px);
+      border-top: 6px solid var(--accent-bronze);
+    }
+
+    .project-title {
+      font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+      color: #ffffff;
+      text-align: center;
+      margin: 0 auto 28px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.18);
+      font-weight: 700;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--gap-desktop);
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .grid-item {
+      background: #ffffff;
+      border: 3px solid #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .grid-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.38);
+    }
+
+    .img-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: #243b5a;
+      overflow: hidden;
+    }
+
+    .img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: zoom-in;
+      transition: transform 0.3s ease;
+      display: block;
+    }
+
+    .img-wrapper img:hover {
+      transform: scale(1.03);
+    }
+
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.88);
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .lightbox-content img {
+      max-width: 100%;
+      max-height: 88vh;
+      object-fit: contain;
+      border: 3px solid #ffffff;
+      border-radius: 6px;
+      background: #111;
+    }
+
+    @media (max-width: 1200px) { .project-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @media (max-width: 900px) { .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--gap-tablet); } }
+    @media (max-width: 560px) { .project-grid { grid-template-columns: 1fr; gap: var(--gap-mobile); } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-side">
+      <img src="assets/logo.png" alt="Bonner Builders Logo" decoding="async" />
+    </div>
+    <div class="header-info">
+      <h3>Bonner Builders LLC</h3>
+      <p>📞 (603) 707-0049</p>
+      <p>✉️ bonnerbuilders@yahoo.com</p>
+      <p>📍 Lakes Region, NH</p>
+    </div>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="services.html">Services</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="join.html">Join Us</a>
+    <a href="contact.html">Contact</a>
+    <a href="about.html">About</a>
+  </nav>
+
+  <main class="portfolio-container">
+    <div class="back-nav">
+      <a href="portfolio.html" class="back-btn">&larr; Back to Portfolio</a>
+    </div>
+
+    <section class="project-card">
+      <h1 class="project-title">Squam Lake Project — Center Harbor, NH</h1>
+      <ul class="project-grid" id="gallery-grid">
+        <!-- Images loaded dynamically -->
+      </ul>
+    </section>
+  </main>
+
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()" aria-hidden="true">
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <img id="lightbox-img" src="" alt="Expanded View" decoding="async" />
+    </div>
+  </div>
+
+  <script>
+    const images = [
+      "assets/bb (14).jpg", "assets/bb (15).jpg", "assets/bb (16).jpg",
+      "assets/bb (17).jpg", "assets/bb (18).jpg", "assets/bb (19).jpg",
+      "assets/bb (20).jpg", "assets/bb (21).jpg", "assets/bb (22).jpg",
+      "assets/bb (24).jpg", "assets/bb (26).jpg", "assets/bb (27).jpg",
+      "assets/bb (28).jpg", "assets/bb (29).jpg", "assets/bb (30).jpg", "assets/bb (31).jpg"
+    ];
+
+    const gridEl = document.getElementById("gallery-grid");
+    const fragment = document.createDocumentFragment();
+
+    images.forEach((src, index) => {
+      const li = document.createElement("li");
+      li.className = "grid-item";
+
+      const wrapper = document.createElement("div");
+      wrapper.className = "img-wrapper";
+
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = "Squam Lake project showcase image";
+      img.loading = index < 4 ? "eager" : "lazy";
+      img.decoding = "async";
+
+      img.addEventListener("click", () => openLightbox(img.src, img.alt));
+      img.addEventListener("error", () => { li.remove(); });
+
+      wrapper.appendChild(img);
+      li.appendChild(wrapper);
+      fragment.appendChild(li);
+    });
+
+    gridEl.appendChild(fragment);
+
+    function openLightbox(src, alt) {
+      document.getElementById("lightbox-img").src = src;
+      document.getElementById("lightbox-img").alt = alt;
+      document.getElementById("lightbox").style.display = "flex";
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+      document.body.style.overflow = "";
+    }
+
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeLightbox(); });
+  </script>
+</body>
+</html>
