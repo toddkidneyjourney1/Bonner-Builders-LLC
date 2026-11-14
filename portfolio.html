@@ -24,8 +24,10 @@
       --gap-tablet: 16px;
       --gap-mobile: 12px;
       --card-radius: 12px;
-      --shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-      --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.12);
+      --card-blue: #162a45;
+      --accent-gold: #f3c65f;
+      --shadow: 0 6px 20px rgba(0, 0, 0, 0.14);
+      --shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.22);
     }
 
     .portfolio-container {
@@ -37,10 +39,10 @@
     }
 
     .project-card {
-      background: #fff;
+      background: var(--card-blue);
       border-radius: var(--card-radius);
       box-shadow: var(--shadow);
-      padding: clamp(20px, 3vw, 32px);
+      padding: clamp(24px, 3.5vw, 36px);
       transition: box-shadow 0.3s ease;
     }
 
@@ -49,12 +51,27 @@
     }
 
     .project-title {
-      font-size: clamp(1.3rem, 2vw, 1.6rem);
-      color: #243041;
-      margin-bottom: 20px;
-      padding-bottom: 10px;
-      border-bottom: 2px solid #eef2f7;
+      font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+      color: #ffffff;
+      text-align: center;
+      margin: 0 auto 28px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.18);
       font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+
+    .partner-link {
+      color: var(--accent-gold);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      text-decoration-thickness: 2px;
+      transition: color 0.2s ease, text-decoration-color 0.2s ease;
+    }
+
+    .partner-link:hover {
+      color: #ffffff;
+      text-decoration-color: #ffffff;
     }
 
     .project-grid {
@@ -68,24 +85,27 @@
     }
 
     .grid-item {
-      background: #f8fafc;
+      background: #ffffff;
+      border: 3px solid #ffffff;
       border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      /* Pure CSS shadow - zero impact on image loading speed */
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       will-change: transform;
     }
 
     .grid-item:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.38);
     }
 
     .img-wrapper {
       position: relative;
       width: 100%;
       aspect-ratio: 4 / 3;
-      background: linear-gradient(135deg, #eef2f7, #e5e7eb);
+      background: #243b5a;
+      border-radius: 5px;
       overflow: hidden;
     }
 
@@ -123,7 +143,9 @@
       max-width: 100%;
       max-height: 88vh;
       object-fit: contain;
+      border: 3px solid #ffffff;
       border-radius: 6px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
       background: #111;
     }
 
@@ -141,7 +163,7 @@
     }
 
     @media (max-width: 560px) {
-      .project-container {
+      .portfolio-container {
         width: min(100% - 1rem, var(--page-max));
         margin: 16px auto 24px;
       }
@@ -158,7 +180,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .grid-item, .img-wrapper img {
+      .grid-item, .img-wrapper img, .partner-link {
         transition: none;
       }
     }
@@ -198,10 +220,13 @@
   </div>
 
   <script>
-    // Define the 3 grouped cards with their respective headers and image lists
+    // Define the 3 grouped cards with optional partner links and accessible alt text
     const projectGroups = [
       {
-        title: "Partnership with Wood & Clay, Inc. — Lakes Region, NH",
+        titlePrefix: "Partnership with ",
+        partnerName: "Wood & Clay, Inc.",
+        partnerUrl: "https://www.woodandclay.com",
+        titleSuffix: " — Lakes Region, NH",
         images: [
           "assets/bb (1).jpg",
           "assets/bb (2).JPG",
@@ -220,7 +245,7 @@
         ]
       },
       {
-        title: "Squam Lake Project — Center Harbor, NH",
+        titlePrefix: "Squam Lake Project — Center Harbor, NH",
         images: [
           "assets/bb (14).jpg",
           "assets/bb (15).jpg",
@@ -241,7 +266,7 @@
         ]
       },
       {
-        title: "Featured Gallery Collection",
+        titlePrefix: "Featured Gallery Collection",
         images: [
           "assets/facebookpics (10).jpeg",
           "assets/facebookpics (11).jpeg",
@@ -261,10 +286,26 @@
       const cardEl = document.createElement("section");
       cardEl.className = "project-card";
 
-      // Create header for the card
+      // Create centered header for the card
       const headingEl = document.createElement("h2");
       headingEl.className = "project-title";
-      headingEl.textContent = group.title;
+
+      if (group.partnerName && group.partnerUrl) {
+        headingEl.appendChild(document.createTextNode(group.titlePrefix || ""));
+
+        const linkEl = document.createElement("a");
+        linkEl.href = group.partnerUrl;
+        linkEl.textContent = group.partnerName;
+        linkEl.className = "partner-link";
+        linkEl.target = "_blank";
+        linkEl.rel = "noopener noreferrer";
+        headingEl.appendChild(linkEl);
+
+        headingEl.appendChild(document.createTextNode(group.titleSuffix || ""));
+      } else {
+        headingEl.textContent = group.titlePrefix;
+      }
+
       cardEl.appendChild(headingEl);
 
       // Create grid list for images
@@ -280,9 +321,9 @@
 
         const img = document.createElement("img");
         img.src = src;
-        img.alt = `${group.title} photo`;
-        
-        // Optimization: eager load the first few images in the first card, lazy load the rest
+        img.alt = "Construction project showcase image";
+
+        // Optimization: eager load top-fold images, lazy load the rest
         img.loading = globalIndex < 4 ? "eager" : "lazy";
         img.fetchPriority = globalIndex < 2 ? "high" : "low";
         img.decoding = "async";
