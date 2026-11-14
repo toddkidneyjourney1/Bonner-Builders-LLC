@@ -20,20 +20,44 @@
   <style>
     :root {
       --page-max: 1280px;
-      --gap-desktop: 20px;
+      --gap-desktop: 24px;
       --gap-tablet: 16px;
       --gap-mobile: 12px;
-      --card-radius: 10px;
-      --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-      --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.14);
+      --card-radius: 12px;
+      --shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.12);
     }
 
-    .portfolio-grid-container {
+    .portfolio-container {
       width: min(100% - 2rem, var(--page-max));
-      margin: clamp(20px, 3vw, 36px) auto;
+      margin: clamp(24px, 4vw, 40px) auto;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
     }
 
-    .portfolio-grid {
+    .project-card {
+      background: #fff;
+      border-radius: var(--card-radius);
+      box-shadow: var(--shadow);
+      padding: clamp(20px, 3vw, 32px);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      box-shadow: var(--shadow-hover);
+    }
+
+    .project-title {
+      font-size: clamp(1.3rem, 2vw, 1.6rem);
+      color: #243041;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #eef2f7;
+      font-weight: 700;
+    }
+
+    .project-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: var(--gap-desktop);
@@ -43,18 +67,18 @@
       align-items: stretch;
     }
 
-    .portfolio-item {
-      background: #fff;
-      border-radius: var(--card-radius);
+    .grid-item {
+      background: #f8fafc;
+      border-radius: 8px;
       overflow: hidden;
-      box-shadow: var(--shadow);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       will-change: transform;
     }
 
-    .portfolio-item:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-hover);
+    .grid-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
     }
 
     .img-wrapper {
@@ -76,15 +100,6 @@
 
     .img-wrapper img:hover {
       transform: scale(1.03);
-    }
-
-    .caption {
-      padding: 10px 12px 12px;
-      font-size: 0.95rem;
-      line-height: 1.4;
-      color: #243041;
-      text-align: center;
-      background: #fff;
     }
 
     .lightbox {
@@ -113,42 +128,37 @@
     }
 
     @media (max-width: 1200px) {
-      .portfolio-grid {
+      .project-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: var(--gap-desktop);
       }
     }
 
     @media (max-width: 900px) {
-      .portfolio-grid {
+      .project-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: var(--gap-tablet);
       }
     }
 
     @media (max-width: 560px) {
-      .portfolio-grid-container {
+      .project-container {
         width: min(100% - 1rem, var(--page-max));
-        margin: 16px auto 22px;
+        margin: 16px auto 24px;
       }
-
-      .portfolio-grid {
+      .project-grid {
         grid-template-columns: 1fr;
         gap: var(--gap-mobile);
       }
-
       .lightbox {
         padding: 10px;
       }
-
       .lightbox-content img {
         max-height: 82vh;
       }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .portfolio-item,
-      .img-wrapper img {
+      .grid-item, .img-wrapper img {
         transition: none;
       }
     }
@@ -177,9 +187,9 @@
     <a href="about.html">About</a>
   </nav>
 
-  <div class="portfolio-grid-container">
-    <ul class="portfolio-grid" id="portfolio-grid"></ul>
-  </div>
+  <main class="portfolio-container" id="portfolio-container">
+    <!-- Cards will be dynamically populated here -->
+  </main>
 
   <div id="lightbox" class="lightbox" onclick="closeLightbox()" aria-hidden="true">
     <div class="lightbox-content" onclick="event.stopPropagation()">
@@ -188,86 +198,112 @@
   </div>
 
   <script>
-    const woodClayCaption = "Project In partnership with Wood & Clay, Inc. Lakes Region NH";
-    const bonnerCaption = "Bonner Builders Project - Squam Lake Center Harbor NH";
-
-    const portfolioItems = [
-      { src: "assets/bb (1).jpg", alt: "Bonner Builders project photo 1", caption: woodClayCaption },
-      { src: "assets/bb (2).JPG", alt: "Bonner Builders project photo 2", caption: woodClayCaption },
-      { src: "assets/facebookpics (15).jpeg", alt: "Bonner Builders project photo 3", caption: woodClayCaption },
-      { src: "assets/bb (4).JPG", alt: "Bonner Builders project photo 4", caption: woodClayCaption },
-      { src: "assets/bb (5) - Copy.jpeg", alt: "Bonner Builders project photo 5", caption: woodClayCaption },
-      { src: "assets/bb (6) - Copy.JPG", alt: "Bonner Builders project photo 6", caption: woodClayCaption },
-      { src: "assets/bb (7).jpg", alt: "Bonner Builders project photo 7", caption: woodClayCaption },
-      { src: "assets/bb (8).jpg", alt: "Bonner Builders project photo 8", caption: woodClayCaption },
-      { src: "assets/bb (9).jpg", alt: "Bonner Builders project photo 9", caption: woodClayCaption },
-      { src: "assets/bb (10).jpg", alt: "Bonner Builders project photo 10", caption: woodClayCaption },
-      { src: "assets/bb (11).jpg", alt: "Bonner Builders project photo 11", caption: woodClayCaption },
-      { src: "assets/bb (12).jpg", alt: "Bonner Builders project photo 12", caption: woodClayCaption },
-      { src: "assets/bb (13).jpg", alt: "Bonner Builders project photo 13", caption: woodClayCaption },
-      { src: "assets/bb (14).jpg", alt: "Bonner Builders project photo 14", caption: bonnerCaption },
-      { src: "assets/bb (15).jpg", alt: "Bonner Builders project photo 15", caption: bonnerCaption },
-      { src: "assets/bb (16).jpg", alt: "Bonner Builders project photo 16", caption: bonnerCaption },
-      { src: "assets/bb (17).jpg", alt: "Bonner Builders project photo 17", caption: bonnerCaption },
-      { src: "assets/bb (18).jpg", alt: "Bonner Builders project photo 18", caption: bonnerCaption },
-      { src: "assets/bb (19).jpg", alt: "Bonner Builders project photo 19", caption: bonnerCaption },
-      { src: "assets/bb (20).jpg", alt: "Bonner Builders project photo 20", caption: bonnerCaption },
-      { src: "assets/bb (21).jpg", alt: "Bonner Builders project photo 21", caption: bonnerCaption },
-      { src: "assets/bb (22).jpg", alt: "Bonner Builders project photo 22", caption: bonnerCaption },
-      { src: "assets/bb (23).jpg", alt: "Bonner Builders project photo 23", caption: woodClayCaption },
-      { src: "assets/bb (24).jpg", alt: "Bonner Builders project photo 24", caption: bonnerCaption },
-      { src: "assets/bb (26).jpg", alt: "Bonner Builders project photo 26", caption: bonnerCaption },
-      { src: "assets/bb (27).jpg", alt: "Bonner Builders project photo 27", caption: bonnerCaption },
-      { src: "assets/bb (28).jpg", alt: "Bonner Builders project photo 28", caption: bonnerCaption },
-      { src: "assets/bb (29).jpg", alt: "Bonner Builders project photo 29", caption: bonnerCaption },
-      { src: "assets/bb (30).jpg", alt: "Bonner Builders project photo 30", caption: bonnerCaption },
-      { src: "assets/bb (31).jpg", alt: "Bonner Builders project photo 31", caption: bonnerCaption },
-      { src: "assets/facebookpics (10).jpeg", alt: "Bonner Builders Facebook gallery image 10", caption: bonnerCaption },
-      { src: "assets/facebookpics (11).jpeg", alt: "Bonner Builders Facebook gallery image 11", caption: bonnerCaption },
-      { src: "assets/facebookpics (12).jpeg", alt: "Bonner Builders Facebook gallery image 12", caption: bonnerCaption },
-      { src: "assets/facebookpics (13).jpeg", alt: "Bonner Builders Facebook gallery image 13", caption: bonnerCaption }
+    // Define the 3 grouped cards with their respective headers and image lists
+    const projectGroups = [
+      {
+        title: "Partnership with Wood & Clay, Inc. — Lakes Region, NH",
+        images: [
+          "assets/bb (1).jpg",
+          "assets/bb (2).JPG",
+          "assets/facebookpics (15).jpeg",
+          "assets/bb (4).JPG",
+          "assets/bb (5) - Copy.jpeg",
+          "assets/bb (6) - Copy.JPG",
+          "assets/bb (7).jpg",
+          "assets/bb (8).jpg",
+          "assets/bb (9).jpg",
+          "assets/bb (10).jpg",
+          "assets/bb (11).jpg",
+          "assets/bb (12).jpg",
+          "assets/bb (13).jpg",
+          "assets/bb (23).jpg"
+        ]
+      },
+      {
+        title: "Squam Lake Project — Center Harbor, NH",
+        images: [
+          "assets/bb (14).jpg",
+          "assets/bb (15).jpg",
+          "assets/bb (16).jpg",
+          "assets/bb (17).jpg",
+          "assets/bb (18).jpg",
+          "assets/bb (19).jpg",
+          "assets/bb (20).jpg",
+          "assets/bb (21).jpg",
+          "assets/bb (22).jpg",
+          "assets/bb (24).jpg",
+          "assets/bb (26).jpg",
+          "assets/bb (27).jpg",
+          "assets/bb (28).jpg",
+          "assets/bb (29).jpg",
+          "assets/bb (30).jpg",
+          "assets/bb (31).jpg"
+        ]
+      },
+      {
+        title: "Featured Gallery Collection",
+        images: [
+          "assets/facebookpics (10).jpeg",
+          "assets/facebookpics (11).jpeg",
+          "assets/facebookpics (12).jpeg",
+          "assets/facebookpics (13).jpeg"
+        ]
+      }
     ];
 
-    const gridEl = document.getElementById("portfolio-grid");
+    const containerEl = document.getElementById("portfolio-container");
+    const fragment = document.createDocumentFragment();
 
-    function createPortfolioItem(item, index) {
-      const li = document.createElement("li");
-      li.className = "portfolio-item";
+    let globalIndex = 0;
 
-      const wrapper = document.createElement("div");
-      wrapper.className = "img-wrapper";
+    projectGroups.forEach((group) => {
+      // Create main card wrapper
+      const cardEl = document.createElement("section");
+      cardEl.className = "project-card";
 
-      const img = document.createElement("img");
-      img.src = item.src;
-      img.alt = item.alt;
-      img.loading = index < 8 ? "eager" : "lazy";
-      img.fetchPriority = index < 4 ? "high" : "low";
-      img.decoding = "async";
-      img.width = 1200;
-      img.height = 900;
-      img.addEventListener("click", () => openLightbox(item.src, item.alt));
-      img.addEventListener("error", () => {
-        li.remove();
+      // Create header for the card
+      const headingEl = document.createElement("h2");
+      headingEl.className = "project-title";
+      headingEl.textContent = group.title;
+      cardEl.appendChild(headingEl);
+
+      // Create grid list for images
+      const gridEl = document.createElement("ul");
+      gridEl.className = "project-grid";
+
+      group.images.forEach((src) => {
+        const li = document.createElement("li");
+        li.className = "grid-item";
+
+        const wrapper = document.createElement("div");
+        wrapper.className = "img-wrapper";
+
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = `${group.title} photo`;
+        
+        // Optimization: eager load the first few images in the first card, lazy load the rest
+        img.loading = globalIndex < 4 ? "eager" : "lazy";
+        img.fetchPriority = globalIndex < 2 ? "high" : "low";
+        img.decoding = "async";
+        img.width = 1200;
+        img.height = 900;
+
+        img.addEventListener("click", () => openLightbox(img.src, img.alt));
+        img.addEventListener("error", () => { li.remove(); });
+
+        wrapper.appendChild(img);
+        li.appendChild(wrapper);
+        gridEl.appendChild(li);
+
+        globalIndex++;
       });
 
-      wrapper.appendChild(img);
-      li.appendChild(wrapper);
-
-      if (item.caption) {
-        const caption = document.createElement("div");
-        caption.className = "caption";
-        caption.textContent = item.caption;
-        li.appendChild(caption);
-      }
-
-      return li;
-    }
-
-    const fragment = document.createDocumentFragment();
-    portfolioItems.forEach((item, index) => {
-      fragment.appendChild(createPortfolioItem(item, index));
+      cardEl.appendChild(gridEl);
+      fragment.appendChild(cardEl);
     });
-    gridEl.appendChild(fragment);
+
+    containerEl.appendChild(fragment);
 
     function openLightbox(imageSrc, imageAlt) {
       const lightbox = document.getElementById("lightbox");
